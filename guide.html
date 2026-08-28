@@ -21,8 +21,30 @@
         <!-- Main Stylesheet File -->
         <link href="css/hover-style.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+    </head>
 
-        <!-- Custom CSS for the Quiz Interface -->
+    <body>
+        <!-- Header Section Start -->
+        <div class="menu"> <span></span> </div>
+        <nav id="nav">
+            <ul class="main">
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="history.html">ประวัติ</a></li>
+                <li><a href="people.html">บุคคลสำคัญ</a></li>
+                <li><a href="types.html">ประเภท</a></li>
+                <li><a href="purpose.html">ประโยชน์</a></li>
+                <li><a href="technique.html">เทคนิค</a></li>
+                <li><a href="accesories.html">อุปกรณ์เสริม</a></li>
+                <li><a href="guide.html">การชี้แนวทาง</a></li>
+                <li><a href="contact.html">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
+		
+		<!-- Swup Container Start -->
+        <main id="swup" class="transition-slide">
+        
+        <!-- นำ CSS มาไว้ใน Swup เพื่อให้ทำงานทันทีเมื่อเปลี่ยนหน้ามาจาก index -->
         <style>
             .quiz-wrapper {
                 background: rgba(255, 255, 255, 0.03);
@@ -52,36 +74,30 @@
                 transform: translateX(10px);
                 box-shadow: 0 5px 15px rgba(121, 232, 228, 0.1);
             }
-            
-            /* อัปเดต Progress Bar ให้แสดงผลได้สมบูรณ์และสวยงาม */
             .quiz-progress {
                 background-color: rgba(255, 255, 255, 0.1);
                 border-radius: 10px;
-                height: 12px; /* เพิ่มความหนา */
+                height: 12px;
                 width: 100%;
                 overflow: hidden;
                 box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
             }
             .quiz-progress-bar {
-                background: linear-gradient(90deg, #5fc3bf, #79E8E4); /* ใส่สีแบบไล่ระดับ */
-                height: 100%; /* สำคัญมากเพื่อให้บาร์แสดงผล */
+                background: linear-gradient(90deg, #5fc3bf, #79E8E4);
+                height: 100%;
                 border-radius: 10px;
                 transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: 0 0 10px rgba(121, 232, 228, 0.5); /* ใส่เงาเรืองแสง */
+                box-shadow: 0 0 10px rgba(121, 232, 228, 0.5);
             }
-
             .quiz-fade-in {
                 animation: fadeIn 0.6s ease-in-out;
             }
-            
-            /* Animation Classes for Questions */
             .slide-out-left {
                 animation: slideOutLeft 0.4s forwards cubic-bezier(0.4, 0, 0.2, 1);
             }
             .slide-in-right {
                 animation: slideInRight 0.4s forwards cubic-bezier(0.4, 0, 0.2, 1);
             }
-            
             @keyframes fadeIn {
                 from { opacity: 0; transform: translateY(15px); }
                 to { opacity: 1; transform: translateY(0); }
@@ -95,29 +111,7 @@
                 to { opacity: 1; transform: translateX(0); }
             }
         </style>
-    </head>
 
-    <body>
-        <!-- Header Section Start -->
-        <div class="menu"> <span></span> </div>
-        <nav id="nav">
-            <ul class="main">
-                <li><a href="index.html">หน้าหลัก</a></li>
-                <li><a href="history.html">ประวัติ</a></li>
-                <li><a href="people.html">บุคคลสำคัญ</a></li>
-                <li><a href="types.html">ประเภท</a></li>
-                <li><a href="purpose.html">ประโยชน์</a></li>
-                <li><a href="technique.html">เทคนิค</a></li>
-                <li><a href="accesories.html">อุปกรณ์เสริม</a></li>
-                <li><a href="guide.html">การชี้แนวทาง</a></li>
-                <li><a href="contact.html">ติดต่อเรา</a></li>
-            </ul>
-        </nav>
-        <div class="overlay"></div>
-		
-		<!-- Swup Container Start -->
-        <main id="swup" class="transition-slide">
-        
         <div class="header header--compact">
             <div class="container text-center">
                 <div class="row">
@@ -146,22 +140,20 @@
                             <p style="color: #cccccc; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
                                 ไม่ว่าคุณจะเป็นมือใหม่หัดถ่าย สายลุย หรือมืออาชีพ แบบทดสอบนี้จะประเมินจากการใช้งาน งบประมาณ และทักษะของคุณ เพื่อค้นหาประเภทกล้อง (Action, Point & Shoot, DSLR หรือ Mirrorless) ที่ตอบโจทย์คุณที่สุด
                             </p>
-                            <button class="btn btn-info btn-lg" style="padding: 12px 40px; font-weight: 600; border-radius: 30px;" onclick="startQuiz()">เริ่มทำแบบทดสอบ <i class="fa fa-angle-right ml-2"></i></button>
+                            <!-- เรียกฟังก์ชันผ่าน window. นำหน้า เพื่อป้องกันการหาโค้ดไม่เจอ -->
+                            <button class="btn btn-info btn-lg" style="padding: 12px 40px; font-weight: 600; border-radius: 30px;" onclick="window.startQuiz()">เริ่มทำแบบทดสอบ <i class="fa fa-angle-right ml-2"></i></button>
                         </div>
 
                         <!-- Question Screen -->
                         <div id="quiz-question" class="quiz-step quiz-fade-in" style="display: none;">
-                            
-                            <!-- แถบ Progress Bar ด้านบนของคำถาม -->
                             <div class="quiz-progress mb-4">
                                 <div id="quiz-progress-bar" class="quiz-progress-bar" role="progressbar" style="width: 0%;"></div>
                             </div>
-                            
                             <h6 id="question-counter" style="color: #79E8E4; font-weight: 600; margin-bottom: 15px; letter-spacing: 1px;">คำถามที่ 1 / 8</h6>
                             <h3 id="question-text" style="color: #ffffff; font-weight: 700; margin-bottom: 30px; line-height: 1.4;"></h3>
                             
                             <div id="options-container" class="d-flex flex-column">
-                                <!-- Options will be injected here via JavaScript -->
+                                <!-- Options will be injected here -->
                             </div>
                         </div>
 
@@ -181,7 +173,7 @@
                             <p id="result-desc" style="color: #cccccc; font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px; text-align: center;"></p>
                             
                             <div>
-                                <button class="btn btn-outline-light mr-3 mb-2" style="border-radius: 30px; padding: 10px 25px;" onclick="restartQuiz()"><i class="fa fa-refresh mr-2"></i>ทำแบบทดสอบอีกครั้ง</button>
+                                <button class="btn btn-outline-light mr-3 mb-2" style="border-radius: 30px; padding: 10px 25px;" onclick="window.restartQuiz()"><i class="fa fa-refresh mr-2"></i>ทำแบบทดสอบอีกครั้ง</button>
                                 <a id="result-link" href="types.html" class="btn btn-info mb-2" style="border-radius: 30px; padding: 10px 25px;">ดูข้อมูลกล้องประเภทนี้ <i class="fa fa-arrow-right ml-2"></i></a>
                             </div>
                         </div>
@@ -222,216 +214,6 @@
 
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
-		
-        <!-- Quiz Logic Script -->
-        <script>
-            // 8 Questions mapping directly to user provided images/concepts
-            // Weight logic: Action (0.625), Point & Shoot (1.25), DSLR (2.5), Mirrorless (5.0)
-            const questions = [
-                {
-                    question: "งบประมาณสำหรับการซื้อกล้องของคุณอยู่ในช่วงใด?",
-                    options: [
-                        { text: "ต่ำกว่า 20,000 บาท (ระดับเริ่มต้น / เน้นประหยัด)", value: 0.625 },
-                        { text: "20,000 - 60,000 บาท (ระดับกลาง / เริ่มจริงจัง)", value: 1.25 },
-                        { text: "60,000 - 150,000 บาท (ระดับสูง / มืออาชีพ)", value: 2.5 },
-                        { text: "มากกว่า 150,000 บาท (ระดับสูงสุด / งานโปรดักชั่น)", value: 5.0 }
-                    ]
-                },
-                {
-                    question: "คุณต้องการให้กล้องมีน้ำหนักและขนาดอย่างไร?",
-                    options: [
-                        { text: "เบามากที่สุด พกพาสะดวก เหมาะสำหรับการเดินทางลุยๆ", value: 0.625 },
-                        { text: "ใส่กระเป๋าเสื้อได้ หยิบจับใช้งานรวดเร็ว ไม่เป็นภาระ", value: 1.25 },
-                        { text: "น้ำหนักปานกลาง จับถนัดมือ มีความสมดุลเวลาติดเลนส์ใหญ่", value: 2.5 },
-                        { text: "ยอมรับน้ำหนักมากได้ ไม่สนใจขนาด ขอให้ได้คุณภาพไฟล์ดีที่สุด", value: 5.0 }
-                    ]
-                },
-                {
-                    question: "คุณตั้งใจจะถ่ายภาพประเภทใดเป็นหลัก?",
-                    options: [
-                        { text: "กีฬาเอ็กซ์ตรีม, แอคชั่น, ใต้น้ำ และ VLOG (ต้องการความสมบุกสมบัน)", value: 0.625 },
-                        { text: "ท่องเที่ยวทั่วไป, ถ่ายภาพถนน (Street) และภาพชีวิตประจำวัน", value: 1.25 },
-                        { text: "ถ่ายภาพรับปริญญา, งานอีเวนต์, ทิวทัศน์ (ชอบการมองผ่านช่องมองภาพ)", value: 2.5 },
-                        { text: "ภาพพอร์เทรตสตูดิโอ, งานพาณิชย์ และวิดีโอระดับภาพยนตร์สั้น", value: 5.0 }
-                    ]
-                },
-                {
-                    question: "คุณคาดว่าจะหยิบกล้องมาใช้งานบ่อยแค่ไหน?",
-                    options: [
-                        { text: "นานๆ ครั้ง เฉพาะช่วงไปเที่ยวทริปพิเศษหรือวันหยุดยาว", value: 0.625 },
-                        { text: "สัปดาห์ละ 1-2 ครั้ง พกติดตัวไปคาเฟ่หรือเป็นงานอดิเรก", value: 1.25 },
-                        { text: "ทุกวัน หรือรับงานถ่ายภาพเป็นรายได้เสริม", value: 2.5 },
-                        { text: "ใช้งานหนักเต็มเวลาในฐานะเครื่องมือประกอบอาชีพ", value: 5.0 }
-                    ]
-                },
-                {
-                    question: "ระดับความรู้และทักษะการถ่ายภาพของคุณอยู่ในระดับใด?",
-                    options: [
-                        { text: "มือใหม่ เน้นโหมดอัตโนมัติ (Auto) ยังไม่เข้าใจการตั้งค่าต่างๆ", value: 0.625 },
-                        { text: "ระดับพื้นฐาน จัดองค์ประกอบเป็น แต่ยังพึ่งพาระบบของกล้องช่วย", value: 1.25 },
-                        { text: "ระดับกลาง เข้าใจ Aperture, Shutter Speed และ ISO ปรับแต่งเองได้", value: 2.5 },
-                        { text: "มืออาชีพ ใช้โหมด Manual ได้คล่องแคล่ว ควบคุมทุกพารามิเตอร์ได้ 100%", value: 5.0 }
-                    ]
-                },
-                {
-                    question: "คุณให้ความสำคัญกับอายุการใช้งานของ 'แบตเตอรี่' มากแค่ไหน?",
-                    options: [
-                        { text: "ไม่ซีเรียส แบตหมดไวก็ชาร์จผ่าน Power Bank ระหว่างทางได้", value: 0.625 },
-                        { text: "ปานกลาง ถ่ายรูปทั่วไป แบตอยู่ได้ครึ่งวันก็พอรับได้", value: 1.25 },
-                        { text: "สำคัญมาก! ต้องถ่ายได้ทั้งวัน กดได้เป็นพันๆ ช็อตโดยไม่ต้องเปลี่ยนแบต", value: 2.5 },
-                        { text: "ยอมรับเรื่องกินแบตได้ แลกมากับหน้าจอ EVF และระบบโฟกัสล้ำสมัย", value: 5.0 }
-                    ]
-                },
-                {
-                    question: "คุณต้องการความละเอียดของภาพ (Resolution) ในระดับใด?",
-                    options: [
-                        { text: "เน้นแค่อัปโหลดลงโซเชียลมีเดีย (Facebook/IG) ไม่ต้องการไฟล์ใหญ่", value: 0.625 },
-                        { text: "20-24 MP เพียงพอ ถ่ายสวยคมชัดกว่ามือถือ ส่งไฟล์แชร์ได้รวดเร็ว", value: 1.25 },
-                        { text: "24-30 MP ไฟล์มีความยืดหยุ่น นำไปแต่งต่อใน Lightroom ได้ลึก", value: 2.5 },
-                        { text: "40-100 MP ขึ้นไป สำหรับงานพิมพ์ขนาดยักษ์และการครอปภาพระดับโปร", value: 5.0 }
-                    ]
-                },
-                {
-                    question: "คุณวางแผนจะลงทุนกับ 'เลนส์' ในระยะยาวอย่างไร?",
-                    options: [
-                        { text: "ไม่ต้องการซื้ออะไรเพิ่ม จบในตัวเดียว พร้อมเมาท์ติดหมวก/ไม้เซลฟี่", value: 0.625 },
-                        { text: "เน้นกล้องตัวเดียวจบ เลนส์ติดกล้องมาเลย ไม่ต้องถอดเปลี่ยนให้ยุ่งยาก", value: 1.25 },
-                        { text: "ต้องการระบบที่มีเลนส์ให้เลือกเยอะ ราคาถูก และหาซื้อเลนส์มือสองได้ง่าย", value: 2.5 },
-                        { text: "งบไม่จำกัด ยินดีลงทุนกับระบบเลนส์ยุคใหม่คุณภาพสูงสุดเพื่ออนาคต", value: 5.0 }
-                    ]
-                }
-            ];
-
-            let currentQuestionIndex = 0;
-            let totalScore = 0;
-
-            function startQuiz() {
-                // รีเซ็ตค่าเสมอเพื่อป้องกันข้อมูลค้าง
-                currentQuestionIndex = 0;
-                totalScore = 0;
-                
-                document.getElementById('quiz-start').style.display = 'none';
-                
-                const qDiv = document.getElementById('quiz-question');
-                qDiv.style.display = 'block';
-                qDiv.className = 'quiz-step quiz-fade-in';
-                
-                renderQuestion(0);
-            }
-
-            function renderQuestion(index) {
-                const q = questions[index];
-                document.getElementById('question-counter').innerText = `คำถามที่ ${index + 1} จาก ${questions.length}`;
-                document.getElementById('question-text').innerText = q.question;
-                
-                // คำนวณเปอร์เซ็นต์ให้สอดคล้องกับข้อปัจจุบัน (เช่น ข้อ 1 จะเห็นหลอดขยับไป 12.5%)
-                const progressPercent = ((index + 1) / questions.length) * 100;
-                document.getElementById('quiz-progress-bar').style.width = `${progressPercent}%`;
-                
-                const optionsContainer = document.getElementById('options-container');
-                optionsContainer.innerHTML = '';
-                
-                q.options.forEach(opt => {
-                    const btn = document.createElement('button');
-                    btn.className = 'quiz-option-btn mb-3';
-                    btn.innerHTML = `<i class="fa fa-circle-o mr-3" style="color: #79E8E4;"></i> ${opt.text}`;
-                    btn.onclick = () => selectOption(opt.value);
-                    optionsContainer.appendChild(btn);
-                });
-            }
-
-            function selectOption(value) {
-                totalScore += value;
-                currentQuestionIndex++;
-                
-                const qDiv = document.getElementById('quiz-question');
-                
-                if (currentQuestionIndex < questions.length) {
-                    qDiv.classList.remove('slide-in-right', 'quiz-fade-in');
-                    qDiv.classList.add('slide-out-left');
-                    
-                    setTimeout(() => {
-                        renderQuestion(currentQuestionIndex);
-                        qDiv.classList.remove('slide-out-left');
-                        qDiv.classList.add('slide-in-right');
-                    }, 400); 
-                } else {
-                    qDiv.classList.remove('slide-in-right', 'quiz-fade-in');
-                    qDiv.classList.add('slide-out-left');
-                    
-                    setTimeout(() => {
-                        calculateResult();
-                    }, 400);
-                }
-            }
-
-            function calculateResult() {
-                document.getElementById('quiz-question').style.display = 'none';
-                document.getElementById('quiz-result').style.display = 'block';
-                document.getElementById('quiz-progress-bar').style.width = `100%`;
-                
-                const resDiv = document.getElementById('quiz-result');
-                resDiv.classList.remove('slide-out-left');
-                resDiv.classList.add('quiz-fade-in');
-
-                const maxPossibleScore = 40; 
-                const percentage = (totalScore / maxPossibleScore) * 100;
-                
-                let resultTitle = '';
-                let resultDesc = '';
-                let resultImg = '';
-                let resultLink = '';
-                
-                if (percentage <= 25) {
-                    resultTitle = 'Action Camera';
-                    resultDesc = 'คุณเป็นสายลุยตัวจริง! ชอบความตื่นเต้น กีฬาผจญภัย หรือการท่องเที่ยวที่ต้องพกพากล้องไปในสภาพแวดล้อมที่สมบุกสมบัน Action Camera ตอบโจทย์ความเล็ก เบา ทนทาน และกันน้ำได้ดีที่สุดสำหรับคุณ';
-                    resultImg = 'img/type/camera/action-camera.jpg'; 
-                    resultLink = 'types.html'; 
-                } else if (percentage <= 50) {
-                    resultTitle = 'Point and Shoot (Compact)';
-                    resultDesc = 'คุณชอบความเรียบง่ายและสะดวกสบาย! เน้นพกพาง่าย ถ่ายสนุก ไม่ต้องคิดเรื่องการปรับตั้งค่าหรือเปลี่ยนเลนส์ให้วุ่นวาย กล้องคอมแพคระดับพรีเมียมคือคำตอบที่ใช่สำหรับไลฟ์สไตล์แบบชิลๆ ของคุณที่สุด';
-                    resultImg = 'img/type/camera/point-and-shoot.jpg';
-                    resultLink = 'POS.html'; 
-                } else if (percentage <= 75) {
-                    resultTitle = 'DSLR Camera';
-                    resultDesc = 'คุณหลงใหลในเสน่ห์ของการถ่ายภาพแบบคลาสสิกและทรงพลัง! ชื่นชอบการมองผ่านช่องมองภาพแบบออปติคอล (OVF) ต้องการแบตเตอรี่ที่อึดทนทาน และระบบเลนส์มือสองที่มีให้เลือกมากมายในราคาที่คุ้มค่า';
-                    resultImg = 'img/type/camera/dslr.jpg';
-                    resultLink = 'types.html'; 
-                } else {
-                    resultTitle = 'Mirrorless Camera';
-                    resultDesc = 'คุณคือผู้ที่มองหาเทคโนโลยีขั้นสุด! ต้องการคุณภาพไฟล์ที่ยอดเยี่ยม ระบบโฟกัสติดตามดวงตาที่แม่นยำรวดเร็ว และรองรับงานวิดีโอระดับมืออาชีพ ในระบบกล้องแห่งอนาคตที่ตอบโจทย์งานได้ครอบจักรวาล';
-                    resultImg = 'img/type/camera/mirrorless.jpg';
-                    resultLink = 'mirrorless.html'; 
-                }
-                
-                document.getElementById('result-title').innerText = resultTitle;
-                document.getElementById('result-score').innerText = `ความตรงกับไลฟ์สไตล์: ${percentage.toFixed(1)}%`;
-                document.getElementById('result-desc').innerText = resultDesc;
-                document.getElementById('result-link').href = resultLink;
-                
-                document.getElementById('result-image-container').innerHTML = `
-                    <div style="width: 100%; max-width: 450px; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: rgba(0,0,0,0.2); padding: 15px; display: flex; align-items: center; justify-content: center;">
-                        <img src="${resultImg}" alt="${resultTitle}" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;" onerror="this.onerror=null; this.src='https://placehold.co/800x450/222222/79E8E4?text=${resultTitle.replace(/ /g, '+')}';">
-                    </div>
-                `;
-            }
-
-            function restartQuiz() {
-                currentQuestionIndex = 0;
-                totalScore = 0;
-                
-                const resDiv = document.getElementById('quiz-result');
-                const startDiv = document.getElementById('quiz-start');
-                
-                resDiv.style.display = 'none';
-                resDiv.classList.remove('quiz-fade-in');
-                
-                startDiv.style.display = 'block';
-                startDiv.classList.add('quiz-fade-in');
-                
-                document.getElementById('quiz-progress-bar').style.width = `0%`;
-            }
-        </script>
 
 		<!-- Swup Script Installation -->
         <script src="js/swup.umd.js"></script>

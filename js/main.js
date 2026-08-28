@@ -48,7 +48,6 @@
                 return $('#popover-content-' + id).html();
             }
         });
-
     });
 	
 	// Date and time picker of booking section (Protected: Only run if datetimepicker is loaded)
@@ -62,169 +61,341 @@
     }
 
     // ==========================================
-    // Dynamic Image Modal Setup
+    // UNIFIED DYNAMIC IMAGE MODAL SETUP
     // ==========================================
-
-   $(document).ready(function() {
-        // 1. Automatically inject the Modal HTML into the page if it doesn't exist
+    $(document).ready(function() {
         if ($('#imageModal').length === 0) {
-            $('body').append(
-                '<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">' +
-                    // REMOVED 'modal-lg' here to make the overall container narrower
-                    '<div class="modal-dialog modal-dialog-centered" role="document">' +
-                        '<div class="modal-content" style="background: transparent; border: none;">' +
-                            '<div class="modal-body text-center position-relative p-0">' +
-                                '<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" style="position: absolute; top: -30px; right: 0; opacity: 1; font-size: 2rem; text-shadow: none;">' +
-                                    '<span aria-hidden="true">&times;</span>' +
-                                '</button>' +
-                                // ADDED 'max-height: 75vh;' to ensure it never gets taller than 75% of the screen height
-                                '<img id="modalImageDisplay" src="" alt="Enlarged Image" style="max-width: 100%; max-height: 75vh; width: auto; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); object-fit: contain;">' +
-                            '</div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>'
-            );
+            $('head').append(`
+                <style>
+                    .img-modal { display: none; position: fixed; z-index: 1050; padding-top: 80px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); opacity: 0; transition: opacity 0.3s ease; cursor: zoom-out; }
+                    .img-modal.show { display: block; opacity: 1; }
+                    .img-modal-content { margin: auto; display: block; max-width: 90%; max-height: 80vh; border-radius: 12px; box-shadow: 0 15px 50px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease; object-fit: contain; }
+                    .img-modal.show .img-modal-content { transform: scale(1); }
+                    .img-modal-trigger, .clickable-image { cursor: zoom-in; transition: opacity 0.3s ease; }
+                    .img-modal-trigger:hover, .clickable-image:hover { opacity: 0.85; }
+                </style>
+            `);
+            $('body').append(`
+                <div id="imageModal" class="img-modal">
+                    <img class="img-modal-content" id="expandedImg">
+                </div>
+            `);
         }
     });
 
-    // 2. Image Modal Trigger (Listens for clicks on any image with the class)
-    $(document).on('click', '.img-modal-trigger', function(e) {
-        e.preventDefault(); // Prevents any weird jumping behavior
-        var imageSrc = $(this).attr('src'); 
-        $('#modalImageDisplay').attr('src', imageSrc); 
-        $('#imageModal').modal('show'); 
+    document.addEventListener('click', function(e) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("expandedImg");
+        
+        if (!modal || !modalImg) return; 
+
+        if (e.target && (e.target.classList.contains('clickable-image') || e.target.classList.contains('img-modal-trigger'))) {
+            e.preventDefault();
+            modal.style.display = "block";
+            setTimeout(function() { modal.classList.add('show'); }, 10);
+            modalImg.src = e.target.src;
+        }
+        
+        // Close modal when clicking on the dark background or the image itself
+        if (e.target && (e.target.classList.contains('img-modal') || e.target.classList.contains('img-modal-content'))) {
+            modal.classList.remove('show');
+            setTimeout(function() { modal.style.display = "none"; }, 300);
+        }
     });
 
-// ==========================================
+    // ==========================================
     // Back to Top Button Setup
     // ==========================================
-
     $(document).ready(function() {
-        // 1. Inject the button's CSS and HTML into the page automatically
         if ($('.back-to-top').length === 0) {
-            // Add hover styles to the <head>
             $('head').append(`
                 <style>
                     .back-to-top {
-                        position: fixed;
-                        display: none;
-                        background: #ffffff;
-                        color: #0c0c0c;
-                        width: 45px;
-                        height: 45px;
-                        text-align: center;
-                        line-height: 45px;
-                        font-size: 20px;
-                        border-radius: 50%;
-                        right: 20px;
-                        bottom: 20px;
-                        z-index: 99;
-                        transition: all 0.3s ease;
-                        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                        position: fixed; display: none; background: #ffffff; color: #0c0c0c;
+                        width: 45px; height: 45px; text-align: center; line-height: 45px;
+                        font-size: 20px; border-radius: 50%; right: 20px; bottom: 20px;
+                        z-index: 99; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
                     }
-                    .back-to-top:hover {
-                        background: #a8a8a8;
-                        color: #ffffff;
-                    }
+                    .back-to-top:hover { background: #a8a8a8; color: #ffffff; }
                 </style>
             `);
-            // Add the button HTML to the <body>
             $('body').append('<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>');
         }
     });
 
-    // 2. Show or hide the button based on scroll position
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
-            $('.back-to-top').fadeIn('slow'); // Fades in after scrolling down 200px
+            $('.back-to-top').fadeIn('slow'); 
         } else {
-            $('.back-to-top').fadeOut('slow'); // Fades out when near the top
+            $('.back-to-top').fadeOut('slow'); 
         }
     });
 
-    // 3. Smooth scroll to the top when clicked
     $(document).on('click', '.back-to-top', function(e) {
         e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-// ==========================================
-// Camera Type Page: Sensor Crop Simulator
-// ==========================================
-document.addEventListener('change', function(e) {
-    if (e.target && e.target.id === 'sensor-selector') {
-        var sensor = e.target.value;
-        var overlayBox = document.getElementById('sensor-overlay-box');
-        var overlayLabel = document.getElementById('sensor-overlay-label');
-        
-        if (!overlayBox || !overlayLabel) return;
+    // ==========================================
+    // Camera Type Page: Sensor Crop Simulator
+    // ==========================================
+    document.addEventListener('change', function(e) {
+        if (e.target && e.target.id === 'sensor-selector') {
+            var sensor = e.target.value;
+            var overlayBox = document.getElementById('sensor-overlay-box');
+            var overlayLabel = document.getElementById('sensor-overlay-label');
+            
+            if (!overlayBox || !overlayLabel) return;
 
-        if(sensor === 'mediumformat') {
-            overlayBox.style.width = '100%';
-            overlayBox.style.height = '100%';
-            overlayLabel.innerText = 'Medium Format';
-        } else if(sensor === 'fullframe') {
-            overlayBox.style.width = '81%';
-            overlayBox.style.height = '72%';
-            overlayLabel.innerText = 'Full Frame';
-        } else if (sensor === 'apsc') {
-            overlayBox.style.width = '53%';
-            overlayBox.style.height = '47%';
-            overlayLabel.innerText = 'APS-C';
-        } else if (sensor === 'm43') {
-            overlayBox.style.width = '39%';
-            overlayBox.style.height = '39%';
-            overlayLabel.innerText = 'Micro 4/3';
-        } else if (sensor === '1inch') {
-            overlayBox.style.width = '30%';
-            overlayBox.style.height = '26%';
-            overlayLabel.innerText = '1-Inch';
+            if(sensor === 'mediumformat') {
+                overlayBox.style.width = '100%'; overlayBox.style.height = '100%'; overlayLabel.innerText = 'Medium Format';
+            } else if(sensor === 'fullframe') {
+                overlayBox.style.width = '81%'; overlayBox.style.height = '72%'; overlayLabel.innerText = 'Full Frame';
+            } else if (sensor === 'apsc') {
+                overlayBox.style.width = '53%'; overlayBox.style.height = '47%'; overlayLabel.innerText = 'APS-C';
+            } else if (sensor === 'm43') {
+                overlayBox.style.width = '39%'; overlayBox.style.height = '39%'; overlayLabel.innerText = 'Micro 4/3';
+            } else if (sensor === '1inch') {
+                overlayBox.style.width = '30%'; overlayBox.style.height = '26%'; overlayLabel.innerText = '1-Inch';
+            }
         }
-    }
-});
-
-// ==========================================
-// Camera Type Page: Auto-scroll for Brand Accordion
-// ==========================================
-$(document).on('shown.bs.collapse', '#brandAccordion .collapse', function (e) {
-    var targetOffset = $(e.target).offset().top - 100;
-    window.scrollTo({
-        top: targetOffset,
-        behavior: 'smooth'
     });
-});
 
-/* ================================================= */
-/* -------------- Modal Image Viewer --------------- */
-/* ================================================= */
-document.addEventListener('click', function(e) {
-    var modal = document.getElementById("imageModal");
-    var modalImg = document.getElementById("expandedImg");
-    
-    // Safety check: stop if the modal HTML is missing on this page
-    if (!modal || !modalImg) return; 
+    $(document).on('shown.bs.collapse', '#brandAccordion .collapse', function (e) {
+        var targetOffset = $(e.target).offset().top - 100;
+        window.scrollTo({ top: targetOffset, behavior: 'smooth' });
+    });
 
-    // If an image with the trigger class is clicked
-    if (e.target && (e.target.classList.contains('clickable-image') || e.target.classList.contains('img-modal-trigger'))) {
-        modal.style.display = "block";
-        // Small delay to allow CSS transition to trigger
-        setTimeout(function() {
-            modal.classList.add('show');
-        }, 10);
-        modalImg.src = e.target.src;
-    }
-    
-    // If the close button or the dark background is clicked
-    if (e.target && (e.target.classList.contains('img-modal-close') || e.target.classList.contains('img-modal'))) {
-        modal.classList.remove('show');
-        // Wait for CSS fade out transition before hiding completely
-        setTimeout(function() {
-            modal.style.display = "none";
-        }, 300);
-    }
-});
+    // ==========================================
+    // Camera Guide Page: Quiz Logic (Global)
+    // ==========================================
+    window.quizQuestions = [
+        {
+            question: "งบประมาณสำหรับการซื้อกล้องของคุณอยู่ในช่วงใด?",
+            options: [
+                { text: "ต่ำกว่า 20,000 บาท (ระดับเริ่มต้น / เน้นประหยัด)", value: 0.625 },
+                { text: "20,000 - 60,000 บาท (ระดับกลาง / เริ่มจริงจัง)", value: 1.25 },
+                { text: "60,000 - 150,000 บาท (ระดับสูง / มืออาชีพ)", value: 2.5 },
+                { text: "มากกว่า 150,000 บาท (ระดับสูงสุด / งานโปรดักชั่น)", value: 5.0 }
+            ]
+        },
+        {
+            question: "คุณต้องการให้กล้องมีน้ำหนักและขนาดอย่างไร?",
+            options: [
+                { text: "เบามากที่สุด พกพาสะดวก เหมาะสำหรับการเดินทางลุยๆ", value: 0.625 },
+                { text: "ใส่กระเป๋าเสื้อได้ หยิบจับใช้งานรวดเร็ว ไม่เป็นภาระ", value: 1.25 },
+                { text: "น้ำหนักปานกลาง จับถนัดมือ มีความสมดุลเวลาติดเลนส์ใหญ่", value: 2.5 },
+                { text: "ยอมรับน้ำหนักมากได้ ไม่สนใจขนาด ขอให้ได้คุณภาพไฟล์ดีที่สุด", value: 5.0 }
+            ]
+        },
+        {
+            question: "คุณตั้งใจจะถ่ายภาพประเภทใดเป็นหลัก?",
+            options: [
+                { text: "กีฬาเอ็กซ์ตรีม, แอคชั่น, ใต้น้ำ และ VLOG (ต้องการความสมบุกสมบัน)", value: 0.625 },
+                { text: "ท่องเที่ยวทั่วไป, ถ่ายภาพถนน (Street) และภาพชีวิตประจำวัน", value: 1.25 },
+                { text: "ถ่ายภาพรับปริญญา, งานอีเวนต์, ทิวทัศน์ (ชอบการมองผ่านช่องมองภาพ)", value: 2.5 },
+                { text: "ภาพพอร์เทรตสตูดิโอ, งานพาณิชย์ และวิดีโอระดับภาพยนตร์สั้น", value: 5.0 }
+            ]
+        },
+        {
+            question: "คุณคาดว่าจะหยิบกล้องมาใช้งานบ่อยแค่ไหน?",
+            options: [
+                { text: "นานๆ ครั้ง เฉพาะช่วงไปเที่ยวทริปพิเศษหรือวันหยุดยาว", value: 0.625 },
+                { text: "สัปดาห์ละ 1-2 ครั้ง พกติดตัวไปคาเฟ่หรือเป็นงานอดิเรก", value: 1.25 },
+                { text: "ทุกวัน หรือรับงานถ่ายภาพเป็นรายได้เสริม", value: 2.5 },
+                { text: "ใช้งานหนักเต็มเวลาในฐานะเครื่องมือประกอบอาชีพ", value: 5.0 }
+            ]
+        },
+        {
+            question: "ระดับความรู้และทักษะการถ่ายภาพของคุณอยู่ในระดับใด?",
+            options: [
+                { text: "มือใหม่ เน้นโหมดอัตโนมัติ (Auto) ยังไม่เข้าใจการตั้งค่าต่างๆ", value: 0.625 },
+                { text: "ระดับพื้นฐาน จัดองค์ประกอบเป็น แต่ยังพึ่งพาระบบของกล้องช่วย", value: 1.25 },
+                { text: "ระดับกลาง เข้าใจ Aperture, Shutter Speed และ ISO ปรับแต่งเองได้", value: 2.5 },
+                { text: "มืออาชีพ ใช้โหมด Manual ได้คล่องแคล่ว ควบคุมทุกพารามิเตอร์ได้ 100%", value: 5.0 }
+            ]
+        },
+        {
+            question: "คุณให้ความสำคัญกับอายุการใช้งานของ 'แบตเตอรี่' มากแค่ไหน?",
+            options: [
+                { text: "ไม่ซีเรียส แบตหมดไวก็ชาร์จผ่าน Power Bank ระหว่างทางได้", value: 0.625 },
+                { text: "ปานกลาง ถ่ายรูปทั่วไป แบตอยู่ได้ครึ่งวันก็พอรับได้", value: 1.25 },
+                { text: "สำคัญมาก! ต้องถ่ายได้ทั้งวัน กดได้เป็นพันๆ ช็อตโดยไม่ต้องเปลี่ยนแบต", value: 2.5 },
+                { text: "ยอมรับเรื่องกินแบตได้ แลกมากับหน้าจอ EVF และระบบโฟกัสล้ำสมัย", value: 5.0 }
+            ]
+        },
+        {
+            question: "คุณต้องการความละเอียดของภาพ (Resolution) ในระดับใด?",
+            options: [
+                { text: "เน้นแค่อัปโหลดลงโซเชียลมีเดีย (Facebook/IG) ไม่ต้องการไฟล์ใหญ่", value: 0.625 },
+                { text: "20-24 MP เพียงพอ ถ่ายสวยคมชัดกว่ามือถือ ส่งไฟล์แชร์ได้รวดเร็ว", value: 1.25 },
+                { text: "24-30 MP ไฟล์มีความยืดหยุ่น นำไปแต่งต่อใน Lightroom ได้ลึก", value: 2.5 },
+                { text: "40-100 MP ขึ้นไป สำหรับงานพิมพ์ขนาดยักษ์และการครอปภาพระดับโปร", value: 5.0 }
+            ]
+        },
+        {
+            question: "คุณวางแผนจะลงทุนกับ 'เลนส์' ในระยะยาวอย่างไร?",
+            options: [
+                { text: "ไม่ต้องการซื้ออะไรเพิ่ม จบในตัวเดียว พร้อมเมาท์ติดหมวก/ไม้เซลฟี่", value: 0.625 },
+                { text: "เน้นกล้องตัวเดียวจบ เลนส์ติดกล้องมาเลย ไม่ต้องถอดเปลี่ยนให้ยุ่งยาก", value: 1.25 },
+                { text: "ต้องการระบบที่มีเลนส์ให้เลือกเยอะ ราคาถูก และหาซื้อเลนส์มือสองได้ง่าย", value: 2.5 },
+                { text: "งบไม่จำกัด ยินดีลงทุนกับระบบเลนส์ยุคใหม่คุณภาพสูงสุดเพื่ออนาคต", value: 5.0 }
+            ]
+        }
+    ];
+
+    window.currentQuestionIndex = 0;
+    window.totalScore = 0;
+
+    window.startQuiz = function() {
+        window.currentQuestionIndex = 0;
+        window.totalScore = 0;
+        
+        var startDiv = document.getElementById('quiz-start');
+        var qDiv = document.getElementById('quiz-question');
+        
+        if (startDiv) startDiv.style.display = 'none';
+        if (qDiv) {
+            qDiv.style.display = 'block';
+            qDiv.className = 'quiz-step quiz-fade-in';
+        }
+        
+        window.renderQuestion(0);
+    };
+
+    window.renderQuestion = function(index) {
+        var q = window.quizQuestions[index];
+        var counter = document.getElementById('question-counter');
+        var text = document.getElementById('question-text');
+        var bar = document.getElementById('quiz-progress-bar');
+        var optionsContainer = document.getElementById('options-container');
+
+        if (!q || !counter || !text) return;
+
+        counter.innerText = 'คำถามที่ ' + (index + 1) + ' จาก ' + window.quizQuestions.length;
+        text.innerText = q.question;
+        
+        if (bar) {
+            var progressPercent = ((index + 1) / window.quizQuestions.length) * 100;
+            bar.style.width = progressPercent + '%';
+        }
+        
+        if (optionsContainer) {
+            optionsContainer.innerHTML = '';
+            q.options.forEach(function(opt) {
+                var btn = document.createElement('button');
+                btn.className = 'quiz-option-btn mb-3';
+                btn.innerHTML = '<i class="fa fa-circle-o mr-3" style="color: #79E8E4;"></i> ' + opt.text;
+                btn.onclick = function() { window.selectOption(opt.value); };
+                optionsContainer.appendChild(btn);
+            });
+        }
+    };
+
+    window.selectOption = function(value) {
+        window.totalScore += value;
+        window.currentQuestionIndex++;
+        
+        var qDiv = document.getElementById('quiz-question');
+        if (!qDiv) return;
+        
+        if (window.currentQuestionIndex < window.quizQuestions.length) {
+            qDiv.classList.remove('slide-in-right', 'quiz-fade-in');
+            qDiv.classList.add('slide-out-left');
+            
+            setTimeout(function() {
+                window.renderQuestion(window.currentQuestionIndex);
+                qDiv.classList.remove('slide-out-left');
+                qDiv.classList.add('slide-in-right');
+            }, 400); 
+        } else {
+            qDiv.classList.remove('slide-in-right', 'quiz-fade-in');
+            qDiv.classList.add('slide-out-left');
+            
+            setTimeout(function() {
+                window.calculateResult();
+            }, 400);
+        }
+    };
+
+    window.calculateResult = function() {
+        var qDiv = document.getElementById('quiz-question');
+        var resDiv = document.getElementById('quiz-result');
+        var bar = document.getElementById('quiz-progress-bar');
+
+        if (qDiv) qDiv.style.display = 'none';
+        if (bar) bar.style.width = '100%';
+        if (resDiv) {
+            resDiv.style.display = 'block';
+            resDiv.classList.remove('slide-out-left');
+            resDiv.classList.add('quiz-fade-in');
+        }
+
+        var maxPossibleScore = 40; 
+        var percentage = (window.totalScore / maxPossibleScore) * 100;
+        
+        var resultTitle = '';
+        var resultDesc = '';
+        var resultImg = '';
+        var resultLink = '';
+        
+        if (percentage <= 25) {
+            resultTitle = 'Action Camera';
+            resultDesc = 'คุณเป็นสายลุยตัวจริง! ชอบความตื่นเต้น กีฬาผจญภัย หรือการท่องเที่ยวที่ต้องพกพากล้องไปในสภาพแวดล้อมที่สมบุกสมบัน Action Camera ตอบโจทย์ความเล็ก เบา ทนทาน และกันน้ำได้ดีที่สุดสำหรับคุณ';
+            resultImg = 'img/type/camera/action-camera.jpg'; 
+            resultLink = 'types.html'; 
+        } else if (percentage <= 50) {
+            resultTitle = 'Point and Shoot (Compact)';
+            resultDesc = 'คุณชอบความเรียบง่ายและสะดวกสบาย! เน้นพกพาง่าย ถ่ายสนุก ไม่ต้องคิดเรื่องการปรับตั้งค่าหรือเปลี่ยนเลนส์ให้วุ่นวาย กล้องคอมแพคระดับพรีเมียมคือคำตอบที่ใช่สำหรับไลฟ์สไตล์แบบชิลๆ ของคุณที่สุด';
+            resultImg = 'img/type/camera/point-and-shoot.jpg';
+            resultLink = 'POS.html'; 
+        } else if (percentage <= 75) {
+            resultTitle = 'DSLR Camera';
+            resultDesc = 'คุณหลงใหลในเสน่ห์ของการถ่ายภาพแบบคลาสสิกและทรงพลัง! ชื่นชอบการมองผ่านช่องมองภาพแบบออปติคอล (OVF) ต้องการแบตเตอรี่ที่อึดทนทาน และระบบเลนส์มือสองที่มีให้เลือกมากมายในราคาที่คุ้มค่า';
+            resultImg = 'img/type/camera/dslr.jpg';
+            resultLink = 'types.html'; 
+        } else {
+            resultTitle = 'Mirrorless Camera';
+            resultDesc = 'คุณคือผู้ที่มองหาเทคโนโลยีขั้นสุด! ต้องการคุณภาพไฟล์ที่ยอดเยี่ยม ระบบโฟกัสติดตามดวงตาที่แม่นยำรวดเร็ว และรองรับงานวิดีโอระดับมืออาชีพ ในระบบกล้องแห่งอนาคตที่ตอบโจทย์งานได้ครอบจักรวาล';
+            resultImg = 'img/type/camera/mirrorless.jpg';
+            resultLink = 'mirrorless.html'; 
+        }
+        
+        var elTitle = document.getElementById('result-title');
+        var elScore = document.getElementById('result-score');
+        var elDesc = document.getElementById('result-desc');
+        var elLink = document.getElementById('result-link');
+        var elImgCont = document.getElementById('result-image-container');
+
+        if (elTitle) elTitle.innerText = resultTitle;
+        if (elScore) elScore.innerText = 'ความตรงกับไลฟ์สไตล์: ' + percentage.toFixed(1) + '%';
+        if (elDesc) elDesc.innerText = resultDesc;
+        if (elLink) elLink.href = resultLink;
+        
+        if (elImgCont) {
+            elImgCont.innerHTML = '<div style="width: 100%; max-width: 450px; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); background: rgba(0,0,0,0.2); padding: 15px; display: flex; align-items: center; justify-content: center;">' +
+                '<img src="' + resultImg + '" alt="' + resultTitle + '" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px;" onerror="this.onerror=null; this.src=\'https://placehold.co/800x450/222222/79E8E4?text=' + resultTitle.replace(/ /g, '+') + '\';">' +
+            '</div>';
+        }
+    };
+
+    window.restartQuiz = function() {
+        window.currentQuestionIndex = 0;
+        window.totalScore = 0;
+        
+        var resDiv = document.getElementById('quiz-result');
+        var startDiv = document.getElementById('quiz-start');
+        var bar = document.getElementById('quiz-progress-bar');
+        
+        if (resDiv) {
+            resDiv.style.display = 'none';
+            resDiv.classList.remove('quiz-fade-in');
+        }
+        if (startDiv) {
+            startDiv.style.display = 'block';
+            startDiv.classList.add('quiz-fade-in');
+        }
+        if (bar) bar.style.width = '0%';
+    };
 
 })(jQuery);
