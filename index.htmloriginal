@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="utf-8">
+        <title>หน้าหลัก | Responsive Photography Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="img/favicon.png" rel="icon">
+        <link href="img/favicon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <!-- Vendor CSS File -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="vendor/slick/slick.css" rel="stylesheet">
+        <link href="vendor/slick/slick-theme.css" rel="stylesheet">
+		<link href="vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Main Stylesheet File -->
+        <link href="css/hover-style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <style type="text/css">
+        a {
+    font-family: "Angsana New", 'AngsanaUPC';
+}
+        </style>
+    </head>
+
+    <body>
+        <!-- Header Section Start -->
+         <div class="menu"> <span></span> </div>
+        <nav id="nav">
+            <ul class="main">
+                <li><a href="index.html" >หน้าหลัก</a></li>
+                <li><a href="history.html">ประวัติ</a></li>
+                <li><a href="people.html">บุคคลสำคัญ</a></li>
+                <li><a href="types.html">ประเภท</a></li>
+                <li><a href="purpose.html">ประโยชน์</a></li>
+                <li><a href="technique.html">เทคนิก</a></li>
+                <li><a href="accesories.html">อุปกรณ์เสริม</a></li>
+				<li><a href="guide.html">การชึ้แนวทาง</a></li>
+                <li><a href="contact.html">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
+        
+        <div class="header-index">
+            <div class="container text-center">
+                <div class="row">
+					<div class="col-md-12">
+                    <h1>ยินดีต้อนรับเข้าสู่&nbsp;</h1>
+						
+                    <div class="col-md-12">
+                      <h1><a class="brand" href="#" style="font-size: 100px" onclick="return false;">เว็บไซต์แนะนำการเรียนรู้กล้องสำหรับมือใหม่</a></h1>
+                        <!-- <a class="brand" href="index.html"><img alt="Logo" src="img/logo.jpg"></a> -->
+                    </div>
+                </div>
+               
+                    <p class="col-md-12">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Header Section End -->
+        
+        <!-- About1 Section Start -->
+        <div id="about">
+            <div class="container">
+                <div class="section-header" style="color:#ffffff">
+                <h1>กล้องถ่ายภาพคืออะไร?</h1> 
+              </div>
+                <div class="row">
+                    <div class="col-md-6 img-cols">
+                        <div class="img-col">
+                            <div class="img">
+                                <div class="box7">
+                                  <img src="img/portrait.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 content-cols">
+                        <div class="content-col content-col-1" style="color:#ffffff">
+                            <h3>กล้องถ่ายภาพ (Camera)</h3>
+                            <p>
+                              กล้องถ่ายภาพ หรือ กล้องถ่ายรูป เป็นเหมือนกล่องทึบแสง ที่ทำหน้าที่รับแสงในปริมาณที่เหมาะสมเพื่อใช้ในการสร้างภาพ กลไกและชิ้นส่วนต่าง ๆ ของกล้องทำงานสัมพันธ์กันในการที่จะควบคุมปริมาณแสงไปยังหน่วยรับภาพอย่างถูกต้องแม่นยำ อีกทั้งยังควบคุมความคมชัดของภาพ ตลอดจนอำนวยความสะดวกต่าง ๆ ในการบันทึกภาพ
+                          </p>
+                          <p> ความหมายของการถ่ายภาพ มี 2 ประเด็น คือ</p>
+                          <p>1.&nbsp; เชิงวิทยาศาสตร์ หมายถึง การทำปฏิกิริยาระหว่างวัสดุไวแสงกับแสง</p>
+                            <p>2. เชิงศิลปะ หมายถึง การวาดภาพด้วยแสงและเงารวมทั้งการผสมสีเพื่อถ่ายทอดความหมาย ความรู้สึก อารมณ์ หรือทัศนคติ </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- About Section End -->
+
+        <!-- About Section 2 Start -->
+        <div id="about-2">
+            <div class="container">
+                <div class="section-header" style="color:#ffffff">
+                <h1>เซ็นเซอร์คืออะไร?</h1> 
+              </div>
+                <div class="row">
+                    <div class="col-md-6 content-cols">
+                        <div class="content-col content-col-1" style="color:#ffffff">
+                          <h3>&nbsp;เซ็นเซอร์ (Sensor)</h3>
+                            <p class="col-xl-12"> <span style="text-align: justify">เซ็นเซอร์&nbsp;คืออุปกรณ์ที่แปลงภาพที่เห็นด้วยตาเป็นสัญญาณอิเล็กทรอนิกส์ โดยมากแล้วจะเป็นส่วนประกอบในกล้องดิจิทัล และอุปกรณ์ที่เกี่ยวกับภาพอื่น ๆ เซ็นเซอร์ในยุคแรก ๆ นั้นจะมีลักษณะเป็นกระบอกกล้องวีดิทัศน์</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 img-cols">
+                        <div class="img-col">
+                            <div class="img">
+                                <div class="box7">
+                                  <img src="img/sensor-portrait.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- About Section 2 End -->
+		
+		        <!-- About Section Start -->
+       <!-- About Section Start -->
+<!-- About Section Start -->
+<div id="about-3">
+    <div class="container">
+        <!-- Moved the heading outside the image and into a section-header -->
+        <div class="section-header" style="color:#ffffff">
+            <h1>กล้องถ่ายภาพทำงานอย่างไร?</h1> 
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="about3-media">
+                    <img src="img/functionality.jpeg" alt="กล้องถ่ายภาพทำงานอย่างไร?" width="1203" height="722">
+                    <!-- The overlay div has been removed -->
+                </div><!-- /.about3-media -->
+                <div class="about3-desc">
+                    <p> 1. แสงจากแหล่งกำเนิดแสง (Light Source) กระบวนการเริ่มต้นที่ แหล่งกำเนิดแสง (Light source) ซึ่งในแผนภาพแสดงเป็นรูปดวงอาทิตย์ แหล่งกำเนิดแสงนี้จะปล่อยแสงเดินทางไปยังตัวแบบ โดยมีลูกศรสีเหลืองที่ระบุว่า "Light rays falling onto the object" (รังสีของแสงที่ตกกระทบลงบนวัตถุ) </p>
+                  <p>2. การสะท้อนจากวัตถุ (Object) เมื่อแสงตกกระทบ วัตถุ (Object) (ในภาพคือแรคคูน) แสงจะสะท้อนออกจากพื้นผิวของตัวแบบ การสะท้อนนี้จะเดินทางเข้าหากล้อง ซึ่งแสดงด้วยลูกศรสีแดงและมีข้อความระบุว่า "Light rays bouncing off the object" (รังสีของแสงที่สะท้อนออกจากวัตถุ)&nbsp;</p>
+                  <p>3. การผ่านเลนส์กล้อง (Camera Lens) แสงที่สะท้อนออกมาจะเข้าสู่ด้านหน้าของกล้องผ่าน เลนส์กล้อง (Camera lens) เลนส์จะทำการหักเหรังสีของแสงที่เข้ามา เพื่อนำทางเข้าสู่ตัวกล้อง</p>
+                  <p>4. การตัดกันที่จุดโฟกัส (Focal Point) เมื่อรังสีของแสงเดินทางผ่านระบบเลนส์ แสงจะมาบรรจบและตัดกันที่ตำแหน่งเฉพาะซึ่งเรียกว่า จุดโฟกัส (focal point) เนื่องจากการตัดกันของรังสีแสงที่จุดนี้ ทำให้เส้นทางของแสงกลับด้าน: แสงจากด้านบนของวัตถุจะทำมุมเฉียงลงด้านล่าง และแสงจากด้านล่างของวัตถุจะทำมุมเฉียงขึ้นด้านบน&nbsp;</p>
+                  <p>5. การฉายภาพลงบนระนาบฟิล์ม (Film Plane) รังสีของแสงจะเดินทางต่อไปยังด้านหลังของกล้องจนกระทั่งตกกระทบ ระนาบฟิล์ม (Film plane) (ซึ่งทำหน้าที่เดียวกับเซนเซอร์รับภาพในกล้องดิจิทัลยุคปัจจุบัน) เนื่องจากรังสีของแสงได้ตัดกันที่จุดโฟกัส ภาพที่ปรากฏลงบนระนาบฟิล์มจึงถูกฉายออกมาเป็นภาพกลับหัว</p>
+                    <p>6. หน้าที่ของกระจกสะท้อนภาพ (Mirror) ในแผนภาพมีเส้นสีน้ำเงินที่ระบุว่า กระจก (Mirror) ซึ่งแสดงในลักษณะพับขึ้นในแนวนอน ในกล้องสะท้อนภาพเลนส์เดี่ยว (SLR หรือ DSLR) โดยปกติกระจกนี้จะวางตัวในมุมเฉียงลงเพื่อสะท้อนแสงขึ้นไปยังช่องมองภาพ (viewfinder) เพื่อให้ผู้ถ่ายสามารถจัดองค์ประกอบภาพได้ เมื่อกดปุ่มชัตเตอร์เพื่อถ่ายภาพ กระจกจะดีดตัวพับขึ้นอย่างรวดเร็วไปยังตำแหน่งที่แสดงในแผนภาพ เพื่อเปิดทางให้แสงสามารถเดินทางตรงทะลุไปยังระนาบฟิล์มได้</p>
+
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Section End -->
+<!-- About Section End -->
+<!-- About Section End -->
+        
+        <!-- start try first time start here -->
+     <!--   <div id="test">
+        <!--	<div class="container">
+            <!--	<div class="section-header">
+               		<!--	 <h2>Test Section</h2>
+    					<!--</div>
+                  <!--   <div class="row">
+               <!--  </div>
+			<!-- </div>
+		<!-- </div> 
+        
+    <!-- Portfolio Section Start -->
+        
+        <div id="modal-id" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="port-slider">
+                                    <div><img src="img/portfolio/portfolio-2.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-4.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-6.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-8.jpg"></div>
+                                </div>
+                                <div class="port-slider-nav">
+                                    <div><img src="img/portfolio/portfolio-2.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-4.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-6.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-8.jpg"></div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <h2>Lorem ipsum dolor</h2>
+                                <p>
+                                    Lorem ipsum dolor viverra purus imperdiet rhoncus imperdiet. Suspendisse vulputate condimentum ligula sollicitudin hendrerit. Phasellus luctus, elit et ultrices interdum, neque mi pellentesque massorci. Nam in cursus ex, nec mattis lectus. Curabitur quis elementum nunc. Mauris iaculis, justo eu aliquam sagittis, arcu eros cursus libero, sit amet eleifend dolor odio at lacus. 
+                                </p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Portfolio Section End -->
+
+        <!-- Subscribe Section Start -->        <!-- Subscribe Section End -->
+        
+        <!-- Booking Section Start -->        <!-- Booking Section End -->
+
+        <!-- Call Section Start -->        <!-- Call Section End -->
+        
+        <!-- Blog Section Start -->        <!-- Blog Section End -->
+        
+        <!-- Footer Section Start -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="social">
+                            <a href=""><li class="fa fa-instagram"></li></a>
+                            <a href=""><li class="fa fa-twitter"></li></a>
+                            <a href=""><li class="fa fa-facebook-f"></li></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p>Copyright &#169; <a href="#">Your Site Name</a> All Rights Reserved.</p>
+						
+						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+						<p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section End -->
+
+        <!-- Vendor JavaScript File -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+        <script src="vendor/slick/slick.min.js"></script>
+		<script src="vendor/tempusdominus/js/moment.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

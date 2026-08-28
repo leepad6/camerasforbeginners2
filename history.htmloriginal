@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="utf-8">
+        <title>ประวัติ | Responsive Photography Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="img/favicon.png" rel="icon">
+        <link href="img/favicon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <!-- Vendor CSS File -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Main Stylesheet File — this page's look (banner, squares, text sizes,
+             spacing) lives in css/style.css under the "History Style" section -->
+        <link href="css/hover-style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Header Section Start -->
+         <div class="menu"> <span></span> </div>
+        <nav id="nav">
+            <ul class="main">
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="history.html">ประวัติ</a></li>
+                <li><a href="people.html">บุคคลสำคัญ</a></li>
+                <li><a href="types.html">ประเภท</a></li>
+                <li><a href="purpose.html">ประโยชน์</a></li>
+                <li><a href="technique.html">เทคนิก</a></li>
+                <li><a href="accesories.html">อุปกรณ์เสริม</a></li>
+				<li><a href="guide.html">การชึ้แนวทาง</a></li>
+                <li><a href="contact.html">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
+
+        <div class="header header--compact">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>ประวัติ</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Section End -->
+
+        <!-- History Section Start -->
+        <div id="history-content">
+            <div class="container">
+
+                <!-- Intro -->
+                <div class="history-block">
+                    <p class="history-intro">
+                        เดิมทีมนุษย์บันทึกความทรงจำด้วยการวาดภาพ ก่อนที่ในศตวรรษที่ 19 หลักการทางฟิสิกส์เรื่องแสงและหลักเคมีเรื่องสารไวแสงจะถูกนำมาผสานกันจนเกิดเป็น "การถ่ายภาพ" คำว่า Photography มีรากศัพท์จากภาษากรีก ผสมคำว่า Phos (แสงสว่าง) กับ Graphein (การเขียน) จึงแปลตรงตัวได้ว่า "การเขียนด้วยแสง" หลักการนี้ย้อนไปได้ไกลถึงอริสโตเติล นักปราชญ์ชาวกรีกผู้บันทึกไว้เมื่อกว่า 2,400 ปีก่อนว่าแสงที่ลอดผ่านรูเล็ก ๆ เข้าไปในห้องมืดจะสร้างภาพหัวกลับขึ้นบนผนังตรงข้าม ซึ่งเป็นที่มาของ "กล้องรูเข็ม" ในเวลาต่อมา
+                    </p>
+                </div>
+
+                <!-- World timeline -->
+                <div class="history-block">
+                    <h2 class="history-block-title">วิวัฒนาการของกล้องถ่ายภาพ</h2>
+                    <div class="history-timeline">
+
+                        <div class="timeline-item">
+                            <p class="timeline-year">400 ปีก่อนคริสตศักราช</p>
+                            <p class="timeline-desc">อริสโตเติลบันทึกหลักการภาพหัวกลับจากแสงที่ลอดผ่านรูเล็ก ๆ อันเป็นรากฐานของกล้องรูเข็มในเวลาต่อมา</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <p class="timeline-year">ค.ศ. 1825</p>
+                            <p class="timeline-desc">ภาพถ่ายที่เก่าแก่ที่สุดเท่าที่มีหลักฐานหลงเหลือถึงปัจจุบันถูกบันทึกขึ้นเป็นครั้งแรก</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <p class="timeline-year">ค.ศ. 1839</p>
+                            <p class="timeline-desc">Daguerreotype วางจำหน่ายในราคาประมาณ 50 ดอลลาร์ ถือเป็นกล้องเพื่อผู้ใช้ทั่วไปรุ่นแรกของโลก</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <p class="timeline-year">ค.ศ. 1900</p>
+                            <p class="timeline-desc">โกดักเปิดตัวกล้อง Brownie ราคาเพียง 1 ดอลลาร์ ทำให้การถ่ายภาพเข้าถึงคนทั่วไปได้มากขึ้น</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <p class="timeline-year">ค.ศ. 1970</p>
+                            <p class="timeline-desc">มีการคิดค้นเซนเซอร์ CCD ซึ่งกลายเป็นรากฐานสำคัญของกล้องดิจิทัลในเวลาต่อมา</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <p class="timeline-year">ค.ศ. 1976</p>
+                            <p class="timeline-desc">Canon เปิดตัว AE-1 กล้อง SLR 35 มม. รุ่นแรกของโลกที่มีไมโครโปรเซสเซอร์ควบคุมการทำงาน</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <p class="timeline-year">ค.ศ. 1981</p>
+                            <p class="timeline-desc">Sony เปิดตัว Mavica กล้องบันทึกภาพอิเล็กทรอนิกส์ที่ไม่ใช้ฟิล์ม จัดเก็บภาพด้วยฟล็อปปี้ดิสก์</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <p class="timeline-year">ค.ศ. 1986</p>
+                            <p class="timeline-desc">Canon RC-701 ถูกใช้บันทึกภาพข่าวสีภาพแรกของโลกที่มาจากกล้องภาพนิ่งวิดีโอ</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <p class="timeline-year">ค.ศ. 1997 เป็นต้นไป</p>
+                            <p class="timeline-desc">ผู้ผลิตนับสิบแบรนด์เข้าสู่ตลาดกล้องดิจิทัล ความละเอียดและคุณภาพเพิ่มขึ้นต่อเนื่องขณะที่ราคาลดลงอย่างรวดเร็ว</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Thailand -->
+                <div class="history-block">
+                    <h2 class="history-block-title">การถ่ายภาพในประเทศไทย</h2>
+                    <div class="history-callout">
+                        <p>
+                          ช่างภาพคนแรกที่มีการบันทึกไว้ในไทยคือสังฆราชชาวฝรั่งเศสนามปาเลอกัวซ์  ส่วนช่างภาพชาวไทยคนแรกคือพระยากระสาปน์กิจโกศล (นายโหมด อมาตยกุล) และช่างภาพหลวงที่มีผลงานหลงเหลือในหอสมุดแห่งชาติมากที่สุดคือหลวงอัคนีนฤมิตร (นายจิตร) ผู้บันทึกภาพบุคคลและเหตุการณ์สำคัญในรัชสมัยที่ 4 และ 5
+                      </p>
+                    </div>
+                </div>
+
+                <!-- Components -->
+                <div class="history-block">
+                    <h2 class="history-block-title">ส่วนประกอบของกล้องถ่ายภาพ</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 history-card-item">
+                            <div class="history-card">
+                                <h3 class="history-card-title">ตัวกล้อง (Body)</h3>
+                                <p class="history-card-desc">ทำหน้าที่เป็นห้องมืดป้องกันแสงรบกวนฟิล์มหรือเซนเซอร์ภายใน และเป็นโครงยึดอุปกรณ์ทุกส่วนของกล้อง</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 history-card-item">
+                            <div class="history-card">
+                                <h3 class="history-card-title">เลนส์ (Lens)</h3>
+                                <p class="history-card-desc">รับแสงจากวัตถุแล้วส่งต่อไปยังฟิล์มหรือเซนเซอร์ กล้องบางประเภทอย่าง SLR สามารถถอดเปลี่ยนเลนส์ได้ตามต้องการ</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 history-card-item">
+                            <div class="history-card">
+                                <h3 class="history-card-title">ช่องมองภาพ (Viewfinder)</h3>
+                                <p class="history-card-desc">ช่วยจัดองค์ประกอบภาพก่อนกดชัตเตอร์ มักอยู่ด้านหลังตัวกล้อง</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 history-card-item">
+                            <div class="history-card">
+                                <h3 class="history-card-title">ชัตเตอร์ (Shutter)</h3>
+                                <p class="history-card-desc">ควบคุมระยะเวลาที่แสงจะตกกระทบฟิล์มหรือเซนเซอร์ หรือที่เรียกว่าความไวชัตเตอร์</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 history-card-item">
+                            <div class="history-card">
+                                <h3 class="history-card-title">ไดอะแฟรม (Diaphragm)</h3>
+                                <p class="history-card-desc">แผ่นโลหะบางหลายชั้นซ้อนกัน ทำหน้าที่ควบคุมปริมาณแสงที่จะผ่านเข้าตัวกล้อง</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 history-card-item">
+                            <div class="history-card">
+                                <h3 class="history-card-title">รูรับแสง (Aperture)</h3>
+                                <p class="history-card-desc">ช่องเปิดของไดอะแฟรมที่ปรับขนาดได้ ยิ่งเปิดกว้างแสงยิ่งเข้ามาก</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- History Section End -->
+
+        <!-- Footer Section Start -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="social">
+                            <a href=""><li class="fa fa-instagram"></li></a>
+                            <a href=""><li class="fa fa-twitter"></li></a>
+                            <a href=""><li class="fa fa-facebook-f"></li></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p>Copyright &#169; <a href="#">Your Site Name</a> All Rights Reserved.</p>
+
+                        <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section End -->
+
+        <!-- Vendor JavaScript File -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

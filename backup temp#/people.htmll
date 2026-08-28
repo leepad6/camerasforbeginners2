@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>NATURE | Responsive Photography Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="img/favicon.png" rel="icon">
+        <link href="img/favicon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <!-- Vendor CSS File -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="vendor/slick/slick.css" rel="stylesheet">
+        <link href="vendor/slick/slick-theme.css" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="css/hover-style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Header Section Start -->
+        <div class="menu"> <span></span> </div>
+        <nav id="nav">
+            <ul class="main">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
+        
+        <div class="header banner">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1><a class="brand" href="index.html">Nature</a></h1>
+                        <!-- <a class="brand" href="index.html"><img alt="Logo" src="img/logo.jpg"></a> -->
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <h1>Home / Portfolio</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Header Section End -->
+        
+        <!-- Portfolio Section Start -->
+        <div id="portfolio" style="padding-bottom: 60px;">
+            <div class="container-fluid gal-container">
+                <div class="section-header">
+                    <h2>Portfolio</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 co-xs-12 port-item">
+                        <div class="box7">
+                            <img src="img/portfolio/portfolio-1.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Lorem ipsum</h3>
+                                <span class="post">Lorem ipsum dolor sit amet consectetur adipiscing elit.</span>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-search" data-toggle="modal" data-target="#modal-id"></a></li>
+                                    <li><a href="#" class="fa fa-link" data-toggle="modal" data-target="#modal-id"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 co-xs-12 port-item">
+                        <div class="box7">
+                            <img src="img/portfolio/portfolio-2.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Phasellus luctus</h3>
+                                <span class="post">Phasellus luctus ultrices pellentesque massa eu turpis.</span>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-search" data-toggle="modal" data-target="#modal-id"></a></li>
+                                    <li><a href="#" class="fa fa-link" data-toggle="modal" data-target="#modal-id"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 co-xs-12 port-item">
+                        <div class="box7">
+                            <img src="img/portfolio/portfolio-3.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Fusce felis varius</h3>
+                                <span class="post">Fusce varius libero fermentum facilisi. Morbi ut tincidunt metus.</span>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-search" data-toggle="modal" data-target="#modal-id"></a></li>
+                                    <li><a href="#" class="fa fa-link" data-toggle="modal" data-target="#modal-id"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 co-xs-12 port-item">
+                        <div class="box7">
+                            <img src="img/portfolio/portfolio-4.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Praesent ultricies</h3>
+                                <span class="post">Etiam purus magna efficitur non mattis molestie nisi.</span>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-search" data-toggle="modal" data-target="#modal-id"></a></li>
+                                    <li><a href="#" class="fa fa-link" data-toggle="modal" data-target="#modal-id"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 co-xs-12 port-item">
+                        <div class="box7">
+                            <img src="img/portfolio/portfolio-5.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Cras vestibulum dui</h3>
+                                <span class="post"> Cras vestibulum consequat  molestie vitae non dignissim eros.</span>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-search" data-toggle="modal" data-target="#modal-id"></a></li>
+                                    <li><a href="#" class="fa fa-link" data-toggle="modal" data-target="#modal-id"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 co-xs-12 port-item">
+                        <div class="box7">
+                            <img src="img/portfolio/portfolio-6.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Molestie vitae</h3>
+                                <span class="post">Etiam purus magna efficitur non mattis molestie nisi.</span>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-search" data-toggle="modal" data-target="#modal-id"></a></li>
+                                    <li><a href="#" class="fa fa-link" data-toggle="modal" data-target="#modal-id"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 co-xs-12 port-item">
+                        <div class="box7">
+                            <img src="img/portfolio/portfolio-7.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Nunc in pellentesque</h3>
+                                <span class="post">Nunc in pellentesque tortor, vulputate vestibulum pretium. </span>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-search" data-toggle="modal" data-target="#modal-id"></a></li>
+                                    <li><a href="#" class="fa fa-link" data-toggle="modal" data-target="#modal-id"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 co-xs-12 port-item">
+                        <div class="box7">
+                            <img src="img/portfolio/portfolio-8.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Cras vitae placerat</h3>
+                                <span class="post">Cras vitae placerat nisi. Suspendisse quis velit nibh.</span>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-search" data-toggle="modal" data-target="#modal-id"></a></li>
+                                    <li><a href="#" class="fa fa-link" data-toggle="modal" data-target="#modal-id"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 co-xs-12 port-item">
+                        <div class="box7">
+                            <img src="img/portfolio/portfolio-9.jpg">
+                            <div class="box-content">
+                                <h3 class="title">Maecenas suscipit vestibulum</h3>
+                                <span class="post">Maecenas suscipit vestibulum varius dolor finibus.</span>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-search" data-toggle="modal" data-target="#modal-id"></a></li>
+                                    <li><a href="#" class="fa fa-link" data-toggle="modal" data-target="#modal-id"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal-id" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="port-slider">
+                                    <div><img src="img/portfolio/portfolio-2.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-4.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-6.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-8.jpg"></div>
+                                </div>
+                                <div class="port-slider-nav">
+                                    <div><img src="img/portfolio/portfolio-2.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-4.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-6.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-8.jpg"></div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <h2>Lorem ipsum dolor</h2>
+                                <p>
+                                    Lorem ipsum dolor viverra purus imperdiet rhoncus imperdiet. Suspendisse vulputate condimentum ligula sollicitudin hendrerit. Phasellus luctus, elit et ultrices interdum, neque mi pellentesque massorci. Nam in cursus ex, nec mattis lectus. Curabitur quis elementum nunc. Mauris iaculis, justo eu aliquam sagittis, arcu eros cursus libero, sit amet eleifend dolor odio at lacus. 
+                                </p>
+                                <h2>Free Download</h2>
+                                <div class="download-content">
+                                    <form>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" name="reg" class="custom-control-input" id="low-reg">
+                                                    <label class="custom-control-label" for="low-reg">640×426 | JPG | 40KB</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" name="reg" class="custom-control-input" id="medium-reg">
+                                                    <label class="custom-control-label" for="medium-reg">1280×853 | JPG | 132KB</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" name="reg" class="custom-control-input" id="high-reg">
+                                                    <label class="custom-control-label" for="high-reg">1920×1280 | JPG | 279KB</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" name="reg" class="custom-control-input" id="very-high-reg">
+                                                    <label class="custom-control-label" for="very-high-reg">5184×3456 | JPG | 1.4MB</label>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <button type="submit"><i class="fa fa-download"></i>Download</button>
+                                                <button type="submit"><i class="fa fa-eye"></i>Preview</button>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Section End -->
+
+        <!-- Call Section Start -->
+        <div id="call-us">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Click below to call me</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p>
+                            Monday-Friday: 7am to 12am<br>
+                            Saturday: 5pm to 12am<br>
+                            Sunday: 9am to 12am
+                        </p>
+                        <a href="tel:+123456789">+123456789</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call Section End -->
+        
+        <!-- Footer Section Start -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="social">
+                            <a href=""><li class="fa fa-instagram"></li></a>
+                            <a href=""><li class="fa fa-twitter"></li></a>
+                            <a href=""><li class="fa fa-facebook-f"></li></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p>Copyright &#169; <a href="#">Your Site Name</a> All Rights Reserved.</p>
+						
+						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+						<p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section End -->
+
+        <!-- Vendor JavaScript File -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+        <script src="vendor/slick/slick.min.js"></script>
+        
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

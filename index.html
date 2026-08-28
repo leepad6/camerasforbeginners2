@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="utf-8">
+        <title>หน้าหลัก | Responsive Photography Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="img/favicon.png" rel="icon">
+        <link href="img/favicon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <!-- Vendor CSS File -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="vendor/slick/slick.css" rel="stylesheet">
+        <link href="vendor/slick/slick-theme.css" rel="stylesheet">
+		<link href="vendor/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Main Stylesheet File -->
+        <link href="css/hover-style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <style type="text/css">
+        
+        /* Sticky Footer & Expandable About-3 Fix */
+        body {
+            display: flex;
+            flex-direction: column;
+            font-size: 2rem;
+        }
+        #swup {
+            display: flex;
+            flex-direction: column;
+            flex: 1 0 auto; /* อนุญาตให้เนื้อหาหลักขยายตัว */
+        }
+        #about-3 {
+            flex-grow: 1; /* บังคับให้ส่วนนี้ขยายตัวเติมเต็มพื้นที่ว่างด้านล่างทั้งหมด */
+        }
+        #footer {
+            flex-shrink: 0; 
+            width: 100%;
+            margin-top: 0 !important; /* ลบระยะห่างด้านบนเพื่อให้ติดกับ about-3 พอดี */
+        }
+
+        /* Swup Slide Transition */
+        .transition-slide {
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            opacity: 1;
+            transform: translateX(0);
+        }
+        html.is-animating.is-leaving .transition-slide {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        html.is-animating.is-rendering .transition-slide {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        
+        /* Mobile adjustments for the new carousel */
+        @media (max-width: 768px) {
+            #howItWorksCarousel .carousel-inner {
+                padding: 40px 40px 60px 40px !important;
+            }
+            #howItWorksCarousel .carousel-control-prev,
+            #howItWorksCarousel .carousel-control-next {
+                width: 40px !important;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+        <!-- Header Section Start -->
+    <div class="menu"> <span></span> </div>
+        <nav id="nav">
+            <ul class="main">
+                <li><a href="index.html" >หน้าหลัก</a></li>
+                <li><a href="history.html">ประวัติ</a></li>
+                <li><a href="people.html">บุคคลสำคัญ</a></li>
+                <li><a href="types.html">ประเภท</a></li>
+                <li><a href="purpose.html">ประโยชน์</a></li>
+                <li><a href="technique.html">เทคนิค</a></li>
+                <li><a href="accesories.html">อุปกรณ์เสริม</a></li>
+				<li><a href="guide.html">การชี้แนวทาง</a></li>
+                <li><a href="contact.html">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
+        
+        <!-- Swup Container Start -->
+       <main id="swup" class="transition-slide">
+        
+        <div class="header-index">
+            <div class="container text-center">
+                <div class="row">
+					<div class="col-md-12">
+                    <h1>ยินดีต้อนรับเข้าสู่&nbsp;</h1>
+						
+                    <div class="col-md-12">
+                      <h1><a class="brand" href="#" style="font-size: 80px" onclick="return false;">เว็บไซต์แนะนำการเรียนรู้กล้องสำหรับมือใหม่</a></h1>
+                    </div>
+                </div>
+               
+                    <p class="col-md-12">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Header Section End -->
+        
+        <!-- About1 Section Start -->
+        <div id="about">
+            <div class="container">
+                <div class="section-header" style="color:#ffffff">
+                <h1 style="color:#79E8E4">กล้องถ่ายภาพคืออะไร?</h1> 
+              </div>
+                <div class="row">
+                    <div class="col-md-6 img-cols">
+                        <div class="img-col">
+                            <div class="img">
+                                <div class="box7">
+                                  <img src="img/portrait.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 content-cols">
+                        <div class="content-col content-col-1" style= color:#ffffff;"font-family: NotoSans">
+                            <h3>กล้องถ่ายภาพ (Camera)</h3>
+                            <p style="color:#ffffff;">
+                              กล้องถ่ายภาพ หรือ กล้องถ่ายรูป เป็นเหมือนกล่องทึบแสง ที่ทำหน้าที่รับแสงใน ปริมาณที่เหมาะสมเพื่อใช้ในการสร้างภาพ กลไกและชิ้นส่วนต่าง ๆ ของกล้องทำงานสัมพันธ์กันในการที่จะควบคุมปริมาณแสงไปยังหน่วยรับภาพอย่างถูกต้องแม่นยำ อีกทั้งยังควบคุมความคมชัดของภาพ ตลอดจนอำนวยความสะดวกต่าง ๆ ในการบันทึกภาพ
+                          </p>
+                          <p style="color:#ffffff;"> ความหมายของการถ่ายภาพ มี 2 ประเด็น คือ</p>
+                          <p style="color:#ffffff;">1.&nbsp; เชิงวิทยาศาสตร์ หมายถึง การทำปฏิกิริยาระหว่างวัสดุไวแสงกับแสง</p>
+                            <p style="color:#ffffff;">2. เชิงศิลปะ หมายถึง การวาดภาพด้วยแสงและเงารวมทั้งการผสมสีเพื่อถ่ายทอดความหมาย ความรู้สึก อารมณ์ หรือทัศนคติ </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- About Section End -->
+
+        <!-- About Section 2 Start -->
+        <div id="about-2">
+            <div class="container">
+                <div class="section-header" style="color:#ffffff">
+                <h1 style="color:#79E8E4">เซ็นเซอร์คืออะไร?</h1> 
+              </div>
+                <div class="row">
+                    <div class="col-md-6 content-cols">
+                        <div class="content-col content-col-1" style="color:#ffffff">
+                          <h3>&nbsp;เซ็นเซอร์ (Sensor)</h3>
+                            <p class="col-xl-12" style="color:#ffffff;"> <span style="text-align: justify">เซ็นเซอร์&nbsp;คืออุปกรณ์ที่แปลงภาพที่เห็นด้วยตาเป็นสัญญาณอิเล็กทรอนิกส์ โดยมากแล้วจะเป็นส่วนประกอบในกล้องดิจิทัล และอุปกรณ์ที่เกี่ยวกับภาพอื่น ๆ เซ็นเซอร์ในยุคแรก ๆ นั้นจะมีลักษณะเป็นกระบอกกล้องวีดิทัศน์</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 img-cols">
+                        <div class="img-col">
+                            <div class="img">
+                                <div class="box7">
+                                  <img src="img/sensor-portrait.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- About Section 2 End -->
+		
+<!-- About Section Start -->
+<div id="about-3" style="padding-bottom: 60px;">
+    <div class="container">
+        <div class="section-header" style="color:#ffffff">
+            <h1 style="color:#79E8E4">กล้องถ่ายภาพทำงานอย่างไร?</h1> 
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-12">
+                <div class="about3-media" style="margin-bottom: 40px; text-align: center;">
+                    <!-- เพิ่มคลาส clickable-image เข้าไปที่แท็ก img ตามที่ต้องการ -->
+                    <img src="img/functionality.jpeg" class="clickable-image" alt="กล้องถ่ายภาพทำงานอย่างไร?" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+        </div>
+                
+                <div class="about3-desc">
+                    
+                    <!-- Manual Carousel Start -->
+                    <div id="howItWorksCarousel" class="carousel slide" data-interval="false" data-wrap="true">
+                        <div class="carousel-inner" style="background: rgba(255, 255, 255, 0.05); padding: 50px 80px 70px 80px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); min-height: 280px; display: flex; align-items: center;">
+                            
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active w-100">
+                                <h3 style="color: #ffffff; font-weight: 700; margin-bottom: 20px; text-align: center;">1. แหล่งกำเนิดแสง (Light Source)</h3>
+                                <p style="color: #cccccc; font-size: 1.2rem; line-height: 1.8; text-align: center; margin: 0;">
+                                    กระบวนการเริ่มต้นที่ แหล่งกำเนิดแสง (Light source) ซึ่งในแผนภาพแสดงเป็นรูปดวงอาทิตย์ แหล่งกำเนิดแสงนี้จะปล่อยแสงเดินทางไปยังตัวแบบ โดยมีลูกศรสีเหลืองที่ระบุว่า "Light rays falling onto the object" (รังสีของแสงที่ตกกระทบลงบนวัตถุ)
+                                </p>
+                            </div>
+                            
+                            <!-- Slide 2 -->
+                            <div class="carousel-item w-100">
+                                <h3 style="color: #ffffff; font-weight: 700; margin-bottom: 20px; text-align: center;">2. การสะท้อนจากวัตถุ (Object)</h3>
+                                <p style="color: #cccccc; font-size: 1.2rem; line-height: 1.8; text-align: center; margin: 0;">
+                                    เมื่อแสงตกกระทบ วัตถุ (Object) (ในภาพคือแรคคูน) แสงจะสะท้อนออกจากพื้นผิวของตัวแบบ การสะท้อนนี้จะเดินทางเข้าหากล้อง ซึ่งแสดงด้วยลูกศรสีแดงและมีข้อความระบุว่า "Light rays bouncing off the object" (รังสีของแสงที่สะท้อนออกจากวัตถุ)
+                                </p>
+                            </div>
+                            
+                            <!-- Slide 3 -->
+                            <div class="carousel-item w-100">
+                                <h3 style="color: #ffffff; font-weight: 700; margin-bottom: 20px; text-align: center;">3. การผ่านเลนส์กล้อง (Camera Lens)</h3>
+                                <p style="color: #cccccc; font-size: 1.2rem; line-height: 1.8; text-align: center; margin: 0;">
+                                    แสงที่สะท้อนออกมาจะเข้าสู่ด้านหน้าของกล้องผ่าน เลนส์กล้อง (Camera lens) เลนส์จะทำการหักเหรังสีของแสงที่เข้ามา เพื่อนำทางเข้าสู่ตัวกล้อง
+                                </p>
+                            </div>
+                            
+                            <!-- Slide 4 -->
+                            <div class="carousel-item w-100">
+                                <h3 style="color: #ffffff; font-weight: 700; margin-bottom: 20px; text-align: center;">4. การตัดกันที่จุดโฟกัส (Focal Point)</h3>
+                                <p style="color: #cccccc; font-size: 1.2rem; line-height: 1.8; text-align: center; margin: 0;">
+                                    เมื่อรังสีของแสงเดินทางผ่านระบบเลนส์ แสงจะมาบรรจบและตัดกันที่ตำแหน่งเฉพาะซึ่งเรียกว่า จุดโฟกัส (focal point) เนื่องจากการตัดกันของรังสีแสงที่จุดนี้ ทำให้เส้นทางของแสงกลับด้าน: แสงจากด้านบนของวัตถุจะทำมุมเฉียงลงด้านล่าง และแสงจากด้านล่างของวัตถุจะทำมุมเฉียงขึ้นด้านบน
+                                </p>
+                            </div>
+                            
+                            <!-- Slide 5 -->
+                            <div class="carousel-item w-100">
+                                <h3 style="color: #ffffff; font-weight: 700; margin-bottom: 20px; text-align: center;">5. การฉายภาพลงบนระนาบฟิล์ม (Film Plane)</h3>
+                                <p style="color: #cccccc; font-size: 1.2rem; line-height: 1.8; text-align: center; margin: 0;">
+                                    รังสีของแสงจะเดินทางต่อไปยังด้านหลังของกล้องจนกระทั่งตกกระทบ ระนาบฟิล์ม (Film plane) (ซึ่งทำหน้าที่เดียวกับเซ็นเซอร์รับภาพในกล้องดิจิทัลยุคปัจจุบัน) เนื่องจากรังสีของแสงได้ตัดกันที่จุดโฟกัส ภาพที่ปรากฏลงบนระนาบฟิล์มจึงถูกฉายออกมาเป็นภาพกลับหัว
+                                </p>
+                            </div>
+                            
+                            <!-- Slide 6 -->
+                            <div class="carousel-item w-100">
+                                <h3 style="color: #ffffff; font-weight: 700; margin-bottom: 20px; text-align: center;">6. หน้าที่ของกระจกสะท้อนภาพ (Mirror)</h3>
+                                <p style="color: #cccccc; font-size: 1.2rem; line-height: 1.8; text-align: center; margin: 0;">
+                                    ในกล้องสะท้อนภาพเลนส์เดี่ยว (SLR หรือ DSLR) โดยปกติกระจกนี้จะวางตัวในมุมเฉียงลงเพื่อสะท้อนแสงขึ้นไปยังช่องมองภาพ (viewfinder) เพื่อให้ผู้ถ่ายสามารถจัดองค์ประกอบภาพได้ เมื่อกดปุ่มชัตเตอร์เพื่อถ่ายภาพ กระจกจะดีดตัวพับขึ้นอย่างรวดเร็วไปยังตำแหน่งที่แสดงในแผนภาพ เพื่อเปิดทางให้แสงสามารถเดินทางตรงทะลุไปยังระนาบฟิล์มได้
+                                </p>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Controls -->
+                        <a class="carousel-control-prev" href="#howItWorksCarousel" role="button" data-slide="prev" style="width: 80px; opacity: 1;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 40px; height: 40px;"></span>
+                            <span class="sr-only">ย้อนกลับ</span>
+                        </a>
+                        <a class="carousel-control-next" href="#howItWorksCarousel" role="button" data-slide="next" style="width: 80px; opacity: 1;">
+                            <span class="carousel-control-next-icon" aria-hidden="true" style="width: 40px; height: 40px;"></span>
+                            <span class="sr-only">ถัดไป</span>
+                        </a>
+                        
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators" style="position: absolute; bottom: 15px; margin: 0;">
+                            <li data-target="#howItWorksCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#howItWorksCarousel" data-slide-to="1"></li>
+                            <li data-target="#howItWorksCarousel" data-slide-to="2"></li>
+                            <li data-target="#howItWorksCarousel" data-slide-to="3"></li>
+                            <li data-target="#howItWorksCarousel" data-slide-to="4"></li>
+                            <li data-target="#howItWorksCarousel" data-slide-to="5"></li>
+                        </ol>
+                    </div>
+                    <!-- Manual Carousel End -->
+
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About Section End -->
+        
+        <div id="modal-id" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="port-slider">
+                                    <div><img src="img/portfolio/portfolio-2.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-4.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-6.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-8.jpg"></div>
+                                </div>
+                                <div class="port-slider-nav">
+                                    <div><img src="img/portfolio/portfolio-2.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-4.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-6.jpg"></div>
+                                    <div><img src="img/portfolio/portfolio-8.jpg"></div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <h2>Lorem ipsum dolor</h2>
+                                <p>
+                                    Lorem ipsum dolor viverra purus imperdiet rhoncus imperdiet. Suspendisse vulputate condimentum ligula sollicitudin hendrerit. Phasellus luctus, elit et ultrices interdum, neque mi pellentesque massorci. Nam in cursus ex, nec mattis lectus. Curabitur quis elementum nunc. Mauris iaculis, justo eu aliquam sagittis, arcu eros cursus libero, sit amet eleifend dolor odio at lacus. 
+                                </p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </main>
+        <!-- Swup Container End -->
+        
+        <!-- โครงสร้าง Modal สำหรับขยายรูปภาพ (วางไว้นอก <main> เพื่อให้ทำงานได้ถูกต้อง) -->
+        <div id="imageModal" class="img-modal">
+            <span class="img-modal-close">&times;</span>
+            <img class="img-modal-content" id="expandedImg">
+        </div>
+
+        <!-- Footer Section Start -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="social">
+                            <a href=""><li class="fa fa-instagram"></li></a>
+                            <a href=""><li class="fa fa-twitter"></li></a>
+                            <a href=""><li class="fa fa-facebook-f"></li></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p>Copyright &#169; <a href="#">Your Site Name</a> All Rights Reserved.</p>
+                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section End -->
+
+        <!-- Vendor JavaScript File -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+        <script src="vendor/slick/slick.min.js"></script>
+		<script src="vendor/tempusdominus/js/moment.min.js"></script>
+        <script src="vendor/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="vendor/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+        
+        <!-- Swup Script Installation -->
+        <script src="js/swup.umd.js"></script>
+        <script>
+          const swup = new Swup();
+        </script>
+    </body>
+</html>

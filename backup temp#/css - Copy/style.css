@@ -1,0 +1,1546 @@
+/* ================================================= */
+/* ------------------ General CSS ------------------ */
+/* ================================================= */
+
+@font-face {
+	font-family: 'TorsilpLamun';
+	src: url('../fonts/TorsilpLamun.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'BTN Somboon Regular';
+	src: url('../fonts/BTN-Somboon-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Itim Regular';
+	src: url('../fonts/Itim Regular.woff') format('truetype');
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	color: #666;
+	font-family: 'Open Sans', sans-serif, 'Angsana New', 'AngsanaUPC';
+	font-weight: 400;
+	background: #ffffff;
+}
+
+
+
+a {
+    color: 	#fffdaf; /*was #7DC576 */
+    transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: none; /* was #3E6F39 */
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    color: #666;
+    font-weight: 700;
+}
+
+@media (max-width: 767.98px) {
+    h2 {
+        font-size: 26px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 575.98px) {
+    h2 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
+/* ================================================= */
+/* ---------------- Burger Menu CSS ---------------- */
+/* ================================================= */
+
+.header {
+    display: table;
+    position: relative;
+    background-image: url(../img/16.jpg);
+    background-size: cover;
+    padding: 100px 0;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+}
+
+.header.banner {
+    height: 400px;
+    background-image: url(../img/banner.jpg);
+}
+
+.header:after {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.header .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.welcome-text {
+	font-family: 'Itim Regular';
+	font-size: 80px;
+	text-shadow: 
+		-1px -1px 0 #000,
+         5px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.header .brand {
+	font-family: 'Itim Regular';
+    font-size: 70px; /* was 60 */
+    font-weight: 800;
+    margin-bottom: 75px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.header .brand:hover {
+    color: #ffd966; /* was #ffffff */
+}
+
+.header .brand:hover img {
+    opacity: .9;
+}
+
+.header h1 {
+    font-size: 75px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 8px;
+}
+
+
+.header .tagline {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 30px 0 60px 0;
+    color: #fff;
+}
+
+.header .btn {
+    background-color: #7DC576;
+    font-weight: 700;
+    color: #fff;
+    padding: 15px 45px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.header .btn:hover {
+    background-color: #222222;
+    color: #7DC576;
+}
+
+.header .btn:focus {
+    color: #fff;
+}
+
+.header .btn i {
+    margin-right: 5px;
+}
+
+.popover-body .radio label {
+    margin-bottom: 0;
+}
+
+.popover-body button {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #7DC576;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.popover-body button:hover {
+    color: #7DC576;
+    background: #222222;
+}
+
+.popover-body button i {
+    margin-right: 5px;
+}
+
+@media (max-width: 61.9em) {
+    .header {
+        padding: 75px 0;
+    }
+    
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .header.banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .header .brand {
+        font-size: 3rem;
+        margin-bottom: 35px;
+    }
+
+    .header .tagline {
+        margin: 35px 0;
+        font-size: 22px;
+        line-height: 28px;
+    }
+}
+
+.menu {
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    z-index: 21;
+    top: 1%;
+    right: 1%;
+    background: rgba(0,0,0,.3);
+    border-radius: 6px;
+}
+
+.menu span {
+    position: relative;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -9px;
+    margin-top: -1px;
+}
+
+.menu span, .menu span::before, .menu span::after {
+    display: block;
+    width: 26px;
+    right: 0;
+    height: 3px;
+    background-color: #fff;
+    outline: 1px solid transparent;
+    -webkit-transition-property: background-color, -webkit-transform;
+    -moz-transition-property: background-color, -moz-transform;
+    -o-transition-property: background-color, -o-transform;
+    transition-property: background-color, transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.menu span::before, 
+.menu span::after {
+    position: absolute;
+    content: "";
+}
+
+.menu span::before {
+    top: -9px;
+    width:20px
+}
+
+.menu span::after {
+    top: 9px;width: 33px;
+
+}
+
+.menu.clicked span {
+    background-color: transparent;
+}
+
+.menu.clicked span::before {
+    -webkit-transform: translateY(9px) rotate(45deg);
+    -moz-transform: translateY(9px) rotate(45deg);
+    -ms-transform: translateY(9px) rotate(45deg);
+    -o-transform: translateY(9px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);    
+    width: 33px;
+}
+
+.menu.clicked span::after {
+    -webkit-transform: translateY(-9px) rotate(-45deg);
+    -moz-transform: translateY(-9px) rotate(-45deg);
+    -ms-transform: translateY(-9px) rotate(-45deg);
+    -o-transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.menu.clicked span:before, .menu.clicked span:after {
+    background-color: #ffffff;
+}
+
+.menu:hover {
+    cursor: pointer;
+}
+
+#nav {
+    background: rgba(0, 0, 0, .8);
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-width: 250px;
+    width: 100%;
+    padding: 100px 40px 60px 40px;
+    overflow-y: auto;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -moz-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -o-transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+#nav.show {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+#nav.show ul.main li {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.menu.clicked {
+    position: fixed;
+    z-index: 99;
+}
+
+#nav.show ul.main li:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+#nav.show ul.main li:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+#nav.show ul.main li:nth-child(3) {
+    transition-delay: 0.45s;
+}
+
+#nav.show ul.main li:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+#nav.show ul.main li:nth-child(5) {
+    transition-delay: 0.75s;
+}
+
+#nav.show ul.main li:nth-child(6) {
+    transition-delay: 0.9s;
+}
+
+#nav.show ul.main li:nth-child(7) {
+    transition-delay: 1.05s;
+}
+
+#nav.show ul.main li:nth-child(8) {
+    transition-delay: 1.2s;
+}
+
+#nav.show ul.main li:nth-child(9) {
+    transition-delay: 1.35s;
+}
+
+#nav.show .about, #nav.show .social, #nav.show ul.sub {
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+    transition-delay: .85s;
+}
+
+@media (min-width: 667px) {
+    #nav {
+        padding: 120px 30px 70px 20px;
+    }
+}
+
+#nav ul.main {
+    list-style-type: none;
+}
+
+#nav ul.main li {
+    -webkit-transform: translateX(40px);
+    -moz-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    -o-transform: translateX(40px);
+    transform: translateX(40px);
+    opacity: 0;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    float: none;
+    list-style: circle;
+    color: #fff
+}
+
+#nav ul.main li:last-of-type {
+    margin-bottom: 0px;
+}
+
+#nav ul.main li a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    display: block;
+    padding: 10px 0;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#nav ul.main li a span {
+    color: #7DC576;
+}
+
+#nav ul.main li a:hover {
+    color: #7DC576;
+}
+
+#nav ul.sub {
+    list-style-type: none;
+    margin-top: 40px;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px);
+    opacity: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#nav ul.sub li {
+    margin-bottom: 10px;
+}
+
+#nav ul.sub li:last-of-type {
+    margin-bottom: 0px;
+}
+
+#nav ul.sub li a {
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#nav ul.sub li a:hover {
+    color: #7DC576;
+}
+
+.menu:hover span{}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #603e82;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.overlay.show {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+/* ================================================= */
+/* -------------- Section Header Style ------------- */
+/* ================================================= */
+
+.section-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.section-header::before {
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 200px;
+    bottom: -10px;
+    left: calc(50% - 100px);
+    background: #666;
+}
+
+.section-header::after {
+    position: absolute;
+    content: '';
+    height: 14px;
+    width: 14px;
+    bottom: -17px;
+    left: calc(50% - 7px);
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+@media (max-width: 767.98px) {
+    .section-header h2 {
+        font-size: 35px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .section-header h2 {
+        font-size: 25px;
+        font-weight: 600;
+    }
+}
+
+/* ================================================= */
+/* ------------------ About Style ------------------ */
+/* ================================================= */
+
+#about .section-header h1 {
+	font-family: 'Itim Regular';
+    font-size: 100px;
+	text-shadow: 
+		-1px -5px 0 #000,
+         1px -5px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+#about {
+    position: relative;
+    padding: 60px 0 60px 0;
+    background-color: #3a3b3d;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.02) 1px,
+        rgba(255,255,255,0.02) 2px,
+        transparent 8px,
+        transparent 10px
+    );
+}
+/* #about {
+	position: relative;
+	padding: 45px 0 60px 0;
+	background-image: url(../img/17.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#about:after {
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#about .container {
+    position: relative;
+    z-index: 1;
+} */
+
+#about .img-col {
+    padding: 15px;
+    border: 20px dotted;
+    border-color: #fff #fff #fff #fff;
+}
+
+#about .img-col .img {
+    padding: 15px;
+    border: 10px dotted;
+    border-color: #636363 #636363 #636363 #636363;
+}
+
+#about .img-col {
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+#about .img-col .box7 {
+    box-shadow: none;
+    border-radius: 6px;
+}
+
+
+#about .content-col h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 767.98px) {
+    #about .content-col {
+        text-align: center;
+    }
+    
+    #about .content-col h3 {
+        margin-top: 15px;
+    }
+}
+
+#about .content-col p {
+	font-family: 'Itim Regular';
+    font-size: 25px;
+	color: #fff;
+    line-height: 25px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* ================================================= */
+/* ---------------- Portfolio Style ---------------- */
+/* ================================================= */
+
+#portfolio {
+    position: relative;
+    padding: 50px 0 60px 0;
+}
+
+.port-item {
+	overflow: hidden;
+	padding: 0px;
+}
+
+.port-item img{
+	height: 100%;
+	width: 100%;
+}
+
+.modal .modal-header button {
+    margin: 0 auto;
+    padding: 0px 8px 5px 8px;
+    font-size: 25px;
+    border-radius: 20px;
+    background: #7DC576;
+    color: #fff;
+}
+
+.modal .modal-body img {
+    height: 100%;
+    width: 100%;
+}
+
+.modal .modal-body h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.modal .modal-body .download-content {
+    font-size: 14px;
+}
+
+.custom-control-label:before{
+    background: #7DC576;
+    border: none;
+}
+
+.custom-radio .custom-control-input:checked~.custom-control-label::before,
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background: #222222;
+    border: none;
+}
+
+.custom-radio .custom-control-input:focus~.custom-control-label::before,
+.custom-checkbox .custom-control-input:focus~.custom-control-label::before {
+    box-shadow: none;
+    border: none;
+}
+
+.modal .modal-body .download-content button {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #7DC576;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.modal .modal-body .download-content button:hover {
+    color: #7DC576;
+    background: #222222;
+}
+
+.modal .modal-body .download-content button i {
+    margin-right: 5px;
+}
+
+.modal .port-slider-nav .slick-track {
+    padding: 30px 0 15px 0;
+}
+
+.modal .port-slider-nav .slick-center img {
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.box7:before {
+    background: rgba(000,000,000,.5);
+}
+
+.box7:after {
+    background: rgba(255,255,255,.5);
+    border: 2px solid #7DC576;
+}
+
+.box7 .post {
+    font-weight: normal;
+    font-style: normal;
+}
+
+.box7 .icon li a {
+    background: #7DC576;
+}
+
+/* ================================================= */
+/* ----------------- Classes Style ----------------- */
+/* ================================================= */
+
+#blog {
+    position: relative;
+    padding: 50px 0 30px 0;
+    background: #ffffff;
+}
+
+#blog .single-blog {
+    margin-bottom: 30px;
+}
+
+#blog .single-blog .col-sm-6:last-child {
+    padding: 15px;
+    margin-left: -15px;
+}
+
+@media (max-width: 575.98px) {
+    #blog .single-blog .col-sm-6:last-child {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}
+
+#blog .blog-img,
+#blog .blog-des {
+    position: relative;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#blog .blog-img img {
+    width: 100%;
+}
+
+#blog .blog-img .box7 {
+    box-shadow: none;
+    border-radius: 6px;
+}
+
+#blog .blog-des {
+    width: 100%;
+    text-align: left;
+}
+
+#blog .blog-des h4 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+#blog .blog-des span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#blog .blog-des span i {
+    margin-right: 3px;
+    margin-left: 10px;
+}
+
+#blog .blog-des span i:first-child {
+    margin-left: 0;
+}
+
+#blog .blog-des p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+#blog .blog-des .btn {
+    padding: 3px 15px 5px 15px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #7DC576;
+    border-radius: 20px;
+}
+
+#blog .blog-des .btn:hover {
+    color: #7DC576;
+    background: #222222;
+}
+
+/* ================================================= */
+/* ----------------- Booking Style ----------------- */
+/* ================================================= */
+#booking {
+    position: relative;
+    padding: 50px 0 60px 0;
+    background: #ffffff;
+}
+
+#booking .container {
+    max-width: 990px;
+}
+
+#booking .form-control {
+    height: 35px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    line-height: 24px;
+    padding: 5px 20px;
+    background-color: transparent;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#booking .form-control:focus {
+    box-shadow: none;
+    outline: 0 none;
+}
+
+#booking .button button {
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    line-height: 24px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background: #7DC576;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#booking .button button:hover {
+    color: #7DC576;
+    background: #222222;
+}
+
+#booking .help-block ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* ================================================= */
+/* ---------------- Subscribe Style ---------------- */
+/* ================================================= */
+#subscribe {
+    position: relative;
+    text-align: center;
+    padding: 45px 0 60px 0;
+    background-color: #7DC576;
+    background-image: linear-gradient(#3E6F39, #7DC576);
+}
+
+#subscribe .section-header h2 {
+    color: #ffffff;
+}
+
+#subscribe .section-header::before,
+#subscribe .section-header::after {
+    background: #fff;
+}
+
+#subscribe .subscribe-form {
+    position: relative;
+    max-width: 525px;
+    width: 100%;
+    margin: auto;
+}
+
+#subscribe .subscribe-form input[type="email"] {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    height: 50px;
+    line-height: 24px;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px; 
+}
+
+#subscribe .subscribe-form input[type="email"]:focus {
+    box-shadow: none;
+    outline: 0 none;
+}
+
+@media only screen and (max-width: 479px) {
+    #subscribe .subscribe-form input[type="email"] {
+        text-align: center; 
+    } 
+}
+
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder,
+input::-ms-input-placeholder { 
+    color: white; 
+}
+
+#subscribe .subscribe-form button {
+    font-size: 22px;
+    color: #7DC576;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 1px;
+    padding: 5px 30px 8px 30px;
+    margin-right: -1px;
+    border-radius: 30px;
+    background: #ffffff;
+    border: none;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+#subscribe .subscribe-form button:hover {
+    color: #7DC576;
+    background: #222222;
+}
+
+#subscribe .subscribe-form button:focus {
+    box-shadow: none;
+    outline: 0 none;
+}
+
+
+@media only screen and (max-width: 479px) {
+    #subscribe .subscribe-form button {
+        position: static;
+        margin-top: 15px;
+        width: 100%; 
+    } 
+}
+
+/* ================================================= */
+/* ----------------- Call Us Style ----------------- */
+/* ================================================= */
+
+#call-us {
+    position: relative;
+    text-align: center;
+    padding: 45px 0 60px 0;
+    background-color: #7DC576;
+    background-image: linear-gradient(#3E6F39, #7DC576);
+}
+
+#call-us .section-header h2 {
+    color: #ffffff;
+}
+
+#call-us .section-header::before,
+#call-us .section-header::after {
+    background: #fff;
+}
+
+#call-us p {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 1px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+#call-us a {
+    display: inline-block;
+    padding: 15px 45px;
+    background: #ffffff;
+    color: #7DC576;
+    font-size: 28px;
+    font-weight: 800;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+
+#call-us a:hover {
+    color: #7DC576;
+    background: #222222;
+}
+
+/* ================================================= */
+/* ------------------ Contact Style ---------------- */
+/* ================================================= */
+
+#contact {
+    position: relative;
+    padding: 45px 0;
+}
+
+#contact .contact-info {
+    position: relative;
+}
+
+#contact .contact-info .info-item {
+    position: relative;
+    padding: 15px 50px;
+    margin-bottom: 15px;
+    background: #f2f2f2;
+    border-radius: 100px;
+}
+
+#contact .contact-info .info-item i {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#contact .contact-info .info-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#contact .contact-info .info-item p {
+    margin: 0;
+}
+
+#contact .contact-form {
+    position: relative;
+}
+
+#contact .contact-form input[type="text"],
+#contact .contact-form input[type="email"] {
+    height: 35px;
+    font-size: 16px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+#contact .contact-form textarea {
+    font-size: 16px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    textarea:focus,
+    input:focus {
+        font-size: 16px;
+        background: #fff;
+    }
+}
+
+#contact .contact-form button {
+    display: inline-block;
+    padding: 5px 30px 8px 30px;
+    background: #7DC576;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+#contact .contact-form button:hover {
+    color: #7DC576;
+    background: #222222;
+}
+
+#contact .help-block ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* ================================================= */
+/* ------------------- Login Style ----------------- */
+/* ================================================= */
+
+#login {
+    position: relative;
+    padding: 45px 0;
+}
+
+#login .login-form {
+    position: relative;
+}
+
+#login .login-form input[type="text"],
+#login .login-form input[type="email"],
+#login .login-form input[type="password"] {
+    height: 35px;
+    font-size: 16px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    input:focus {
+        font-size: 16px;
+        background: #fff;
+    }
+}
+
+#login .login-form button {
+    display: inline-block;
+    padding: 5px 30px 8px 30px;
+    background: #7DC576;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+#login .login-form button:hover {
+    color: #7DC576;
+    background: #222222;
+}
+
+/* ================================================= */
+/* ------------------ Footer Style ----------------- */
+/* ================================================= */
+
+#footer {
+    position: relative;
+    padding: 30px 0 25px 0;
+    text-align: center;
+    background: #222222;
+}
+
+#footer .social {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#footer .social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 4px 10px;
+    background: #7DC576;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+#footer .social a:hover {
+    background: #ffffff;
+    color: #7DC576;
+}
+
+#footer p {
+    margin: 0;
+    font-size: 18px;
+}
+
+
+/* ================================================= */
+/* ------------------ DIY Style ----------------- */
+/* ================================================= */
+
+#test {
+	position: relative;
+	padding: 45px 0 60px 0;
+	background-image: url(../img/18.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* ================================================= */
+/* ----------------- Figures Style ------------------ */
+/* บุคคลสำคัญ page (portfolio.html) — the 7 photo     */
+/* squares. Tweak the variables below to restyle      */
+/* almost everything on that page from one place.     */
+/* ================================================= */
+
+:root {
+    /* Compact page-banner (the shrunk header on this page only) */
+    --figures-banner-height: 140px;
+    --figures-banner-title-size: 42px;
+    --figures-banner-title-color: #ffffff;
+    --figures-banner-title-spacing: 4px;
+    --figures-banner-title-margin: 0;
+
+    /* Section spacing */
+    --figures-section-padding-top: 30px;
+    --figures-section-padding-bottom: 60px;
+    --figures-row-gap: 40px;
+
+    /* The squares themselves */
+    --figures-square-border-width: 3px;
+    --figures-square-border-color: #000000;
+    --figures-square-radius: 16px;
+    --figures-square-bg: rgba(255, 255, 255, 0.05);
+    --figures-square-hover-zoom: 1.08;
+    --figures-square-hover-speed: 0.4s;
+
+    /* Placeholder ("รูปภาพ") shown until a real photo is added */
+    --figures-placeholder-text-size: 1.3rem;
+    --figures-placeholder-opacity: 0.6;
+
+    /* Name captions under each square */
+    --figures-name-size: 48px;
+    --figures-name-color: #666;
+    --figures-name-margin-top: 15px;
+}
+
+/* Compact banner variant — scoped to .header--compact so it ONLY affects
+   this page. The homepage's tall hero (plain .header) is untouched. */
+.header.header--compact {
+    height: var(--figures-banner-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header.header--compact .container {
+    display: block;
+}
+
+.header.header--compact h1 {
+    font-size: var(--figures-banner-title-size);
+    color: var(--figures-banner-title-color);
+    letter-spacing: var(--figures-banner-title-spacing);
+    margin: var(--figures-banner-title-margin);
+}
+
+#figures {
+    padding: var(--figures-section-padding-top) 0 var(--figures-section-padding-bottom);
+}
+
+.figures-row {
+    margin-bottom: var(--figures-row-gap);
+}
+
+.figures-row:last-child {
+    margin-bottom: 0;
+}
+
+.person-box {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.photo-slot {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: var(--figures-square-border-width) solid var(--figures-square-border-color);
+    border-radius: var(--figures-square-radius);
+    background: var(--figures-square-bg);
+}
+
+.photo-slot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform var(--figures-square-hover-speed) ease;
+}
+
+.person-box:hover .photo-slot img {
+    transform: scale(var(--figures-square-hover-zoom));
+}
+
+/* Shows automatically whenever a photo hasn't been added yet (broken/missing src) */
+.photo-slot.img-missing::after {
+    content: "รูปภาพ";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--figures-placeholder-text-size);
+    opacity: var(--figures-placeholder-opacity);
+}
+
+.person-name {
+    margin: var(--figures-name-margin-top) 0 0;
+    font-size: var(--figures-name-size);
+    color: var(--figures-name-color);
+}
+
+/* Row 3 boxes are wider (col-md-6), so cap the square so it doesn't get huge on wide screens */
+.figures-row-wide .photo-slot {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ================================================= */
+/* ----------------- History Style ------------------ */
+/* ประวัติ page (history.html) — 4 alternating         */
+/* image/text sections. Tweak the variables below     */
+/* to restyle the whole page from one place.          */
+/* ================================================= */
+
+:root {
+    /* Section spacing */
+    --history-section-padding-top: 60px;
+    --history-section-padding-bottom: 60px;
+    --history-section-gap: 70px;
+
+    /* The image square — max-width is the number to design your photos around */
+    --history-square-max: 500px;
+    --history-square-border-width: 3px;
+    --history-square-border-color: #000000;
+    --history-square-radius: 0px;
+    --history-square-bg: rgba(0, 0, 0, 0.03);
+
+    /* Placeholder ("รูปภาพ") shown until a real photo is added */
+    --history-placeholder-text-size: 1.3rem;
+    --history-placeholder-opacity: 0.5;
+
+    /* Heading + body text next to each square */
+    --history-heading-size: 28px;
+    --history-heading-color: #222222;
+    --history-heading-margin-bottom: 15px;
+    --history-body-size: 16px;
+    --history-body-color: #666666;
+    --history-body-line-height: 1.8;
+}
+
+#history-content {
+    padding: var(--history-section-padding-top) 0 var(--history-section-padding-bottom);
+}
+
+.history-section {
+    margin-bottom: var(--history-section-gap);
+}
+
+.history-section:last-child {
+    margin-bottom: 0;
+}
+
+.history-photo {
+    position: relative;
+    width: 100%;
+    max-width: var(--history-square-max);
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    overflow: hidden;
+    border: var(--history-square-border-width) solid var(--history-square-border-color);
+    border-radius: var(--history-square-radius);
+    background: var(--history-square-bg);
+}
+
+.history-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.history-photo.img-missing::after {
+    content: "รูปภาพ";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--history-placeholder-text-size);
+    opacity: var(--history-placeholder-opacity);
+    color: var(--history-square-border-color);
+}
+
+.history-heading {
+    font-size: var(--history-heading-size);
+    color: var(--history-heading-color);
+    font-weight: 700;
+    margin: 0 0 var(--history-heading-margin-bottom);
+}
+
+.history-body {
+    font-size: var(--history-body-size);
+    color: var(--history-body-color);
+    line-height: var(--history-body-line-height);
+    margin: 0;
+}
+
+@media (max-width: 767.98px) {
+    .history-section [class^="col-"]:first-child {
+        margin-bottom: 30px;
+    }
+}
+
+/* ================================================= */
+/* ------------------- Types Style ------------------ */
+/* ประเภท page (types.html) — 2 large squares side    */
+/* by side. Tweak the variables below to restyle      */
+/* the whole page from one place.                     */
+/* ================================================= */
+
+:root {
+    --types-section-padding-top: 60px;
+    --types-section-padding-bottom: 60px;
+
+    /* The squares — max-width is the number to design your photos around */
+    --types-square-max: 480px;
+    --types-square-border-width: 3px;
+    --types-square-border-color: #000000;
+    --types-square-radius: 0px;
+    --types-square-bg: rgba(0, 0, 0, 0.03);
+
+    /* Placeholder ("รูปภาพ") shown until a real photo is added */
+    --types-placeholder-text-size: 1.3rem;
+    --types-placeholder-opacity: 0.5;
+
+    /* Caption below each square */
+    --types-caption-size: 20px;
+    --types-caption-color: #222222;
+    --types-caption-margin-top: 15px;
+}
+
+#types-content {
+    padding: var(--types-section-padding-top) 0 var(--types-section-padding-bottom);
+}
+
+.type-box {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.type-photo {
+    position: relative;
+    width: 100%;
+    max-width: var(--types-square-max);
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    overflow: hidden;
+    border: var(--types-square-border-width) solid var(--types-square-border-color);
+    border-radius: var(--types-square-radius);
+    background: var(--types-square-bg);
+}
+
+.type-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.type-photo.img-missing::after {
+    content: "รูปภาพ";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--types-placeholder-text-size);
+    opacity: var(--types-placeholder-opacity);
+    color: var(--types-square-border-color);
+}
+
+.type-caption {
+    margin: var(--types-caption-margin-top) 0 0;
+    font-size: var(--types-caption-size);
+    color: var(--types-caption-color);
+    font-weight: 700;
+}

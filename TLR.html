@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="utf-8">
+        <title>TLR | Responsive Photography Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="img/favicon.png" rel="icon">
+        <link href="img/favicon.png" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <!-- Vendor CSS File -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="css/hover-style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Custom CSS สำหรับ Modal Image -->
+        <style>
+            .img-modal {
+                display: none;
+                position: fixed;
+                z-index: 1050;
+                padding-top: 80px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.85);
+                backdrop-filter: blur(8px);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal.show {
+                display: block;
+                opacity: 1;
+            }
+            .img-modal-content {
+                margin: auto;
+                display: block;
+                max-width: 90%;
+                max-height: 80vh;
+                border-radius: 12px;
+                box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+                transform: scale(0.95);
+                transition: transform 0.3s ease;
+                object-fit: contain;
+            }
+            .img-modal.show .img-modal-content {
+                transform: scale(1);
+            }
+            .img-modal-close {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+                z-index: 1060;
+            }
+            .img-modal-close:hover,
+            .img-modal-close:focus {
+                color: #79E8E4;
+                text-decoration: none;
+            }
+            .img-modal-trigger {
+                cursor: pointer;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal-trigger:hover {
+                opacity: 0.85;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Header Section Start -->
+        <div class="menu"> <span></span> </div>
+        <nav id="nav">
+            <ul class="main">
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="history.html">ประวัติ</a></li>
+                <li><a href="people.html">บุคคลสำคัญ</a></li>
+                <li><a href="types.html">ประเภท</a></li>
+                <li><a href="purpose.html">ประโยชน์</a></li>
+                <li><a href="technique.html">เทคนิค</a></li>
+                <li><a href="accesories.html">อุปกรณ์เสริม</a></li>
+				<li><a href="guide.html">การชี้แนวทาง</a></li>
+                <li><a href="contact.html">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
+		
+		<!-- Swup Container Start -->
+        <main id="swup" class="transition-slide">
+        
+        <!-- Header Section -->
+        <div class="header header--compact">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 style="font-family: NotoSans; font-size:3.5rem; font-weight: 700; color: #ffffff;">Film TLR</h1>
+                        <p class="lead mt-3" style="font-weight: 300; max-width: 600px; margin: 0 auto; color: #cccccc; font-size: 20px;">
+                            เจาะลึกกล้องสะท้อนภาพเลนส์คู่ เสน่ห์แห่งการถ่ายภาพระดับเอวและมุมมองสี่เหลี่ยมจัตุรัสสุดคลาสสิก
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Section End -->
+
+        <!-- Info Section Start -->
+        <div id="info-content" style="padding: 60px 0;">
+            <div class="container">
+
+                <!-- 1. Intro Section (Image + Text) -->
+                <div class="info-section row align-items-center" style="background: rgba(255, 255, 255, 0.02); padding: 40px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 60px;">
+                    <div class="col-md-5 mb-4 mb-md-0">
+                        <div style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                            <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพหลัก -->
+                            <img src="img/type/camera/film-tlr.jpg" alt="กล้อง Film TLR" class="img-modal-trigger" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                    <div class="col-md-7" style="padding-left: 30px;">
+                        <h3 style="font-weight: 700; color: #79E8E4; margin-bottom: 20px; font-size: 28px;">Film TLR คืออะไร?</h3>
+                        <p style="color: #cccccc; font-size: 1.2rem; line-height: 1.8;">
+                            <strong>กล้อง TLR (Twin-Lens Reflex)</strong> คือกล้องถ่ายภาพประเภท "สะท้อนภาพเลนส์คู่" หรือกล้องเลนส์แฝด เป็นกล้องคลาสสิกที่มีเอกลักษณ์โดดเด่นด้วยการใช้เลนส์สองตัววางซ้อนกันในแนวตั้งด้านหน้าตัวกล้อง ส่วนใหญ่มักใช้กับฟิล์มขนาดกลาง (Medium Format เช่น ฟิล์ม 120) และมักจะใช้วิธีการจัดองค์ประกอบภาพโดยการก้มมองจากด้านบน (Waist-level viewfinder)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. The Anatomy (Mechanics) -->
+                <div class="row mb-5">
+                    <div class="col-12 text-center mb-4">
+                        <h3 style="font-weight: 700; color: #ffffff; font-size: 28px;">กายวิภาคของความคลาสสิก</h3>
+                        <p style="color: #aaaaaa; font-size: 1.1rem;">ชิ้นส่วนกลไกอันเป็นเสน่ห์เฉพาะตัวของกล้อง Film TLR</p>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div style="background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 16px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.05);">
+                            <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-eye"></i></div>
+                            <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">Twin-Lens (เลนส์คู่)</h4>
+                            <p style="color: #cccccc; font-size: 1.1rem; line-height: 1.6; margin: 0;">
+                                เลนส์ตัวบน (Viewing Lens) ทำหน้าที่รับแสงสะท้อนขึ้นไปยังกระจกฝ้าด้านบนเพื่อให้ช่างภาพมองภาพและจัดองค์ประกอบ ส่วนเลนส์ตัวล่าง (Taking Lens) มีชุดหน้ากล้องและชัตเตอร์ ทำหน้าที่เปิดรับแสงเพื่อบันทึกภาพลงบนฟิล์มโดยตรง
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div style="background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 16px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.05);">
+                            <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-clone"></i></div>
+                            <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">Reflex (การสะท้อน)</h4>
+                            <p style="color: #cccccc; font-size: 1.1rem; line-height: 1.6; margin: 0;">
+                                มีกระจกสะท้อนภาพวางทำมุม 45 องศาอยู่ด้านหลังเลนส์ตัวบน เพื่อสะท้อนภาพขึ้นไปยังหน้าจอโฟกัสด้านบนตัวกล้อง ทำให้เวลาถ่ายภาพช่างภาพจะต้องก้มมองลงมา
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Iconic Models -->
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-12 text-center mb-4">
+                        <h3 style="font-weight: 700; color: #ffffff; font-size: 28px;">กล้องระดับตำนานที่พลิกวงการ</h3>
+                        <p style="color: #aaaaaa; font-size: 1.1rem;">ต้นแบบของกล้อง TLR ที่ได้รับความนิยมสูงสุดในอดีต</p>
+                    </div>
+                    
+                    <!-- Iconic 1: Rolleiflex -->
+                    <div class="col-md-4 mb-4">
+                        <div style="background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%); padding: 25px; border-radius: 16px; height: 100%; border-top: 2px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
+                            <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; margin-bottom: 20px; background: rgba(0,0,0,0.3);">
+                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพโมเดล -->
+                                <img src="img/rolleiflex.webp" alt="Rolleiflex 2.8F" class="img-modal-trigger" style="width: 100%; height: 100%; object-fit: contain; padding: 15px;" onerror="this.onerror=null; this.src='https://placehold.co/600x600/222222/ffffff?text=Rolleiflex+2.8F';">
+                            </div>
+                            <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Rolleiflex 2.8F</h4>
+                            <span style="display: block; color: #79E8E4; font-size: 0.9rem; margin-bottom: 15px;">ค.ศ. 1960</span>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">
+                                ราชาแห่งกล้อง TLR ที่สุดแห่งความพรีเมียมจากเยอรมนี โดดเด่นด้วยเลนส์ Carl Zeiss Planar 80mm f/2.8 ที่ให้ความคมชัดและมิติภาพระดับตำนาน
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Iconic 2: Yashica Mat-124G -->
+                    <div class="col-md-4 mb-4">
+                        <div style="background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%); padding: 25px; border-radius: 16px; height: 100%; border-top: 2px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
+                            <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; margin-bottom: 20px; background: rgba(0,0,0,0.3);">
+                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพโมเดล -->
+                                <img src="img/yashica.jpg" alt="Yashica Mat-124G" class="img-modal-trigger" style="width: 100%; height: 100%; object-fit: contain; padding: 15px;" onerror="this.onerror=null; this.src='https://placehold.co/600x600/222222/ffffff?text=Yashica+Mat-124G';">
+                            </div>
+                            <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Yashica Mat-124G</h4>
+                            <span style="display: block; color: #79E8E4; font-size: 0.9rem; margin-bottom: 15px;">ค.ศ. 1970</span>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">
+                                หนึ่งใน TLR ยอดฮิตที่สุดตลอดกาล ใช้งานง่าย ทนทาน มีระบบวัดแสงในตัว และให้คุณภาพไฟล์ที่ดีมากในราคาที่คนทั่วไปเอื้อมถึงได้
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Iconic 3: Mamiya C330 -->
+                    <div class="col-md-4 mb-4">
+                        <div style="background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%); padding: 25px; border-radius: 16px; height: 100%; border-top: 2px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
+                            <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; margin-bottom: 20px; background: rgba(0,0,0,0.3);">
+                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพโมเดล -->
+                                <img src="img/mamiya.jpg" alt="Mamiya C330" class="img-modal-trigger" style="width: 100%; height: 100%; object-fit: contain; padding: 15px;" onerror="this.onerror=null; this.src='https://placehold.co/600x600/222222/ffffff?text=Mamiya+C330';">
+                            </div>
+                            <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Mamiya C330</h4>
+                            <span style="display: block; color: #79E8E4; font-size: 0.9rem; margin-bottom: 15px;">ค.ศ. 1969</span>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">
+                                ฉีกกฎเกณฑ์กล้อง TLR ด้วยความสามารถในการ "เปลี่ยนเลนส์ได้" ทำให้เป็นที่รักของช่างภาพมืออาชีพและช่างภาพสตูดิโอในยุคนั้น
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Pros & Cons Section (Colored Panels) -->
+                <div class="row mb-5">
+                    <!-- Pros -->
+                    <div class="col-md-6 mb-4">
+                        <div style="background: rgba(46, 204, 113, 0.08); padding: 35px; border-radius: 16px; height: 100%; border: 1px solid rgba(46, 204, 113, 0.3);">
+                            <h4 style="font-weight: 700; color: #2ecc71; margin-bottom: 25px; font-size: 24px;">
+                                <i class="fa fa-check-circle" style="margin-right: 10px;"></i>ข้อดี (Pros)
+                            </h4>
+                            <ul style="color: #cccccc; font-size: 1.1rem; line-height: 1.8; padding-left: 20px; list-style-type: disc;">
+                                <li style="margin-bottom: 10px;"><strong>ช่องมองภาพไม่มืดขณะกดชัตเตอร์:</strong> เนื่องจากกลไกการมองภาพและการบันทึกภาพแยกเลนส์กันอย่างอิสระ จึงไม่มีกระจกกระดกบังแสงเวลาถ่ายภาพ ทำให้ช่างภาพมองเห็นเหตุการณ์ตรงหน้าได้ตลอดเวลา</li>
+                                <li style="margin-bottom: 10px;"><strong>เสียงชัตเตอร์เงียบและนุ่มนวล:</strong> การใช้ชัตเตอร์แบบกลีบ (Leaf Shutter) ในเลนส์ตัวล่าง และไม่มีกลไกกระจกดีดตัว ทำให้เกิดแรงสั่นสะเทือนน้อยมาก</li>
+                                <li style="margin-bottom: 0;"><strong>การถ่ายภาพระดับเอว (Waist-level):</strong> การก้มมองจอจากด้านบนทำให้ตัวกล้องอยู่ระดับอกหรือเอว ช่วยให้ผู้ถูกถ่ายรู้สึกผ่อนคลายและไม่เกร็งเหมือนตอนถูกเล็งกล้องใส่หน้าตรงๆ</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cons -->
+                    <div class="col-md-6 mb-4">
+                        <div style="background: rgba(231, 76, 60, 0.08); padding: 35px; border-radius: 16px; height: 100%; border: 1px solid rgba(231, 76, 60, 0.3);">
+                            <h4 style="font-weight: 700; color: #e74c3c; margin-bottom: 25px; font-size: 24px;">
+                                <i class="fa fa-times-circle" style="margin-right: 10px;"></i>ข้อเสีย (Cons)
+                            </h4>
+                            <ul style="color: #cccccc; font-size: 1.1rem; line-height: 1.8; padding-left: 20px; list-style-type: disc;">
+                                <li style="margin-bottom: 10px;"><strong>ภาพสลับซ้าย-ขวา:</strong> ภาพที่ปรากฏบนกระจกฝ้าจะถูกต้องตามแกนบน-ล่าง แต่จะถูกสลับซ้าย-ขวา (Lateral reversal) ซึ่งต้องอาศัยความคุ้นเคยในการจัดองค์ประกอบ</li>
+                                <li style="margin-bottom: 10px;"><strong>อาการภาพเหลื่อม (Parallax Error):</strong> เนื่องจากตำแหน่งของเลนส์มองภาพอยู่สูงกว่าเลนส์ถ่ายภาพ มุมมองที่มองเห็นจึงต่างจากภาพที่ถูกบันทึกจริงเล็กน้อย ซึ่งจะเห็นผลชัดเจนเมื่อถ่ายวัตถุในระยะใกล้</li>
+                                <li style="margin-bottom: 0;"><strong>ข้อจำกัดเรื่องการเปลี่ยนเลนส์:</strong> กล้อง TLR ส่วนใหญ่ในตลาดไม่สามารถถอดเปลี่ยนเลนส์ได้ (ยกเว้นบางรุ่นเช่น Mamiya C-series) ทำให้ถูกจำกัดการใช้งานอยู่เพียงระยะทางยาวโฟกัสเดียว</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Demo Photos Carousel (Native Bootstrap Captions with Modal Triggers) -->
+                <div class="row mt-5 border-top" style="border-color: rgba(255,255,255,0.1) !important; padding-top: 50px; margin-bottom: 60px;">
+                    <div class="col-12 text-center mb-4">
+                        <h3 style="font-weight: 700; color: #ffffff; font-size: 28px;">แกลเลอรีภาพตัวอย่าง</h3>
+                        <p style="color: #aaaaaa; font-size: 1.1rem;">สัมผัสโทนสีและอารมณ์ภาพที่ถ่ายทอดจากกล้อง Film TLR รุ่นต่างๆ</p>
+                    </div>
+
+                    <div class="col-12 text-center p-4" style="background: rgba(255, 255, 255, 0.02); border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+                        <div id="tlrCarousel" class="carousel slide mb-4" data-ride="carousel">
+                            <div class="carousel-inner" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                
+                                <!-- Demo Photo 1 -->
+                                <div class="carousel-item active">
+                                    <div style="background: #000;">
+                                        <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพในสไลด์ -->
+                                        <img src="img/tlr-demo1.jpg" class="d-block w-100 img-modal-trigger" alt="Demo 1" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x1000/111111/dddddd?text=Demo+Photo+1';">
+                                    </div>
+                                    <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Rolleiflex 2.8F ถ่ายกับฟิล์ม JCH Street Pan 400 กับเลนส์ Carl Zeiss Planar 80mm f/2.8</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Demo Photo 2 -->
+                                <div class="carousel-item">
+                                    <div style="background: #000;">
+                                        <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพในสไลด์ -->
+                                        <img src="img/tlr-demo2.jpg" class="d-block w-100 img-modal-trigger" alt="Demo 2" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x1000/111111/dddddd?text=Demo+Photo+2';">
+                                    </div>
+                                    <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Yashica Mat-124G ถ่ายกับฟิล์ม Kodak Portra 160 กับเลนส์ Yashinon 80mm f/3.5</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Demo Photo 3 -->
+                                <div class="carousel-item">
+                                    <div style="background: #000;">
+                                        <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพในสไลด์ -->
+                                        <img src="img/tlr-demo3.jpg" class="d-block w-100 img-modal-trigger" alt="Demo 3" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x1000/111111/dddddd?text=Demo+Photo+3';">
+                                    </div>
+                                    <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Mamiya C330 ถ่ายกับฟิล์ม Agfa RSX II กับเลนส์ Sekor 105mm f/3.5</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Demo Photo 4 -->
+                                <div class="carousel-item">
+                                    <div style="background: #000;">
+                                        <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพในสไลด์ -->
+                                        <img src="img/tlr-demo4.jpg" class="d-block w-100 img-modal-trigger" alt="Demo 4" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x1000/111111/dddddd?text=Demo+Photo+4';">
+                                    </div>
+                                    <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Minolta Autocord ถ่ายกับฟิล์ม Kodak Portra 160 กับเลนส์ Minolta Rokkor 75mm f/3.5</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                            <a class="carousel-control-prev" href="#tlrCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ก่อนหน้า</span>
+                            </a>
+                            <a class="carousel-control-next" href="#tlrCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ถัดไป</span>
+                            </a>
+                            
+                            <div class="carousel-indicators" style="bottom: 0;">
+                                <button type="button" data-target="#tlrCarousel" data-slide-to="0" class="active"></button>
+                                <button type="button" data-target="#tlrCarousel" data-slide-to="1"></button>
+                                <button type="button" data-target="#tlrCarousel" data-slide-to="2"></button>
+                                <button type="button" data-target="#tlrCarousel" data-slide-to="3"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Maintenance Section (Grid with Hover Effects) -->
+                <div class="row border-top" style="border-color: rgba(255,255,255,0.1) !important; padding-top: 50px;">
+                    <div class="col-12 text-center mb-4 mt-2">
+                        <h3 style="font-weight: 700; color: #ffffff; font-size: 28px;">วิธีการดูแลที่ควรรู้</h3>
+                        <p style="color: #aaaaaa; font-size: 1.1rem;">ทริคการบำรุงรักษากล้อง Film TLR ให้อยู่คู่กับคุณไปนานๆ</p>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 16px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; transition: all 0.3s ease; cursor: default;" onmouseover="this.style.background='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.transform='translateY(0)';">
+                            <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-crosshairs"></i></div>
+                            <h5 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">การทำความสะอาดกระจกฝ้า</h5>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">ฝุ่นมักจะตกลงไปเกาะที่กระจกฝ้าด้านบนเมื่อเปิดฝาครอบมองภาพ ควรใช้ลูกยางเป่าลมอย่างระมัดระวัง หลีกเลี่ยงการเช็ดถูแรงๆ เพราะกระจกเป็นรอยขีดข่วนได้ง่าย</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 16px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; transition: all 0.3s ease; cursor: default;" onmouseover="this.style.background='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.transform='translateY(0)';">
+                            <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-cogs"></i></div>
+                            <h5 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">บริหารกลไกชัตเตอร์</h5>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">หากไม่ได้ใช้งานนานๆ กลไกชัตเตอร์แบบ Leaf Shutter อาจเกิดอาการฝืด ควรนำกล้องมากดชัตเตอร์ในทุกๆ ระดับความเร็ว อย่างน้อยเดือนละครั้ง</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 16px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; transition: all 0.3s ease; cursor: default;" onmouseover="this.style.background='rgba(255, 255, 255, 0.08)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.transform='translateY(0)';">
+                            <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-eye"></i></div>
+                            <h5 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">การดูแลเลนส์ทั้งสองตัว</h5>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">ต้องระมัดระวังการเกิดเชื้อราและฝ้าที่เลนส์ทั้งคู่ (Viewing Lens และ Taking Lens) จึงควรเก็บกล้องไว้ในตู้กันชื้น และปิดฝาครอบเลนส์ทุกครั้งเมื่อไม่ได้ใช้งาน</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Info Section End -->
+			
+		</main>
+        <!-- Swup Container End -->
+
+        <!-- โครงสร้าง Modal สำหรับขยายรูปภาพ -->
+        <div id="imageModal" class="img-modal">
+            <span class="img-modal-close">&times;</span>
+            <img class="img-modal-content" id="expandedImg">
+        </div>
+
+        <!-- Footer Section Start -->
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="social">
+                            <a href=""><li class="fa fa-instagram"></li></a>
+                            <a href=""><li class="fa fa-twitter"></li></a>
+                            <a href=""><li class="fa fa-facebook-f"></li></a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p>Copyright &#169; <a href="#">Your Site Name</a> All Rights Reserved.</p>
+                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Section End -->
+
+        <!-- Vendor JavaScript File -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery/jquery-migrate.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/wow/wow.min.js"></script>
+
+        <!-- Main Javascript File -->
+        <script src="js/main.js"></script>
+
+        <!-- Script สำหรับ Modal Image (รองรับ Swup) -->
+        <script>
+            document.addEventListener('click', function(e) {
+                var modal = document.getElementById("imageModal");
+                var modalImg = document.getElementById("expandedImg");
+
+                // ถ้าคลิกโดนรูปที่มีคลาส img-modal-trigger
+                if (e.target && e.target.classList.contains('img-modal-trigger')) {
+                    modal.style.display = "block";
+                    setTimeout(function() {
+                        modal.classList.add('show');
+                    }, 10);
+                    modalImg.src = e.target.src;
+                }
+                
+                // ถ้าคลิกโดนปุ่มปิด หรือพื้นที่ว่างสีดำรอบๆ
+                if (e.target && (e.target.classList.contains('img-modal-close') || e.target.classList.contains('img-modal'))) {
+                    modal.classList.remove('show');
+                    setTimeout(function() {
+                        modal.style.display = "none";
+                    }, 300);
+                }
+            });
+        </script>
+		
+		<!-- Swup Script Installation -->
+        <script src="js/swup.umd.js"></script>
+        <script>
+          const swup = new Swup();
+        </script>
+    </body>
+</html>
