@@ -358,7 +358,7 @@
             resultTitle = 'Mirrorless Camera';
             resultDesc = 'คุณคือผู้ที่มองหาเทคโนโลยีขั้นสุด! ต้องการคุณภาพไฟล์ที่ยอดเยี่ยม ระบบโฟกัสติดตามดวงตาที่แม่นยำรวดเร็ว และรองรับงานวิดีโอระดับมืออาชีพ ในระบบกล้องแห่งอนาคตที่ตอบโจทย์งานได้ครอบจักรวาล';
             resultImg = 'img/type/camera/mirrorless.jpg';
-            resultLink = 'mirrorless.html'; 
+            resultLink = 'Mirrorless.html'; 
         }
         
         var elTitle = document.getElementById('result-title');
