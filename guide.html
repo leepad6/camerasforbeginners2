@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>แบบสอบถาม | Responsive Photography Template</title>
-        <meta content="width=device-width initial-scale=1.0" name="viewport">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
 
@@ -12,7 +12,7 @@
         <link href="img/favicon.png" rel="apple-touch-icon">
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300400600700800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
         <!-- Vendor CSS File -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,18 +47,18 @@
         <!-- นำ CSS มาไว้ใน Swup เพื่อให้ทำงานทันทีเมื่อเปลี่ยนหน้ามาจาก index -->
         <style>
             .quiz-wrapper {
-                background: rgba(255 255 255 0.03);
-                border: 1px solid rgba(255 255 255 0.08);
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
                 border-radius: 20px;
                 padding: 50px 40px;
                 max-width: 800px;
                 margin: 0 auto 60px auto;
-                box-shadow: 0 15px 40px rgba(0000.6);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
                 overflow: hidden;
             }
             .quiz-option-btn {
-                background: rgba(0 0 0 0.4);
-                border: 1px solid rgba(121 232 228 0.2);
+                background: rgba(0, 0, 0, 0.4);
+                border: 1px solid rgba(121, 232, 228, 0.2);
                 color: #cccccc;
                 font-size: 1.1rem;
                 transition: all 0.3s ease;
@@ -68,35 +68,35 @@
                 padding: 15px 20px;
             }
             .quiz-option-btn:hover {
-                background: rgba(121 232 228 0.1);
+                background: rgba(121, 232, 228, 0.1);
                 border-color: #79E8E4;
                 color: #ffffff;
                 transform: translateX(10px);
-                box-shadow: 0 5px 15px rgba(121 232 228 0.1);
+                box-shadow: 0 5px 15px rgba(121, 232, 228, 0.1);
             }
             .quiz-progress {
-                background-color: rgba(255 255 255 0.1);
+                background-color: rgba(255, 255, 255, 0.1);
                 border-radius: 10px;
                 height: 12px;
                 width: 100%;
                 overflow: hidden;
-                box-shadow: inset 0 1px 3px rgba(0 0 0 0.3);
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
             }
             .quiz-progress-bar {
-                background: linear-gradient(90deg #5fc3bf #79E8E4);
+                background: linear-gradient(90deg, #5fc3bf, #79E8E4);
                 height: 100%;
                 border-radius: 10px;
-                transition: width 0.5s cubic-bezier(0.4 0 0.2 1);
-                box-shadow: 0 0 10px rgba(121 232 228 0.5);
+                transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 0 10px rgba(121, 232, 228, 0.5);
             }
             .quiz-fade-in {
                 animation: fadeIn 0.6s ease-in-out;
             }
             .slide-out-left {
-                animation: slideOutLeft 0.4s forwards cubic-bezier(0.4 0 0.2 1);
+                animation: slideOutLeft 0.4s forwards cubic-bezier(0.4, 0, 0.2, 1);
             }
             .slide-in-right {
-                animation: slideInRight 0.4s forwards cubic-bezier(0.4 0 0.2 1);
+                animation: slideInRight 0.4s forwards cubic-bezier(0.4, 0, 0.2, 1);
             }
             @keyframes fadeIn {
                 from { opacity: 0; transform: translateY(15px); }
@@ -116,7 +116,7 @@
             <div class="container text-center">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 style="font-weight: 700; font-family: NotoSans; font-size:3.5rem; color: #ffffff;">แบบสอบถามแนะนำแนวทางซื้อกล้อง</h1>
+                        <h1 style="font-weight: 700; font-family: NotoSans; font-size:3.5rem; color: #ffffff;">แบบสอบถาม</h1>
                         <p class="lead mt-3" style="font-weight: 300; max-width: 600px; margin: 0 auto; color: #cccccc; font-size: 20px;">
                             ค้นหากล้องที่ใช่สำหรับคุณที่สุด ผ่าน 8 คำถามง่ายๆ
                         </p>
@@ -166,7 +166,7 @@
                                 <!-- Image injected via JS -->
                             </div>
                             
-                            <div style="background: rgba(0000.3); padding: 15px 25px; border-radius: 12px; display: inline-block; margin-bottom: 25px;">
+                            <div style="background: rgba(0, 0, 0, 0.3); padding: 15px 25px; border-radius: 12px; display: inline-block; margin-bottom: 25px;">
                                 <h5 id="result-score" style="color: #ffffff; margin: 0; font-weight: 600;"></h5>
                             </div>
                             
@@ -205,7 +205,6 @@
             </div>
         </div> --!>
         <!-- Footer Section End -->
-
 
         <!-- Vendor JavaScript File -->
         <script src="vendor/jquery/jquery.min.js"></script>
