@@ -85,8 +85,12 @@
                 <!-- Section 2: รูรับแสง -->
                 <div class="row align-items-center mb-5">
                     <div class="col-md-6 mb-4 mb-md-0">
-                        <div style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-                            <img src="img/aperture2.jpg" alt="การควบคุมรูรับแสง (Aperture)" class="img-modal-trigger" style="cursor: pointer; width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); aspect-ratio: 16/9; object-fit: cover;">
+                        <!-- Added click trigger on the wrapper div for Section 2 -->
+                        <div onclick="this.querySelector('.img-modal-trigger').click();" style="background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); cursor: pointer;">
+                            <!-- Visible Thumbnail Image -->
+                            <img src="img/aperture2.png" alt="การควบคุมรูรับแสง (Aperture) Thumbnail" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); aspect-ratio: 16/9; object-fit: cover;">
+                            <!-- Hidden Modal Image Trigger -->
+                            <img src="img/aperture2.jpg" class="img-modal-trigger" style="display: none;" alt="การควบคุมรูรับแสง (Aperture) Full Size">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 0 30px;">
