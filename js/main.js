@@ -354,7 +354,7 @@
         } else if (percentage <= 75) {
             resultTitle = 'DSLR Camera';
             resultDesc = 'คุณหลงใหลในเสน่ห์ของการถ่ายภาพแบบคลาสสิกและทรงพลัง! ชื่นชอบการมองผ่านช่องมองภาพแบบออปติคอล (OVF) ต้องการแบตเตอรี่ที่อึดทนทาน และระบบเลนส์มือสองที่มีให้เลือกมากมายในราคาที่คุ้มค่า';
-            resultImg = 'img/type/camera/dslr.jpg';
+            resultImg = 'img/type/camera/nikon.jpg';
             resultLink = 'DSLR.html'; 
         } else {
             resultTitle = 'Mirrorless Camera';
@@ -423,42 +423,32 @@
         });
     });
 
- // ==========================================
-    // Active Navigation Menu Logic (Bulletproof)
     // ==========================================
-    $(document).ready(function() {
-        // 1. Function to check the URL and set the active link
-        function highlightCurrentMenu() {
-            // Get the current file name (or default to index.html)
-            var currentPath = window.location.pathname.split('/').pop() || 'index.html';
-            
-            // Remove active class from all links
-            $('#nav ul.main li a').removeClass('active');
-            
-            // Find the link that matches the current path
-            var $targetLink = $('#nav ul.main li a[href="' + currentPath + '"]');
-            
-            // Apply the active class
-            if ($targetLink.length) {
-                $targetLink.addClass('active');
-            } else {
-                $('#nav ul.main li a[href="index.html"]').addClass('active');
-            }
+    // Active Navigation Menu Logic (Swup Compatible)
+    // ==========================================
+    function updateActiveMenu() {
+        // Get the current file name from the URL
+        var currentPath = window.location.pathname.split('/').pop();
+        
+        // If the path is empty (e.g., just the domain name), default to index.html
+        if (currentPath === "") {
+            currentPath = "index.html";
         }
 
-        // Run immediately when the site first loads
-        highlightCurrentMenu();
+        // Remove the active class from all links
+        $('#nav ul.main li a').removeClass('active');
 
-        // 2. Instantly update the menu when a link is manually clicked
-        $('#nav ul.main li a').on('click', function() {
-            $('#nav ul.main li a').removeClass('active');
-            $(this).addClass('active');
-        });
+        // Add the active class only to the link that matches the current path
+        $('#nav ul.main li a[href="' + currentPath + '"]').addClass('active');
+    }
 
-        // 3. Ensure the menu updates if the user uses the Browser's Back/Forward buttons
-        window.addEventListener('popstate', function() {
-            setTimeout(highlightCurrentMenu, 100);
-        });
+    // Run on initial page load
+    $(document).ready(function() {
+        updateActiveMenu();
     });
+
+    // Run every time Swup finishes transitioning to a new page
+    document.addEventListener('swup:pageView', updateActiveMenu);
+    document.addEventListener('swup:contentReplaced', updateActiveMenu);
 
 })(jQuery);
