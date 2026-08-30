@@ -67,12 +67,15 @@
         if ($('#imageModal').length === 0) {
             $('head').append(`
                 <style>
-                    .img-modal { display: none; position: fixed; z-index: 1050; padding-top: 80px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); opacity: 0; transition: opacity 0.3s ease; cursor: zoom-out; }
-                    .img-modal.show { display: block; opacity: 1; }
-                    .img-modal-content { margin: auto; display: block; max-width: 90%; max-height: 80vh; border-radius: 12px; box-shadow: 0 15px 50px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease; object-fit: contain; }
+                    /* Removed padding-top and added Flexbox alignment */
+                    .img-modal { display: none; position: fixed; z-index: 1050; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); opacity: 0; transition: opacity 0.3s ease; cursor: zoom-out; align-items: center; justify-content: center; }
+                    /* Changed block to flex */
+                    .img-modal.show { display: flex; opacity: 1; }
+                    /* Removed margin: auto */
+                    .img-modal-content { display: block; max-width: 90%; max-height: 80vh; border-radius: 12px; box-shadow: 0 15px 50px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease; object-fit: contain; }
                     .img-modal.show .img-modal-content { transform: scale(1); }
-                    .img-modal-trigger, .clickable-image { cursor: zoom-in; transition: opacity 0.3s ease; }
-                    .img-modal-trigger:hover, .clickable-image:hover { opacity: 0.85; }
+                    .img-modal-trigger, .img-modal-trigger { cursor: zoom-in; transition: opacity 0.3s ease; }
+                    .img-modal-trigger:hover, .img-modal-trigger:hover { opacity: 0.85; }
                 </style>
             `);
             $('body').append(`
@@ -89,9 +92,10 @@
         
         if (!modal || !modalImg) return; 
 
-        if (e.target && (e.target.classList.contains('clickable-image') || e.target.classList.contains('img-modal-trigger'))) {
+        if (e.target && (e.target.classList.contains('img-modal-trigger') || e.target.classList.contains('img-modal-trigger'))) {
             e.preventDefault();
-            modal.style.display = "block";
+            // Force flex layout instead of block via inline styles
+            modal.style.display = "flex"; 
             setTimeout(function() { modal.classList.add('show'); }, 10);
             modalImg.src = e.target.src;
         }
@@ -397,5 +401,28 @@
         }
         if (bar) bar.style.width = '0%';
     };
+
+// Handles auto-scroll for both Brand and Component accordions
+    $(document).on('shown.bs.collapse', '#brandAccordion .collapse, #componentAccordion .collapse', function (e) {
+        var targetOffset = $(e.target).offset().top - 100;
+        window.scrollTo({ top: targetOffset, behavior: 'smooth' });
+    });
+
+    // Add your history.html accordion logic here:
+    $(document).on('shown.bs.collapse', '#mediaAccordion .collapse', function (e) {
+        var contentDiv = $(e.target).find('> div');
+        var targetOffset;
+
+        if(contentDiv.length > 0) {
+             targetOffset = contentDiv.offset().top - 100;
+        } else {
+             targetOffset = $(e.target).offset().top - 100;
+        }
+        
+        window.scrollTo({
+            top: targetOffset,
+            behavior: 'smooth'
+        });
+    });
 
 })(jQuery);

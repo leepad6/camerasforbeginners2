@@ -2355,7 +2355,6 @@ html.is-animating.is-rendering .transition-slide {
     display: none;
     position: fixed;
     z-index: 1050; /* Above Navbar */
-    padding-top: var(--modal-padding-top);
     left: 0;
     top: 0;
     width: 100%;
@@ -2365,15 +2364,17 @@ html.is-animating.is-rendering .transition-slide {
     backdrop-filter: var(--modal-backdrop-blur);
     opacity: 0;
     transition: opacity var(--modal-transition-speed) ease;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-modal.show {
-    display: block;
+    display: flex !important; /* Forces flex to override JS inline styles */
     opacity: 1;
 }
 
 .img-modal-content {
-    margin: auto;
+    margin: auto; /* Acts as a structural failsafe */
     display: block;
     max-width: var(--modal-img-max-width);
     max-height: var(--modal-img-max-height);
@@ -2407,13 +2408,13 @@ html.is-animating.is-rendering .transition-slide {
 }
 
 /* Target both classes we used for triggers */
-.clickable-image, 
+.img-modal-trigger, 
 .img-modal-trigger {
     cursor: pointer;
     transition: opacity var(--modal-transition-speed) ease;
 }
 
-.clickable-image:hover, 
+.img-modal-trigger:hover, 
 .img-modal-trigger:hover {
     opacity: var(--modal-trigger-hover-opacity);
 }

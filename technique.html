@@ -361,8 +361,8 @@
                 var modal = document.getElementById("imageModal");
                 var modalImg = document.getElementById("expandedImg");
 
-                // ถ้าคลิกโดนรูปที่มีคลาส clickable-image
-                if (e.target && e.target.classList.contains('clickable-image')) {
+                // ถ้าคลิกโดนรูปที่มีคลาส img-modal-trigger
+                if (e.target && e.target.classList.contains('img-modal-trigger')) {
                     modal.style.display = "block";
                     setTimeout(function() {
                         modal.classList.add('show');

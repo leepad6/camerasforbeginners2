@@ -208,7 +208,7 @@ document.addEventListener('click', function(e) {
     if (!modal || !modalImg) return; 
 
     // If an image with the trigger class is clicked
-    if (e.target && (e.target.classList.contains('clickable-image') || e.target.classList.contains('img-modal-trigger'))) {
+    if (e.target && (e.target.classList.contains('img-modal-trigger') || e.target.classList.contains('img-modal-trigger'))) {
         modal.style.display = "block";
         // Small delay to allow CSS transition to trigger
         setTimeout(function() {

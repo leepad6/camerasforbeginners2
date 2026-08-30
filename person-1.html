@@ -23,67 +23,6 @@
         <link href="css/hover-style.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
 
-        <!-- Custom CSS สำหรับ Modal Image -->
-        <style>
-            .img-modal {
-                display: none;
-                position: fixed;
-                z-index: 1050;
-                padding-top: 80px;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-                background-color: rgba(0, 0, 0, 0.85);
-                backdrop-filter: blur(8px);
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-            .img-modal.show {
-                display: block;
-                opacity: 1;
-            }
-            .img-modal-content {
-                margin: auto;
-                display: block;
-                max-width: 90%;
-                max-height: 80vh;
-                border-radius: 12px;
-                box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-                transform: scale(0.95);
-                transition: transform 0.3s ease;
-                object-fit: contain;
-            }
-            .img-modal.show .img-modal-content {
-                transform: scale(1);
-            }
-            .img-modal-close {
-                position: absolute;
-                top: 20px;
-                right: 35px;
-                color: #f1f1f1;
-                font-size: 40px;
-                font-weight: bold;
-                transition: 0.3s;
-                cursor: pointer;
-                z-index: 1060;
-            }
-            .img-modal-close:hover,
-            .img-modal-close:focus {
-                color: #79E8E4;
-                text-decoration: none;
-            }
-            .img-modal-trigger {
-                cursor: pointer;
-                transition: opacity 0.3s ease;
-            }
-            .img-modal-trigger:hover {
-                opacity: 0.85;
-            }
-        </style>
-    </head>
-	
 
     <body>
         <!-- Header Section Start -->
@@ -137,9 +76,9 @@
                     </div>
                   <div class="col-md-5 col-xl-7">
                     <h3 class="info-heading" style="font-size: 48px">นิเซฟอร์ เนียปซ์</h3>
-                    <p class="info-body">Joseph Nicéphore Niépce เป็นหนึ่งในผู้บุกเบิกยุคแรกของการถ่ายภาพ และได้รับการยกย่องว่าเป็นผู้สร้างภาพถ่ายที่เก่าแก่ที่สุดที่ยังคงหลงเหลืออยู่ในปัจจุบันอย่าง Point de vue du Gras</p>
+                    <p class="info-body">นิเซฟอร์ เนียปซ์ Joseph Nicéphore Niépce เป็นหนึ่งในผู้บุกเบิกยุคแรกของการถ่ายภาพ และได้รับการยกย่องว่าเป็นผู้สร้างภาพถ่ายที่เก่าแก่ที่สุดที่ยังคงหลงเหลืออยู่ในปัจจุบันอย่าง Point de vue du Gras</p>
                     <p class="info-body">&nbsp;</p>
-                    <p class="info-body">Niépce เกิดวันที่ 7 มีนาคม 1765 (พ.ศ. 2308)  ในเมือง Chalon-sur-Saône ประเทศฝรั่งเศส และเริ่มต้นอาชีพในกองทัพภายใต้ยุคของนโปเลียน ระหว่างการทำวิจัยทางวิทยาศาสตร์ เขาได้พัฒนากระบวนการที่เรียกว่า Heliography ซึ่งใช้แสงอาทิตย์ทำให้ Bitumen แข็งตัว และราวปี ค.ศ. 1826 (พ.ศ. 2369) เขาก็ใช้กล้อง Camera Obscura แบบดั้งเดิมสร้างภาพถ่ายภาพแรกของโลกขึ้นมาด้วยวิธีนี้</p>
+                    <p class="info-body">Niépce เกิดวันที่ 7 มีนาคม 1765 (พ.ศ. 2308)  ในเมือง Chalon-sur-Saône ประเทศฝรั่งเศส เสียชีวิต 5 กรกฎาคม 1833 (พ.ศ. 2376) เริ่มต้นอาชีพในกองทัพภายใต้ยุคของนโปเลียน ระหว่างการทำวิจัยทางวิทยาศาสตร์ เขาได้พัฒนากระบวนการที่เรียกว่า Heliography ซึ่งใช้แสงอาทิตย์ทำให้ Bitumen แข็งตัว และราวปี ค.ศ. 1826 (พ.ศ. 2369) เขาก็ใช้กล้อง Camera Obscura แบบดั้งเดิมสร้างภาพถ่ายภาพแรกของโลกขึ้นมาด้วยวิธีนี้</p>
                     <p class="info-body">&nbsp;</p>
                     <p class="info-body">ต่อมา Joseph Nicéphore Niépce ได้ร่วมงานกับ Louis Daguerre ผู้คิดค้นกระบวนการ Daguerreotype โดยทั้งสองร่วมกันพัฒนาวิธีสร้างภาพถาวรจากการถ่ายภาพ แม้ Niépce จะเสียชีวิตในปี ค.ศ. 1833 (พ.ศ. 2376) ก่อนที่การถ่ายภาพจะถูกประกาศอย่างเป็นทางการหลายปี แต่ผลงานและการทดลองในช่วงแรกของเขาก็ถือเป็นรากฐานสำคัญของประวัติศาสตร์การถ่ายภาพ</p>
                     <p class="info-body">&nbsp;</p>
@@ -149,12 +88,20 @@
 				<!-- Landscape Image Rectangle Section -->
                 <div class="row mt-5">
                     <div class="col-12 text-center p-4" style="background-color: #333333; border-radius: 10px;">
-                        <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพทิวทัศน์ -->
-                        <img src="img/window-view.jpg" alt="Landscape Photo" class="img-fluid mb-4 img-modal-trigger" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 8px;">
-                        <h4 style="color: #ffffff;">View from the Window at Le Gras</h4>
-                        <p class="info-body" style="color: #cccccc; font-size: 24px;">
-                            ผลงานที่สร้างชื่อและถูกบันทึกว่าเป็น ภาพถ่ายถาวรใบแรกของโลก เกิดขึ้นในช่วงปี 1826 - 1827 ภาพนี้มีชื่อว่า "View from the Window at Le Gras" เป็นภาพทิวทัศน์หลังคาบ้านเรือนที่ถ่ายจากหน้าต่างห้องทำงานของเขา ณ แซงต์-ลูป-เดอ-วาแรนส์ (Saint-Loup-de-Varennes)&nbsp;
-                        </p>
+                        
+                        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                            <div style="background: #000;">
+                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพ -->
+                                <img src="img/window-view.jpg" class="d-block w-100 img-modal-trigger" alt="Landscape Photo" style="max-height: 500px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=View+from+the+Window';">
+                            </div>
+                            <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+                                <h4 style="color: #79E8E4; margin-bottom: 15px; font-weight: 700;">View from the Window at Le Gras</h4>
+                                <p style="color: #cccccc; font-size: 1.2rem; line-height: 1.8; margin: 0;">
+                                    ผลงานที่สร้างชื่อและถูกบันทึกว่าเป็น ภาพถ่ายถาวรใบแรกของโลก เกิดขึ้นในช่วงปี 1826 - 1827 ภาพนี้มีชื่อว่า "View from the Window at Le Gras" เป็นภาพทิวทัศน์หลังคาบ้านเรือนที่ถ่ายจากหน้าต่างห้องทำงานของเขา ณ แซงต์-ลูป-เดอ-วาแรนส์ (Saint-Loup-de-Varennes)&nbsp;
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
