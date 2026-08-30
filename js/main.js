@@ -86,6 +86,10 @@
             e.preventDefault();
             // Force flex layout instead of block via inline styles to ensure centering
             modal.style.display = "flex"; 
+            
+            // --- NEW: Lock the scroll wheel ---
+            document.body.style.overflow = "hidden";
+            
             setTimeout(function() { modal.classList.add('show'); }, 10);
             modalImg.src = e.target.src;
         }
@@ -93,6 +97,10 @@
         // Close modal when clicking on the dark background, the image itself, OR the X button
         if (e.target && (e.target.classList.contains('img-modal') || e.target.classList.contains('img-modal-content') || e.target.classList.contains('img-modal-close'))) {
             modal.classList.remove('show');
+            
+            // --- NEW: Unlock the scroll wheel ---
+            document.body.style.overflow = "";
+            
             setTimeout(function() { modal.style.display = "none"; }, 300);
         }
     });
