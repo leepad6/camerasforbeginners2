@@ -13,8 +13,6 @@
     src: url('../fonts/NotoSans.ttf') format('truetype');
 }
 
-
-
 * {
     box-sizing: border-box;
 }
@@ -36,10 +34,9 @@ body{
 
 #page{
 	background:url('../img/header.jpg') no-repeat center top;
-	width:650px;
+	width: 100%;
+    max-width: 650px;
 }
-
-
 
 a {
     color: #fff; /* Light grey matching your theme's --mono-grey-light */
@@ -323,7 +320,6 @@ h2 {
     color: #fff;
     letter-spacing: 8px;
 }
-
 
 .header .tagline {
     font-size: 26px;
@@ -1589,10 +1585,11 @@ input::-ms-input-placeholder {
 /* Compact banner variant — scoped to .header--compact so it ONLY affects
    this page. The homepage's tall hero (plain .header) is untouched. */
 .header.header--compact {
-    height: var(--figures-banner-height);
+    min-height: var(--figures-banner-height);
+    height: auto;
     display: flex;
     align-items: center;
-    padding: 0;
+    padding: 30px 0;
     overflow: hidden;
 }
 
@@ -2423,4 +2420,26 @@ html.is-animating.is-rendering .transition-slide {
     color: #79E8E4 !important;
     font-family: 'NotoSans', sans-serif !important;
     font-size: 30px !important; 
+}
+
+/* ================================================= */
+/* ------------- Mobile Typography Fixes ----------- */
+/* ================================================= */
+@media (max-width: 767.98px) {
+    /* Scale down the massive welcome text */
+    .welcome-text {
+        font-size: 40px !important;
+    }
+    
+    /* Shrink the compact header titles so they don't cause horizontal scroll */
+    .header.header--compact h1 {
+        font-size: 32px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    /* Scale down the sub-text under the compact header */
+    .header.header--compact p.lead {
+        font-size: 14px !important;
+        padding: 0 15px;
+    }
 }
