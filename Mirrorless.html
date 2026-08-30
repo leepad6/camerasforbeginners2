@@ -21,6 +21,66 @@
         <!-- Main Stylesheet File -->
         <link href="css/hover-style.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Custom CSS สำหรับ Modal Image -->
+        <style>
+            .img-modal {
+                display: none;
+                position: fixed;
+                z-index: 1050;
+                padding-top: 80px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.85);
+                backdrop-filter: blur(8px);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal.show {
+                display: block;
+                opacity: 1;
+            }
+            .img-modal-content {
+                margin: auto;
+                display: block;
+                max-width: 90%;
+                max-height: 80vh;
+                border-radius: 12px;
+                box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+                transform: scale(0.95);
+                transition: transform 0.3s ease;
+                object-fit: contain;
+            }
+            .img-modal.show .img-modal-content {
+                transform: scale(1);
+            }
+            .img-modal-close {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+                z-index: 1060;
+            }
+            .img-modal-close:hover,
+            .img-modal-close:focus {
+                color: #79E8E4;
+                text-decoration: none;
+            }
+            .img-modal-trigger {
+                cursor: pointer;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal-trigger:hover {
+                opacity: 0.85;
+            }
+        </style>
     </head>
 
     <body>
@@ -79,7 +139,7 @@
                     <div class="col-md-7" style="padding-left: 30px;">
                         <h3 style="font-weight: 700; color: #79E8E4; margin-bottom: 20px; font-size: 28px;">Mirrorless คืออะไร?</h3>
                         <p style="color: #cccccc; font-size: 1.2rem; line-height: 1.8; margin-bottom: 0;">
-                      <span style="font-weight: bolder">กล้อง Mirrorless</span> คือ กล้องดิจิทัลที่นำการผสมผสานข้อดีระหว่างกล้อง 2 แพลตฟอร์ม กล้อง DSLR กับ กล้อง Compact  โดยกล้อง Mirrorless นั้นได้ถูกออกแบบมาเพื่อเน้นการพกพาสะดวกสบาย มีรูปทรงกะทัดรัดและน้ำหนักเบา ส่วนฟังก์ชั่นในการใช้งานจับเอาความสามารถของ DSLR มาผนวกไว้ กลายเป็นกล้องเล็กแต่คุณภาพล้ำ </p>
+                      <span style="font-weight: bolder">กล้อง Mirrorless</span> คือ กล้องดิจิทัลที่นำการผสมผสานข้อดีระหว่างกล้อง 2 แพลตฟอร์ม กล้อง DSLR กับ กล้อง Compact  โดยกล้อง Mirrorless นั้นได้ถูกออกแบบมาเพื่อเน้นการพกพาสะดวกสบาย มีรูปทรงกะทัดรัดและน้ำหนักเบา ส่วนฟังก์ชั่นในการใช้งานจับเอาความสามารถของ DSLR มาผนวกไว้ กลายเป็นกล้องเล็กแต่คุณภาพล้ำ 14]</p>
                     </div>
                 </div>
 
@@ -95,7 +155,7 @@
                             <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-minus-square-o"></i></div>
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">ไร้กระจกสะท้อนภาพ</h4>
                             <p style="color: #cccccc; font-size: 1.1rem; line-height: 1.6; margin: 0;">
-                                เนื่องจากไม่มีกระจกขวางกั้น แสงจึงส่งตรงถึงเซ็นเซอร์ตลอดเวลา ทำให้ตัวกล้องมีขนาดเล็กลง น้ำหนักเบาขึ้น และลดแรงสั่นสะเทือนทางกลไกขณะถ่ายภาพ
+                                เนื่องจากไม่มีกระจกขวางกั้น แสงจึงส่งตรงถึงเซ็นเซอร์ตลอดเวลา ทำให้ตัวกล้องมีขนาดเล็กลง น้ำหนักเบาขึ้น และลดแรงสั่นสะเทือนทางกลไกขณะถ่ายภาพ 14]
                             </p>
                         </div>
                     </div>
@@ -105,7 +165,7 @@
                             <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-eye"></i></div>
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">ช่องมองภาพ EVF</h4>
                             <p style="color: #cccccc; font-size: 1.1rem; line-height: 1.6; margin: 0;">
-                                ใช้หน้าจอขนาดเล็กภายในช่องมองภาพ (Electronic Viewfinder) หรือหน้าจอ LCD ด้านหลังแทนกระจก ภาพที่เห็นคือข้อมูลที่ประมวลผลจากเซ็นเซอร์โดยตรง
+                                ใช้หน้าจอขนาดเล็กภายในช่องมองภาพ (Electronic Viewfinder) หรือหน้าจอ LCD ด้านหลังแทนกระจก ภาพที่เห็นคือข้อมูลที่ประมวลผลจากเซ็นเซอร์โดยตรง 14]
                             </p>
                         </div>
                     </div>
@@ -115,7 +175,7 @@
                             <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-bolt"></i></div>
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">ออโต้โฟกัสอัจฉริยะ</h4>
                             <p style="color: #cccccc; font-size: 1.1rem; line-height: 1.6; margin: 0;">
-                                มีจุดโฟกัสครอบคลุมแทบจะ 100% ของภาพ และเทคโนโลยีเซ็นเซอร์ที่ทำให้ระบบโฟกัสติดตามดวงตา (Eye AF) หรือวัตถุเคลื่อนที่ทำงานได้รวดเร็วและแม่นยำมาก
+                                มีจุดโฟกัสครอบคลุมแทบจะ 100% ของภาพ และเทคโนโลยีเซ็นเซอร์ที่ทำให้ระบบโฟกัสติดตามดวงตา (Eye AF) หรือวัตถุเคลื่อนที่ทำงานได้รวดเร็วและแม่นยำมาก 14]
                             </p>
                         </div>
                     </div>
@@ -132,13 +192,12 @@
                     <div class="col-md-4 mb-4">
                         <div style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); padding: 25px; border-radius: 16px; height: 100%; border-top: 2px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
                             <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; margin-bottom: 20px; background: rgba(0, 0, 0, 0.3);">
-                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพโมเดล -->
                                 <img src="img/a7-ii.png" alt="Sony Alpha 7 Series" class="img-modal-trigger" style="width: 100%; height: 100%; object-fit: contain; padding: 15px;" onerror="this.onerror=null; this.src='https://placehold.co/600x600/222222/ffffff?text=Sony+Alpha+7';">
                             </div>
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Sony Alpha 7 Series</h4>
                             <span style="display: block; color: #79E8E4; font-size: 0.9rem; margin-bottom: 15px;">ค.ศ. 2013</span>
                             <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">
-                                ผู้บุกเบิกกล้อง Mirrorless เซ็นเซอร์ฟูลเฟรมตัวแรกของโลกที่ประสบความสำเร็จอย่างล้นหลาม สั่นสะเทือนบัลลังก์ของกล้อง DSLR และตั้งมาตรฐานใหม่ให้วงการ
+                                ผู้บุกเบิกกล้อง Mirrorless เซ็นเซอร์ฟูลเฟรมตัวแรกของโลกที่ประสบความสำเร็จอย่างล้นหลาม สั่นสะเทือนบัลลังก์ของกล้อง DSLR และตั้งมาตรฐานใหม่ให้วงการ 14]
                             </p>
                         </div>
                     </div>
@@ -147,13 +206,12 @@
                     <div class="col-md-4 mb-4">
                         <div style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); padding: 25px; border-radius: 16px; height: 100%; border-top: 2px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
                             <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; margin-bottom: 20px; background: rgba(0, 0, 0, 0.3);">
-                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพโมเดล -->
                                 <img src="img/x-t50.png" alt="Fujifilm X-T Series" class="img-modal-trigger" style="width: 100%; height: 100%; object-fit: contain; padding: 15px;" onerror="this.onerror=null; this.src='https://placehold.co/600x600/222222/ffffff?text=Fujifilm+X-T+Series';">
                             </div>
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Fujifilm X-T Series</h4>
                             <span style="display: block; color: #79E8E4; font-size: 0.9rem; margin-bottom: 15px;">ค.ศ. 2014</span>
                             <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">
-                                กล้องที่ผสานดีไซน์เรโทร แป้นหมุนสไตล์อนาล็อก และเทคโนโลยีจำลองสีฟิล์มสุดคลาสสิกเข้าด้วยกัน พิสูจน์ให้เห็นว่าเซ็นเซอร์ APS-C ก็ทรงพลังได้ไม่แพ้ใคร
+                                กล้องที่ผสานดีไซน์เรโทร แป้นหมุนสไตล์อนาล็อก และเทคโนโลยีจำลองสีฟิล์มสุดคลาสสิกเข้าด้วยกัน พิสูจน์ให้เห็นว่าเซ็นเซอร์ APS-C ก็ทรงพลังได้ไม่แพ้ใคร 14]
                             </p>
                         </div>
                     </div>
@@ -162,13 +220,12 @@
                     <div class="col-md-4 mb-4">
                         <div style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); padding: 25px; border-radius: 16px; height: 100%; border-top: 2px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
                             <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; margin-bottom: 20px; background: rgba(0, 0, 0, 0.3);">
-                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพโมเดล -->
                                 <img src="img/nikon-z6.png" alt="Canon EOS R / Nikon Z" class="img-modal-trigger" style="width: 100%; height: 100%; object-fit: contain; padding: 15px;" onerror="this.onerror=null; this.src='https://placehold.co/600x600/222222/ffffff?text=EOS+R+%2F+Nikon+Z';">
                             </div>
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Canon EOS R / Nikon Z</h4>
                             <span style="display: block; color: #79E8E4; font-size: 0.9rem; margin-bottom: 15px;">ค.ศ. 2018</span>
                             <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">
-                                การก้าวเข้าสู่สมรภูมิ Mirrorless เต็มตัวของ 2 ค่ายยักษ์ใหญ่แห่งวงการ DSLR พร้อมเปิดตัวเมาท์เลนส์รุ่นใหม่ที่ใหญ่กว่าเดิม เพื่อรองรับเลนส์คุณภาพสูงในอนาคต
+                                การก้าวเข้าสู่สมรภูมิ Mirrorless เต็มตัวของ 2 ค่ายยักษ์ใหญ่แห่งวงการ DSLR พร้อมเปิดตัวเมาท์เลนส์รุ่นใหม่ที่ใหญ่กว่าเดิม เพื่อรองรับเลนส์คุณภาพสูงในอนาคต 14]
                             </p>
                         </div>
                     </div>
@@ -183,9 +240,9 @@
                                 <i class="fa fa-check-circle" style="margin-right: 10px;"></i>ข้อดี (Pros)
                             </h4>
                             <ul style="color: #cccccc; font-size: 1.1rem; line-height: 1.8; padding-left: 20px; list-style-type: disc;">
-                                <li style="margin-bottom: 10px;">การปรับค่ารูรับแสง ความเร็วชัตเตอร์ หรือไวต์บาลานซ์ จะแสดงผลให้เห็นล่วงหน้าบนหน้าจอทันที ทำให้กะแสงได้แม่นยำ</li>
-                                <li style="margin-bottom: 10px;">สามารถใช้ระบบชัตเตอร์อิเล็กทรอนิกส์ ถ่ายภาพได้โดยไร้เสียงกลไก 100% เหมาะสำหรับสถานที่ที่ต้องการความสงบ</li>
-                                <li style="margin-bottom: 0;">ได้รับการพัฒนาเทคโนโลยีวิดีโออย่างก้าวกระโดด ทั้งเรื่องความละเอียดและระบบกันสั่นในตัวกล้อง (IBIS) จึงเป็นตัวเลือกหลักของนักสร้างคอนเทนต์</li>
+                                <li style="margin-bottom: 10px;">การปรับค่ารูรับแสง ความเร็วชัตเตอร์ หรือไวต์บาลานซ์ จะแสดงผลให้เห็นล่วงหน้าบนหน้าจอทันที ทำให้กะแสงได้แม่นยำ 14]</li>
+                                <li style="margin-bottom: 10px;">สามารถใช้ระบบชัตเตอร์อิเล็กทรอนิกส์ ถ่ายภาพได้โดยไร้เสียงกลไก 100% เหมาะสำหรับสถานที่ที่ต้องการความสงบ 14]</li>
+                                <li style="margin-bottom: 0;">ได้รับการพัฒนาเทคโนโลยีวิดีโออย่างก้าวกระโดด ทั้งเรื่องความละเอียดและระบบกันสั่นในตัวกล้อง (IBIS) จึงเป็นตัวเลือกหลักของนักสร้างคอนเทนต์ 14]</li>
                             </ul>
                         </div>
                     </div>
@@ -197,15 +254,15 @@
                                 <i class="fa fa-times-circle" style="margin-right: 10px;"></i>ข้อเสีย (Cons)
                             </h4>
                             <ul style="color: #cccccc; font-size: 1.1rem; line-height: 1.8; padding-left: 20px; list-style-type: disc;">
-                                <li style="margin-bottom: 10px;">เซ็นเซอร์และหน้าจอต้องทำงานตลอดเวลาเพื่อดึงภาพมาแสดงผล ทำให้แบตเตอรี่หมดเร็วกว่ากล้อง DSLR อย่างเห็นได้ชัด</li>
-                                <li style="margin-bottom: 10px;">เมื่อถอดเลนส์ เซ็นเซอร์จะสัมผัสกับสภาพแวดล้อมโดยตรง ทำให้โอกาสที่ฝุ่นจะลอยเข้าไปเกาะหน้าเซ็นเซอร์มีสูงมาก</li>
-                                <li style="margin-bottom: 0;">ในสภาพแสงน้อยมากๆ ช่องมองภาพอิเล็กทรอนิกส์อาจมีอาการกระตุก หน่วง หรือมี Noise รบกวนสายตา ซึ่งต่างจากกระจกสะท้อนภาพ</li>
+                                <li style="margin-bottom: 10px;">เซ็นเซอร์และหน้าจอต้องทำงานตลอดเวลาเพื่อดึงภาพมาแสดงผล ทำให้แบตเตอรี่หมดเร็วกว่ากล้อง DSLR อย่างเห็นได้ชัด 14]</li>
+                                <li style="margin-bottom: 10px;">เมื่อถอดเลนส์ เซ็นเซอร์จะสัมผัสกับสภาพแวดล้อมโดยตรง ทำให้โอกาสที่ฝุ่นจะลอยเข้าไปเกาะหน้าเซ็นเซอร์มีสูงมาก 14]</li>
+                                <li style="margin-bottom: 0;">ในสภาพแสงน้อยมากๆ ช่องมองภาพอิเล็กทรอนิกส์อาจมีอาการกระตุก หน่วง หรือมี Noise รบกวนสายตา ซึ่งต่างจากกระจกสะท้อนภาพ 14]</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- 5. 8-Brand Mirrorless Carousel (Fixed with Native Bootstrap Captions) -->
+                <!-- 5. 8-Brand Mirrorless Carousel with Clickable Triggers -->
                 <div class="row mt-5 border-top" style="border-color: rgba(255, 255, 255, 0.1) !important; padding-top: 50px; margin-bottom: 60px;">
                     <div class="col-12 text-center mb-4">
                         <h3 style="font-weight: 700; color: #ffffff; font-size: 28px;">แกลเลอรีจำลองโทนสี 8 แบรนด์ดัง</h3>
@@ -222,7 +279,9 @@
                                         <img src="img/mirrorless-demo1.jpg" class="d-block w-100 img-modal-trigger" alt="Canon Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Canon+Mirrorless';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Canon EOS R5 ถ่ายด้วยเลนส์ Canon RF 800mm F11 IS STM</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Canon-EOS-R5.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Canon EOS R5</span> ถ่ายด้วยเลนส์ Canon RF 800mm F11 IS STM
+                                        </p>
                                     </div>
                                 </div>
                                 
@@ -232,7 +291,9 @@
                                         <img src="img/mirrorless-demo2.jpg" class="d-block w-100 img-modal-trigger" alt="Sony Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Sony+Mirrorless';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Sony Alpha 7R V ถ่ายด้วยเลนส์ FE 70-200mm F2.8 GM OSS II</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Sony-Alpha-7R-V.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Sony Alpha 7R V</span> ถ่ายด้วยเลนส์ FE 70-200mm F2.8 GM OSS II
+                                        </p>
                                     </div>
                                 </div>
                                 
@@ -242,7 +303,9 @@
                                         <img src="img/mirrorless-demo3.jpg" class="d-block w-100 img-modal-trigger" alt="Fujifilm Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Fujifilm+Mirrorless';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Fujifilm X-T5 ถ่ายด้วยเลนส์ XF16-55mmF2.8 R LM WR II</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Fujifilm-X-T5.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Fujifilm X-T5</span> ถ่ายด้วยเลนส์ XF16-55mmF2.8 R LM WR II
+                                        </p>
                                     </div>
                                 </div>
                                 
@@ -252,7 +315,9 @@
                                         <img src="img/mirrorless-demo4.jpg" class="d-block w-100 img-modal-trigger" alt="Nikon Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Nikon+Mirrorless';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Nikon Z9 ถ่ายด้วยเลนส์ NIKKOR Z MC 50mm f/2.8</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Nikon-Z9.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Nikon Z9</span> ถ่ายด้วยเลนส์ NIKKOR Z MC 50mm f/2.8
+                                        </p>
                                     </div>
                                 </div>
 
@@ -262,7 +327,9 @@
                                         <img src="img/mirrorless-demo5.jpg" class="d-block w-100 img-modal-trigger" alt="Lumix Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Lumix+Mirrorless';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Panasonic Lumix S5 II ถ่ายด้วยเลนส์ Lumix S 24-60mm f/2.8</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Panasonic-Lumix-S5-II.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Panasonic Lumix S5 II</span> ถ่ายด้วยเลนส์ Lumix S 24-60mm f/2.8
+                                        </p>
                                     </div>
                                 </div>
 
@@ -272,7 +339,9 @@
                                         <img src="img/mirrorless-demo6.jpg" class="d-block w-100 img-modal-trigger" alt="Olympus Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Olympus+Mirrorless';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">OM System OM-1 ถ่ายด้วยเลนส์ OM 12-100mm F4.0</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/OM-System-OM-1.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">OM System OM-1</span> ถ่ายด้วยเลนส์ OM 12-100mm F4.0
+                                        </p>
                                     </div>
                                 </div>
 
@@ -282,7 +351,9 @@
                                         <img src="img/mirrorless-demo7.jpg" class="d-block w-100 img-modal-trigger" alt="Leica Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Leica+Mirrorless';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Leica SL2 ถ่ายด้วยเลนส์ Leica Summicron-SL 50mm f/2 ASPH.</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Leica-SL2.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Leica SL2</span> ถ่ายด้วยเลนส์ Leica Summicron-SL 50mm f/2 ASPH.
+                                        </p>
                                     </div>
                                 </div>
 
@@ -292,20 +363,22 @@
                                         <img src="img/mirrorless-demo8.jpg" class="d-block w-100 img-modal-trigger" alt="Hasselblad Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Hasselblad+Mirrorless';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Hasselblad X2D 100C ถ่ายด้วยเลนส์ XCD 25/55V</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Hasselblad-X2D-100C.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Hasselblad X2D 100C</span> ถ่ายด้วยเลนส์ XCD 25/55V
+                                        </p>
                                     </div>
                                 </div>
 
                             </div>
                             <!-- Navigation Arrows -->
                             <button class="carousel-control-prev" type="button" data-target="#mirrorlessCarousel" data-slide="prev" style="background: transparent; border: none; cursor: pointer;">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">ก่อนหน้า</span>
-</button>
-<button class="carousel-control-next" type="button" data-target="#mirrorlessCarousel" data-slide="next" style="background: transparent; border: none; cursor: pointer;">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">ถัดไป</span>
-</button>
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ก่อนหน้า</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-target="#mirrorlessCarousel" data-slide="next" style="background: transparent; border: none; cursor: pointer;">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ถัดไป</span>
+                            </button>
                             <!-- Indicators for 8 slides -->
                             <div class="carousel-indicators" style="bottom: 0;">
                                 <button type="button" data-target="#mirrorlessCarousel" data-slide-to="0" class="active"></button>
@@ -332,7 +405,7 @@
                         <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 16px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; transition: all 0.3s ease; cursor: default;">
                             <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-sun-o"></i></div>
                             <h5 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">ระวังหน้าจอ EVF ไหม้</h5>
-                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">ห้ามวางกล้องโดยหันช่องมองภาพรับแสงแดดโดยตรงเด็ดขาด เพราะเลนส์ในช่องมองภาพจะรวมแสงและเผาจอ OLED ด้านในจนเป็นจุดถาวร</p>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">ห้ามวางกล้องโดยหันช่องมองภาพรับแสงแดดโดยตรงเด็ดขาด เพราะเลนส์ในช่องมองภาพจะรวมแสงและเผาจอ OLED ด้านในจนเป็นจุดถาวร 14]</p>
                         </div>
                     </div>
 
@@ -340,7 +413,7 @@
                         <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 16px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; transition: all 0.3s ease; cursor: default;">
                             <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-exchange"></i></div>
                             <h5 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">เทคนิคเปลี่ยนเลนส์</h5>
-                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">ปิดกล้องทุกครั้งก่อนถอดเลนส์ (บางรุ่นจะดึงม่านชัตเตอร์ลงมาปกป้องเซ็นเซอร์ให้) และต้องคว่ำหน้าเมาท์กล้องลงพื้นเสมอเพื่อกันฝุ่น</p>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">ปิดกล้องทุกครั้งก่อนถอดเลนส์ (บางรุ่นจะดึงม่านชัตเตอร์ลงมาปกป้องเซ็นเซอร์ให้) และต้องคว่ำหน้าเมาท์กล้องลงพื้นเสมอเพื่อกันฝุ่น 14]</p>
                         </div>
                     </div>
 
@@ -348,7 +421,7 @@
                         <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 16px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; transition: all 0.3s ease; cursor: default;">
                             <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-battery-half"></i></div>
                             <h5 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">การจัดการแบตเตอรี่</h5>
-                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">ควรพกแบตเตอรี่สำรองอย่างน้อย 1-2 ก้อน และตั้งค่า Sleep Mode ให้ปิดจออัตโนมัติรวดเร็วขึ้น เพื่อช่วยประหยัดพลังงาน</p>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">ควรพกแบตเตอรี่สำรองอย่างน้อย 1-2 ก้อน และตั้งค่า Sleep Mode ให้ปิดจออัตโนมัติรวดเร็วขึ้น เพื่อช่วยประหยัดพลังงาน 14]</p>
                         </div>
                     </div>
 
@@ -356,7 +429,7 @@
                         <div style="background: rgba(255, 255, 255, 0.03); padding: 25px; border-radius: 16px; height: 100%; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; transition: all 0.3s ease; cursor: default;">
                             <div style="font-size: 2.5rem; color: #79E8E4; margin-bottom: 15px;"><i class="fa fa-refresh"></i></div>
                             <h5 style="font-weight: 700; color: #ffffff; margin-bottom: 15px;">อัปเดต Firmware</h5>
-                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">กล้องพึ่งพาซอฟต์แวร์ประมวลผลสูง การอัปเดตจากผู้ผลิตจะช่วยแก้บั๊ก เพิ่มความฉลาดให้ระบบโฟกัส และบางครั้งอาจได้ฟีเจอร์ใหม่</p>
+                            <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">กล้องพึ่งพาซอฟต์แวร์ประมวลผลสูง การอัปเดตจากผู้ผลิตจะช่วยแก้บั๊ก เพิ่มความฉลาดให้ระบบโฟกัส และบางครั้งอาจได้ฟีเจอร์ใหม่ 14]</p>
                         </div>
                     </div>
                 </div>
@@ -402,6 +475,8 @@
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
 
+        
+		
 		<!-- Swup Script Installation -->
         <script src="js/swup.umd.js"></script>
         <script>

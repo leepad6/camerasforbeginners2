@@ -21,6 +21,66 @@
         <!-- Main Stylesheet File -->
         <link href="css/hover-style.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Custom CSS สำหรับ Modal Image -->
+        <style>
+            .img-modal {
+                display: none;
+                position: fixed;
+                z-index: 1050;
+                padding-top: 80px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.85);
+                backdrop-filter: blur(8px);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal.show {
+                display: block;
+                opacity: 1;
+            }
+            .img-modal-content {
+                margin: auto;
+                display: block;
+                max-width: 90%;
+                max-height: 80vh;
+                border-radius: 12px;
+                box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+                transform: scale(0.95);
+                transition: transform 0.3s ease;
+                object-fit: contain;
+            }
+            .img-modal.show .img-modal-content {
+                transform: scale(1);
+            }
+            .img-modal-close {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+                z-index: 1060;
+            }
+            .img-modal-close:hover,
+            .img-modal-close:focus {
+                color: #79E8E4;
+                text-decoration: none;
+            }
+            .img-modal-trigger {
+                cursor: pointer;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal-trigger:hover {
+                opacity: 0.85;
+            }
+        </style>
     </head>
 
     <body>
@@ -164,7 +224,7 @@
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Insta360 Series</h4>
                             <span style="display: block; color: #79E8E4; font-size: 0.9rem; margin-bottom: 15px;">ปฏิวัติมุมมองแบบ 360 องศา</span>
                             <p style="color: #cccccc; font-size: 1rem; line-height: 1.6; margin: 0;">
-                                เปลี่ยนวิธีการถ่ายทำด้วยการ "ถ่ายไปก่อนแล้วค่อยเลือกมุมทีหลัง" ให้ภาพสุดล้ำแบบ 360 องศา และสามารถลบไม้เซลฟี่ออกจากภาพได้เนียนกริบ
+                                เปลี่ยนวิธีการทำด้วยการ "ถ่ายไปก่อนแล้วค่อยเลือกมุมทีหลัง" ให้ภาพสุดล้ำแบบ 360 องศา และสามารถลบไม้เซลฟี่ออกจากภาพได้เนียนกริบ
                             </p>
                         </div>
                     </div>
@@ -201,7 +261,7 @@
                     </div>
                 </div>
 
-                <!-- 5. NEW SECTION: Action Camera Carousel (Native Bootstrap Captions) -->
+                <!-- 5. Action Camera Carousel with Clickable Triggers -->
                 <div class="row mt-5 border-top" style="border-color: rgba(255, 255, 255, 0.1) !important; padding-top: 50px; margin-bottom: 60px;">
                     <div class="col-12 text-center mb-4">
                         <h3 style="font-weight: 700; color: #ffffff; font-size: 28px;">แกลเลอรีภาพตัวอย่างแอคชั่นแคมยอดฮิต</h3>
@@ -218,7 +278,9 @@
                                         <img src="img/action-demo1.jpg" class="d-block w-100 img-modal-trigger" alt="GoPro Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=GoPro+HERO+Action';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">GoPro HERO12 Black ถ่ายด้วยโหมด HyperSmooth 6.0 มุมมอง SuperView</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/type/camera/action-camera.jpg" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">GoPro HERO12 Black</span> ถ่ายด้วยโหมด HyperSmooth 6.0 มุมมอง SuperView
+                                        </p>
                                     </div>
                                 </div>
                                 
@@ -228,7 +290,9 @@
                                         <img src="img/action-demo2.jpg" class="d-block w-100 img-modal-trigger" alt="DJI Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=DJI+Osmo+Action';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">DJI Osmo Action 4 ถ่ายด้วยเซ็นเซอร์ขนาดใหญ่ในที่แสงน้อย</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/DJI-Osmo-Action-4.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">DJI Osmo Action 4</span> ถ่ายด้วยเซ็นเซอร์ขนาดใหญ่ในที่แสงน้อย
+                                        </p>
                                     </div>
                                 </div>
                                 
@@ -238,22 +302,23 @@
                                         <img src="img/action-demo3.webp" class="d-block w-100 img-modal-trigger" alt="Insta360 Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Insta360+Series';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Insta360 X3 ถ่ายด้วยโหมด PureShot</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/insta360.jpeg" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Insta360 X3</span> ถ่ายด้วยโหมด PureShot
+                                        </p>
                                     </div>
                                 </div>
 
                             </div>
 
                             <!-- Navigation Arrows -->
-                            <!-- Navigation Arrows -->
-<button class="carousel-control-prev" type="button" data-target="#actionCarousel" data-slide="prev" style="background: transparent; border: none; cursor: pointer;">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">ก่อนหน้า</span>
-</button>
-<button class="carousel-control-next" type="button" data-target="#actionCarousel" data-slide="next" style="background: transparent; border: none; cursor: pointer;">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">ถัดไป</span>
-</button>
+                            <button class="carousel-control-prev" type="button" data-target="#actionCarousel" data-slide="prev" style="background: transparent; border: none; cursor: pointer;">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ก่อนหน้า</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-target="#actionCarousel" data-slide="next" style="background: transparent; border: none; cursor: pointer;">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ถัดไป</span>
+                            </button>
                             
                             <!-- Indicators -->
                             <div class="carousel-indicators" style="bottom: 0;">
@@ -306,6 +371,7 @@
 
         <!-- โครงสร้าง Modal สำหรับขยายรูปภาพ -->
         <div id="imageModal" class="img-modal">
+            <span class="img-modal-close">&times;</span>
             <img class="img-modal-content" id="expandedImg">
         </div>
 
@@ -337,7 +403,7 @@
 
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
-		
+
 		<!-- Swup Script Installation -->
         <script src="js/swup.umd.js"></script>
         <script>

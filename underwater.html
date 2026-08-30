@@ -21,6 +21,66 @@
         <!-- Main Stylesheet File -->
         <link href="css/hover-style.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Custom CSS สำหรับ Modal Image -->
+        <style>
+            .img-modal {
+                display: none;
+                position: fixed;
+                z-index: 1050;
+                padding-top: 80px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.85);
+                backdrop-filter: blur(8px);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal.show {
+                display: block;
+                opacity: 1;
+            }
+            .img-modal-content {
+                margin: auto;
+                display: block;
+                max-width: 90%;
+                max-height: 80vh;
+                border-radius: 12px;
+                box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+                transform: scale(0.95);
+                transition: transform 0.3s ease;
+                object-fit: contain;
+            }
+            .img-modal.show .img-modal-content {
+                transform: scale(1);
+            }
+            .img-modal-close {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+                z-index: 1060;
+            }
+            .img-modal-close:hover,
+            .img-modal-close:focus {
+                color: #79E8E4;
+                text-decoration: none;
+            }
+            .img-modal-trigger {
+                cursor: pointer;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal-trigger:hover {
+                opacity: 0.85;
+            }
+        </style>
     </head>
 
     <body>
@@ -43,7 +103,7 @@
 		<!-- Swup Container Start -->
         <main id="swup" class="transition-slide">
 			
-			        <!-- Back Button Start -->
+        <!-- Back Button Start -->
         <a href="cameratype.html" style="position: fixed; top: 20px; left: 20px; z-index: 1000; background: rgba(255, 255, 255, 0.05); color: #79E8E4; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(121, 232, 228, 0.2)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.05)';">
             <i class="fa fa-arrow-left" style="font-size: 18px;"></i>
         </a>
@@ -98,6 +158,7 @@
                             <p style="color: #cccccc; font-size: 1.1rem; line-height: 1.6; margin: 0;">
                                 ใช้ซีลยาง (O-ring) ตามจุดเปิด-ปิดต่างๆ เช่น ช่องใส่แบตเตอรี่ ช่องเสียบการ์ดหน่วยความจำ และพอร์ตเชื่อมต่อ ป้องกันไม่ให้น้ำซึมเข้าสู่แผงวงจรภายในอย่างเด็ดขาด
                             </p>
+
                         </div>
                     </div>
 
@@ -206,7 +267,7 @@
                     </div>
                 </div>
 
-                <!-- 5. NEW SECTION: Legendary Cameras Carousel -->
+                <!-- 5. NEW SECTION: Legendary Cameras Carousel with Clickable Triggers -->
                 <div class="row mt-5 border-top" style="border-color: rgba(255,255,255,0.1) !important; padding-top: 50px; margin-bottom: 60px;">
                     <div class="col-12 text-center mb-4">
                         <h3 style="font-weight: 700; color: #ffffff; font-size: 28px;">แกลเลอรีภาพตัวอย่างกล้องใต้น้ำระดับตำนาน</h3>
@@ -220,57 +281,61 @@
                                 <!-- Legendary Camera 1: Olympus Tough TG-6 -->
                                 <div class="carousel-item active">
                                     <div style="background: #000;">
-                                        <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพในสไลด์ -->
                                         <img src="img/underwater-demo1.jpg" class="d-block w-100 img-modal-trigger" alt="Olympus TG-6" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Olympus+Tough+TG-6';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Olympus Tough TG-6 ถ่ายใต้น้ำด้วยโหมด Underwater Macro</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/olympus-tg.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Olympus Tough TG-6</span> ถ่ายใต้น้ำด้วยโหมด Underwater Macro
+                                        </p>
                                     </div>
                                 </div>
                                 
                                 <!-- Legendary Camera 2: GoPro HERO11 Black -->
                                 <div class="carousel-item">
                                     <div style="background: #000;">
-                                        <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพในสไลด์ -->
                                         <img src="img/underwater-demo2.jpg" class="d-block w-100 img-modal-trigger" alt="GoPro HERO11" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=GoPro+HERO11+Black';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">GoPro HERO11 Black ถ่ายด้วยเลนส์ Wide FOV ใต้ทะเลลึก</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/GoPro-HERO11-Black.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">GoPro HERO11 Black</span> ถ่ายด้วยเลนส์ Wide FOV ใต้ทะเลลึก
+                                        </p>
                                     </div>
                                 </div>
                                 
                                 <!-- Legendary Camera 3: SeaLife Micro 3.0 -->
                                 <div class="carousel-item">
                                     <div style="background: #000;">
-                                        <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพในสไลด์ -->
                                         <img src="img/underwater-demo3.jpg" class="d-block w-100 img-modal-trigger" alt="SeaLife Micro 3.0" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=SeaLife+Micro+3.0';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">SeaLife Micro 2.0 ถ่ายกับแสงแฟลชใต้น้ำ SeaDragon</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/sealife-micro.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">SeaLife Micro 2.0</span> ถ่ายกับแสงแฟลชใต้น้ำ SeaDragon
+                                        </p>
                                     </div>
                                 </div>
 
                                 <!-- Legendary Camera 4: Nikon Coolpix W300 -->
                                 <div class="carousel-item">
                                     <div style="background: #000;">
-                                        <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพในสไลด์ -->
                                         <img src="img/underwater-demo4.jpg" class="d-block w-100 img-modal-trigger" alt="Nikon W300" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Nikon+Coolpix+W300';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Nikon Coolpix W300 ถ่ายบันทึกแนวปะการังน้ำตื้น</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/underwater-demo4.jpg" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Nikon Coolpix W300</span> ถ่ายบันทึกแนวปะการังน้ำตื้น
+                                        </p>
                                     </div>
                                 </div>
 
                             </div>
                             <!-- Navigation Arrows -->
                             <button class="carousel-control-prev" type="button" data-target="#underwaterCarousel" data-slide="prev" style="background: transparent; border: none; cursor: pointer;">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">ก่อนหน้า</span>
-</button>
-<button class="carousel-control-next" type="button" data-target="#underwaterCarousel" data-slide="next" style="background: transparent; border: none; cursor: pointer;">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">ถัดไป</span>
-</button>
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ก่อนหน้า</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-target="#underwaterCarousel" data-slide="next" style="background: transparent; border: none; cursor: pointer;">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ถัดไป</span>
+                            </button>
                             <!-- Indicators for 4 slides -->
                             <div class="carousel-indicators" style="bottom: 0;">
                                 <button type="button" data-target="#underwaterCarousel" data-slide-to="0" class="active"></button>
@@ -363,6 +428,54 @@
 
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
+
+        <!-- Script สำหรับ Modal Image (รองรับ Swup และป้องกันการกระโดดขึ้นด้านบน) -->
+        <script>
+            document.addEventListener('click', function(e) {
+                var modal = document.getElementById("imageModal");
+                var modalImg = document.getElementById("expandedImg");
+
+                var trigger = e.target.closest('.img-modal-trigger');
+
+                // ถ้าคลิกโดนรูปหรือลิงก์ที่มีคลาส img-modal-trigger
+                if (trigger) {
+                    e.preventDefault();
+                    modal.style.display = "flex";
+
+                    // Lock body scroll WITHOUT losing the current scroll position
+                    var scrollY = window.scrollY;
+                    document.body.style.position = "fixed";
+                    document.body.style.top = "-" + scrollY + "px";
+                    document.body.style.width = "100%";
+                    
+                    setTimeout(function() {
+                        modal.classList.add('show');
+                    }, 10);
+
+                    if (trigger.tagName === 'IMG') {
+                        modalImg.src = trigger.src;
+                    } else if (trigger.getAttribute('data-img-src')) {
+                        modalImg.src = trigger.getAttribute('data-img-src');
+                    }
+                }
+                
+                // ถ้าคลิกโดนปุ่มปิด หรือพื้นที่ว่างสีดำรอบๆ เพื่อปิด Modal
+                if (e.target && (e.target.classList.contains('img-modal-close') || e.target.classList.contains('img-modal') || e.target.classList.contains('img-modal-content'))) {
+                    modal.classList.remove('show');
+
+                    // Restore scroll position that was locked in above
+                    var lockedScrollY = document.body.style.top;
+                    document.body.style.position = "";
+                    document.body.style.top = "";
+                    document.body.style.width = "";
+                    window.scrollTo(0, parseInt(lockedScrollY || "0") * -1);
+                    
+                    setTimeout(function() {
+                        modal.style.display = "none";
+                    }, 300);
+                }
+            });
+        </script>
 		
 		<!-- Swup Script Installation -->
         <script src="js/swup.umd.js"></script>

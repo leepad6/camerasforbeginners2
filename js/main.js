@@ -81,25 +81,39 @@
         
         if (!modal || !modalImg) return; 
 
-        // Open Modal: Now checks for BOTH 'img-modal-trigger' AND 'clickable-image'
-        if (e.target && (e.target.classList.contains('img-modal-trigger') || e.target.classList.contains('clickable-image'))) {
+        // Use closest to accurately target elements or child nodes with trigger classes
+        var trigger = e.target.closest('.img-modal-trigger, .clickable-image');
+
+        if (trigger) {
             e.preventDefault();
-            // Force flex layout instead of block via inline styles to ensure centering
             modal.style.display = "flex"; 
             
-            // --- NEW: Lock the scroll wheel ---
-            document.body.style.overflow = "hidden";
+            // Lock the scroll wheel and retain position
+            var scrollY = window.scrollY;
+            document.body.style.position = "fixed";
+            document.body.style.top = "-" + scrollY + "px";
+            document.body.style.width = "100%";
             
             setTimeout(function() { modal.classList.add('show'); }, 10);
-            modalImg.src = e.target.src;
+            
+            // Check if it's a standard image tag or a text element with data-img-src
+            if (trigger.tagName === 'IMG') {
+                modalImg.src = trigger.src;
+            } else if (trigger.getAttribute('data-img-src')) {
+                modalImg.src = trigger.getAttribute('data-img-src');
+            }
         }
         
         // Close modal when clicking on the dark background, the image itself, OR the X button
         if (e.target && (e.target.classList.contains('img-modal') || e.target.classList.contains('img-modal-content') || e.target.classList.contains('img-modal-close'))) {
             modal.classList.remove('show');
             
-            // --- NEW: Unlock the scroll wheel ---
-            document.body.style.overflow = "";
+            // Unlock the scroll wheel and restore position
+            var lockedScrollY = document.body.style.top;
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.width = "";
+            window.scrollTo(0, parseInt(lockedScrollY || "0") * -1);
             
             setTimeout(function() { modal.style.display = "none"; }, 300);
         }
@@ -424,31 +438,41 @@
     });
 
     // ==========================================
-    // Active Navigation Menu Logic (Swup Compatible)
+    // Active Navigation Menu Logic (Bulletproof)
     // ==========================================
-    function updateActiveMenu() {
-        // Get the current file name from the URL
-        var currentPath = window.location.pathname.split('/').pop();
-        
-        // If the path is empty (e.g., just the domain name), default to index.html
-        if (currentPath === "") {
-            currentPath = "index.html";
+    $(document).ready(function() {
+        // 1. Function to check the URL and set the active link
+        function highlightCurrentMenu() {
+            // Get the current file name (or default to index.html)
+            var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            
+            // Remove active class from all links
+            $('#nav ul.main li a').removeClass('active');
+            
+            // Find the link that matches the current path
+            var $targetLink = $('#nav ul.main li a[href="' + currentPath + '"]');
+            
+            // Apply the active class
+            if ($targetLink.length) {
+                $targetLink.addClass('active');
+            } else {
+                $('#nav ul.main li a[href="index.html"]').addClass('active');
+            }
         }
 
-        // Remove the active class from all links
-        $('#nav ul.main li a').removeClass('active');
+        // Run immediately when the site first loads
+        highlightCurrentMenu();
 
-        // Add the active class only to the link that matches the current path
-        $('#nav ul.main li a[href="' + currentPath + '"]').addClass('active');
-    }
+        // 2. Instantly update the menu when a link is manually clicked
+        $('#nav ul.main li a').on('click', function() {
+            $('#nav ul.main li a').removeClass('active');
+            $(this).addClass('active');
+        });
 
-    // Run on initial page load
-    $(document).ready(function() {
-        updateActiveMenu();
+        // 3. Ensure the menu updates if the user uses the Browser's Back/Forward buttons
+        window.addEventListener('popstate', function() {
+            setTimeout(highlightCurrentMenu, 100);
+        });
     });
-
-    // Run every time Swup finishes transitioning to a new page
-    document.addEventListener('swup:pageView', updateActiveMenu);
-    document.addEventListener('swup:contentReplaced', updateActiveMenu);
 
 })(jQuery);

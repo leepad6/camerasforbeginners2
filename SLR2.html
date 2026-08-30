@@ -22,7 +22,69 @@
         <link href="css/hover-style.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
 
-            <body>
+        <!-- Custom CSS สำหรับ Modal Image -->
+        <style>
+            .img-modal {
+                display: none;
+                position: fixed;
+                z-index: 1050;
+                padding-top: 80px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.85);
+                backdrop-filter: blur(8px);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal.show {
+                display: block;
+                opacity: 1;
+            }
+            .img-modal-content {
+                margin: auto;
+                display: block;
+                max-width: 90%;
+                max-height: 80vh;
+                border-radius: 12px;
+                box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+                transform: scale(0.95);
+                transition: transform 0.3s ease;
+                object-fit: contain;
+            }
+            .img-modal.show .img-modal-content {
+                transform: scale(1);
+            }
+            .img-modal-close {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+                z-index: 1060;
+            }
+            .img-modal-close:hover,
+            .img-modal-close:focus {
+                color: #C2E5FF;
+                text-decoration: none;
+            }
+            /* คลาสที่คุณกำหนดสำหรับรูปที่กดขยายได้ */
+            .img-modal-trigger {
+                cursor: pointer;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal-trigger:hover {
+                opacity: 0.85;
+            }
+        </style>
+    </head>
+
+    <body>
         <!-- Header Section Start -->
         <div class="menu"> <span></span> </div>
         <nav id="nav">
@@ -55,7 +117,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1 style="font-family: NotoSans; font-size:3.5rem; font-weight: 700; color: #ffffff;">Film SLR</h1>
-                        <p class="lead mt-3" style="font-weight: 300; max-width: 800px; margin: 0 auto; color: #cccccc; font-size: 20px;">
+                        <p class="lead mt-3" style="font-weight: 300; max-width: 600px; margin: 0 auto; color: #cccccc; font-size: 20px;">
                             เจาะลึกกล้องสะท้อนภาพเลนส์เดี่ยว ตำนานแห่งยุคฟิล์มที่มอบประสบการณ์ถ่ายภาพอันเป็นเอกลักษณ์
                         </p>
                     </div>
@@ -220,7 +282,7 @@
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
                                         <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
-                                            <span class="img-modal-trigger" data-img-src="img/ae-1.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Canon AE-1</span> ถ่ายกับฟิล์ม Fujifilm 400 กับเลนส์ Vivitar 28mm F 2.8
+                                            <a href="#" class="img-modal-trigger" data-img-src="img/cameras/ae-1.png" style="color: #79E8E4; text-decoration: underline;">Canon AE-1</a> ถ่ายกับฟิล์ม Fujifilm 400 กับเลนส์ Vivitar 28mm F 2.8
                                         </p>
                                     </div>
                                 </div>
@@ -232,7 +294,7 @@
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
                                         <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
-                                            <span class="img-modal-trigger" data-img-src="img/k1000.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Pentax K1000</span> ถ่ายกับฟิล์ม Fujifilm 400 กับเลนส์ Pentax 50mm f/2
+                                            <a href="#" class="img-modal-trigger" data-img-src="img/cameras/k1000.png" style="color: #79E8E4; text-decoration: underline;">Pentax K1000</a> ถ่ายกับฟิล์ม Fujifilm 400 กับเลนส์ Pentax 50mm f/2
                                         </p>
                                     </div>
                                 </div>
@@ -244,7 +306,7 @@
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
                                         <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
-                                            <span class="img-modal-trigger" data-img-src="img/fm2.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Nikon FM2</span> ถ่ายกับฟิล์ม Kodak Ultramax 400 กับเลนส์ Nikon 50mm f/1.8
+                                            <a href="#" class="img-modal-trigger" data-img-src="img/cameras/fm2.png" style="color: #79E8E4; text-decoration: underline;">Nikon FM2</a> ถ่ายกับฟิล์ม Kodak Ultramax 400 กับเลนส์ Nikon 50mm f/1.8
                                         </p>
                                     </div>
                                 </div>
@@ -255,12 +317,11 @@
                                         <img src="img/slr-demo4.jpg" class="d-block w-100 img-modal-trigger" alt="Demo 4" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Demo+Photo+4';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
-                                            <span class="img-modal-trigger" data-img-src="img/leica-m3.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Leica M3</span> ถ่ายกับฟิล์ม Kodak ColorPlus 200 กับเลนส์ Canon 50mm f/1.2
-                                        </p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Leica M3 ถ่ายกับฟิล์ม Kodak ColorPlus 200 กับเลนส์ Canon 50mm f/1.2</p>
                                     </div>
                                 </div>
-								
+                            </div>
+
                             <button class="carousel-control-prev" type="button" data-target="#slrCarousel" data-slide="prev" style="background: transparent; border: none; cursor: pointer;">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">ก่อนหน้า</span>
@@ -354,12 +415,7 @@
                 if (trigger) {
                     e.preventDefault();
                     modal.style.display = "flex";
-
-                    // Lock body scroll WITHOUT losing the current scroll position
-                    var scrollY = window.scrollY;
-                    document.body.style.position = "fixed";
-                    document.body.style.top = "-" + scrollY + "px";
-                    document.body.style.width = "100%";
+                    document.body.style.overflow = "hidden";
                     
                     setTimeout(function() {
                         modal.classList.add('show');
@@ -375,13 +431,7 @@
                 // ถ้าคลิกโดนปุ่มปิด หรือพื้นที่ว่างสีดำรอบๆ เพื่อปิด Modal
                 if (e.target && (e.target.classList.contains('img-modal-close') || e.target.classList.contains('img-modal') || e.target.classList.contains('img-modal-content'))) {
                     modal.classList.remove('show');
-
-                    // Restore scroll position that was locked in above
-                    var lockedScrollY = document.body.style.top;
-                    document.body.style.position = "";
-                    document.body.style.top = "";
-                    document.body.style.width = "";
-                    window.scrollTo(0, parseInt(lockedScrollY || "0") * -1);
+                    document.body.style.overflow = "";
                     
                     setTimeout(function() {
                         modal.style.display = "none";

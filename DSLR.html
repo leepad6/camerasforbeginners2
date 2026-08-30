@@ -21,6 +21,66 @@
         <!-- Main Stylesheet File -->
         <link href="css/hover-style.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Custom CSS สำหรับ Modal Image -->
+        <style>
+            .img-modal {
+                display: none;
+                position: fixed;
+                z-index: 1050;
+                padding-top: 80px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.85);
+                backdrop-filter: blur(8px);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal.show {
+                display: block;
+                opacity: 1;
+            }
+            .img-modal-content {
+                margin: auto;
+                display: block;
+                max-width: 90%;
+                max-height: 80vh;
+                border-radius: 12px;
+                box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+                transform: scale(0.95);
+                transition: transform 0.3s ease;
+                object-fit: contain;
+            }
+            .img-modal.show .img-modal-content {
+                transform: scale(1);
+            }
+            .img-modal-close {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+                z-index: 1060;
+            }
+            .img-modal-close:hover,
+            .img-modal-close:focus {
+                color: #79E8E4;
+                text-decoration: none;
+            }
+            .img-modal-trigger {
+                cursor: pointer;
+                transition: opacity 0.3s ease;
+            }
+            .img-modal-trigger:hover {
+                opacity: 0.85;
+            }
+        </style>
     </head>
 
     <body>
@@ -131,7 +191,6 @@
                     <div class="col-md-4 mb-4">
                         <div style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); padding: 25px; border-radius: 16px; height: 100%; border-top: 2px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
                             <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; margin-bottom: 20px; background: rgba(0, 0, 0, 0.3);">
-                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพโมเดล -->
                                 <img src="img/canon-5d.png" alt="Canon EOS 5D Series" class="img-modal-trigger" style="width: 100%; height: 100%; object-fit: contain; padding: 15px;" onerror="this.onerror=null; this.src='https://placehold.co/600x600/222222/ffffff?text=Canon+EOS+5D';">
                             </div>
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Canon EOS 5D Series</h4>
@@ -146,7 +205,6 @@
                     <div class="col-md-4 mb-4">
                         <div style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); padding: 25px; border-radius: 16px; height: 100%; border-top: 2px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
                             <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; margin-bottom: 20px; background: rgba(0, 0, 0, 0.3);">
-                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพโมเดล -->
                                 <img src="img/d850.png" alt="Nikon D850" class="img-modal-trigger" style="width: 100%; height: 100%; object-fit: contain; padding: 15px;" onerror="this.onerror=null; this.src='https://placehold.co/600x600/222222/ffe400?text=Nikon+D850';">
                             </div>
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Nikon D850</h4>
@@ -161,7 +219,6 @@
                     <div class="col-md-4 mb-4">
                         <div style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); padding: 25px; border-radius: 16px; height: 100%; border-top: 2px solid rgba(255, 255, 255, 0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';" onmouseout="this.style.transform='translateY(0)';">
                             <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; margin-bottom: 20px; background: rgba(0, 0, 0, 0.3);">
-                                <!-- เพิ่มคลาส img-modal-trigger ที่รูปภาพโมเดล -->
                                 <img src="img/100d.png" alt="Entry Level DSLR" class="img-modal-trigger" style="width: 100%; height: 100%; object-fit: contain; padding: 15px;" onerror="this.onerror=null; this.src='https://placehold.co/600x600/222222/ffffff?text=Entry+Level+DSLR';">
                             </div>
                             <h4 style="font-weight: 700; color: #ffffff; margin-bottom: 5px;">Canon XXXD / Nikon D3X00</h4>
@@ -205,7 +262,7 @@
                     </div>
                 </div>
 
-                <!-- 5. NEW SECTION: 8-Brand Digital Color Science Carousel -->
+                <!-- 5. 8-Brand Digital Color Science Carousel with Clickable Triggers -->
                 <div class="row mt-5 border-top" style="border-color: rgba(255, 255, 255, 0.1) !important; padding-top: 50px; margin-bottom: 60px;">
                     <div class="col-12 text-center mb-4">
                         <h3 style="font-weight: 700; color: #ffffff; font-size: 28px;">แกลเลอรีจำลองโทนสี 8 แบรนด์ดัง</h3>
@@ -222,7 +279,9 @@
                                         <img src="img/dslr-demo1.jpg" class="d-block w-100 img-modal-trigger" alt="Canon Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Canon+Color+Science';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Canon EOS 5D Mark IV ถ่ายด้วยเลนส์ EF16-35mm f/4L IS USM</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Canon-EOS-5D-Mark-IV.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Canon EOS 5D Mark IV</span> ถ่ายด้วยเลนส์ EF16-35mm f/4L IS USM
+                                        </p>
                                     </div>
                                 </div>
                                 
@@ -232,7 +291,9 @@
                                         <img src="img/dslr-demo2.jpg" class="d-block w-100 img-modal-trigger" alt="Sony Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Sony+Color+Science';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Sony Alpha 99 II ถ่ายด้วยเลนส์ FE 50mm f/1.2 GM</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Sony-Alpha-99-II.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Sony Alpha 99 II</span> ถ่ายด้วยเลนส์ FE 50mm f/1.2 GM
+                                        </p>
                                     </div>
                                 </div>
                                 
@@ -242,7 +303,9 @@
                                         <img src="img/dslr-demo3.jpg" class="d-block w-100 img-modal-trigger" alt="Fujifilm Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Fujifilm+Color+Science';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Fujifilm FinePix S5 Pro ถ่ายด้วยเลนส์ XF 56mm f/1.2 R</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Fujifilm-FinePix-S5-Pro.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Fujifilm FinePix S5 Pro</span> ถ่ายด้วยเลนส์ XF 56mm f/1.2 R
+                                        </p>
                                     </div>
                                 </div>
                                 
@@ -252,7 +315,9 @@
                                         <img src="img/dslr-demo4.jpg" class="d-block w-100 img-modal-trigger" alt="Nikon Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Nikon+Color+Science';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Nikon D850 ถ่ายด้วยเลนส์ NIKKOR 18.0-105.0 mm f/3.5-5.6</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/d850.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Nikon D850</span> ถ่ายด้วยเลนส์ NIKKOR 18.0-105.0 mm f/3.5-5.6
+                                        </p>
                                     </div>
                                 </div>
 
@@ -262,7 +327,9 @@
                                         <img src="img/dslr-demo5.jpg" class="d-block w-100 img-modal-trigger" alt="Lumix Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Lumix+Color+Science';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Lumix DMC-L1 ถ่ายด้วยเลนส์ Lumix S PRO 50mm f/1.4</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Lumix-DMC-L1.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Lumix DMC-L1</span> ถ่ายด้วยเลนส์ Lumix S PRO 50mm f/1.4
+                                        </p>
                                     </div>
                                 </div>
 
@@ -272,7 +339,9 @@
                                         <img src="img/dslr3-demo6.jpg" class="d-block w-100 img-modal-trigger" alt="Olympus Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Olympus+Color+Science';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Olympus E-5 ถ่ายด้วยเลนส์ OLYMPUS M.12-200mm F3.5-6.3</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Olympus-E-5.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Olympus E-5</span> ถ่ายด้วยเลนส์ OLYMPUS M.12-200mm F3.5-6.3
+                                        </p>
                                     </div>
                                 </div>
 
@@ -282,30 +351,34 @@
                                         <img src="img/dslr-demo7.jpg" class="d-block w-100 img-modal-trigger" alt="Leica Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Leica+Color+Science';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Leica S3 ถ่ายด้วยเลนส์ Elmarit-S 45 CS</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Leica-S3.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Leica S3</span> ถ่ายด้วยเลนส์ Elmarit-S 45 CS
+                                        </p>
                                     </div>
                                 </div>
 
                                 <!-- Brand 8: Hasselblad -->
                                 <div class="carousel-item">
                                     <div style="background: #000;">
-                                        <img src="img/dslr2-demo8.jpg" class="d-block w-100 img-modal-trigger" alt="Hasselblad Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Hasselblad+Color+Science';">
+                                        <img src="img/dslr-demo8.jpg" class="d-block w-100 img-modal-trigger" alt="Hasselblad Sample" style="max-height: 550px; object-fit: scale-down;" onerror="this.onerror=null; this.src='https://placehold.co/1000x600/111111/dddddd?text=Hasselblad+Color+Science';">
                                     </div>
                                     <div class="carousel-caption d-block" style="position: static; padding: 25px 20px 40px 20px; background: #1a1a1a; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">Hasselblad H6D-100c ถ่ายด้วยเลนส์ XCD 80mm f/1.9</p>
+                                        <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">
+                                            <span class="img-modal-trigger" data-img-src="img/Hasselblad-H6D-100c.png" style="color: #79E8E4; text-decoration: underline; cursor: pointer;">Hasselblad H6D-100c</span> ถ่ายด้วยเลนส์ XCD 80mm f/1.9
+                                        </p>
                                     </div>
                                 </div>
 
                             </div>
                             <!-- Navigation Arrows -->
-<button class="carousel-control-prev" type="button" data-target="#brandCarousel" data-slide="prev" style="background: transparent; border: none; cursor: pointer;">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">ก่อนหน้า</span>
-</button>
-<button class="carousel-control-next" type="button" data-target="#brandCarousel" data-slide="next" style="background: transparent; border: none; cursor: pointer;">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">ถัดไป</span>
-</button>
+                            <button class="carousel-control-prev" type="button" data-target="#brandCarousel" data-slide="prev" style="background: transparent; border: none; cursor: pointer;">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ก่อนหน้า</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-target="#brandCarousel" data-slide="next" style="background: transparent; border: none; cursor: pointer;">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">ถัดไป</span>
+                            </button>
                             <!-- Indicators for 8 slides -->
                             <div class="carousel-indicators" style="bottom: 0;">
                                 <button type="button" data-target="#brandCarousel" data-slide-to="0" class="active"></button>
@@ -370,6 +443,7 @@
 
         <!-- โครงสร้าง Modal สำหรับขยายรูปภาพ -->
         <div id="imageModal" class="img-modal">
+            <span class="img-modal-close">&times;</span>
             <img class="img-modal-content" id="expandedImg">
         </div>
 
@@ -402,6 +476,7 @@
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
 
+ 
 		<!-- Swup Script Installation -->
         <script src="js/swup.umd.js"></script>
         <script>
