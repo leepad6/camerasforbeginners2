@@ -34,7 +34,8 @@
                 <li><a href="types.html" >ประเภท</a></li>
                 <li><a href="purpose.html">ประโยชน์</a></li>
                 <li><a href="technique.html">เทคนิค</a></li>
-                <li><a href="accesories.html">อุปกรณ์เสริม</a></li>				<li><a href="guide.html">แบบสอบถาม</a></li>
+                <li><a href="accesories.html">อุปกรณ์เสริม</a></li>
+				<li><a href="guide.html">แบบสอบถาม</a></li>
                 <li><a href="contact.html">ติดต่อเรา</a></li>
             </ul>
         </nav>
@@ -66,23 +67,23 @@
                     <!-- Category 1: Camera Types -->
                     <div class="col-md-6 mb-4">
                         <a href="cameratype.html" style="display: block; text-decoration: none;">
-                            <div style="position: relative; border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.3s ease, box-shadow 0.3s ease;" 
-                                 onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(194, 229, 255, 0.2)'; this.querySelector('img').style.transform='scale(1.1)';" 
-                                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'; this.querySelector('img').style.transform='scale(1)';">
+                            <div style="position: relative; border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: translateZ(0); backface-visibility: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" 
+                                 onmouseover="this.style.transform='translateY(-10px) translateZ(0)'; this.style.boxShadow='0 15px 40px rgba(194, 229, 255, 0.2)'; this.querySelector('img').style.transform='scale(1.1)'; " 
+                                 onmouseout="this.style.transform='translateY(0) translateZ(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'; this.querySelector('img').style.transform='scale(1)';">
                                 
                                 <!-- Background Image -->
-                                <img src="img/cameras.jpg" alt="ประเภทของกล้อง" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                                <img src="img/cameras.jpg" alt="ประเภทของกล้อง" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; backface-visibility: hidden;">
                                 
                                 <!-- Dark Gradient Overlay -->
-                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);"></div>
+                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%); pointer-events: none;"></div>
                                 
                                 <!-- Text Content -->
-                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 30px; text-align: left;">
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 30px; text-align: left; pointer-events: none;">
                                     <h3 style="font-weight: 700; color: #ffffff; font-size: 32px; margin-bottom: 10px;">ประเภทของกล้อง</h3>
                                 </div>
                                 
                                 <!-- Arrow Icon -->
-                                <div style="position: absolute; bottom: 40px; right: 30px; font-size: 2rem; color: #79E8E4;">
+                                <div style="position: absolute; bottom: 40px; right: 30px; font-size: 2rem; color: #79E8E4; pointer-events: none;">
                                     <i class="fa fa-arrow-right"></i>
                                 </div>
                             </div>
@@ -92,23 +93,23 @@
                     <!-- Category 2: Sensor Types -->
                     <div class="col-md-6 mb-4">
                         <a href="sensortype.html" style="display: block; text-decoration: none;">
-                            <div style="position: relative; border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.3s ease, box-shadow 0.3s ease;" 
-                                 onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 40px rgba(194, 229, 255, 0.2)'; this.querySelector('img').style.transform='scale(1.1)';" 
-                                 onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'; this.querySelector('img').style.transform='scale(1)';">
+                            <div style="position: relative; border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: translateZ(0); backface-visibility: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;" 
+                                 onmouseover="this.style.transform='translateY(-10px) translateZ(0)'; this.style.boxShadow='0 15px 40px rgba(194, 229, 255, 0.2)'; this.querySelector('img').style.transform='scale(1.1)';" 
+                                 onmouseout="this.style.transform='translateY(0) translateZ(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)'; this.querySelector('img').style.transform='scale(1)';">
                                 
                                 <!-- Background Image -->
-                                <img src="img/sensor.jpg" alt="ประเภทของเซ็นเซอร์" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                                <img src="img/sensor.jpg" alt="ประเภทของเซ็นเซอร์" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; backface-visibility: hidden;">
                                 
                                 <!-- Dark Gradient Overlay -->
-                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);"></div>
+                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%); pointer-events: none;"></div>
                                 
                                 <!-- Text Content -->
-                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 30px; text-align: left;">
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 30px; text-align: left; pointer-events: none;">
                                     <h3 style="font-weight: 700; color: #ffffff; font-size: 32px; margin-bottom: 10px;">ประเภทของเซ็นเซอร์</h3>
                                 </div>
                                 
                                 <!-- Arrow Icon -->
-                                <div style="position: absolute; bottom: 40px; right: 30px; font-size: 2rem; color: #79E8E4;">
+                                <div style="position: absolute; bottom: 40px; right: 30px; font-size: 2rem; color: #79E8E4; pointer-events: none;">
                                     <i class="fa fa-arrow-right"></i>
                                 </div>
                             </div>
