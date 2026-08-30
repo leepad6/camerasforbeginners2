@@ -86,15 +86,19 @@
 
         if (trigger) {
             e.preventDefault();
-            modal.style.display = "flex"; 
             
-            // Lock the scroll wheel and retain position
-            var scrollY = window.scrollY;
-            document.body.style.position = "fixed";
-            document.body.style.top = "-" + scrollY + "px";
-            document.body.style.width = "100%";
-            
-            setTimeout(function() { modal.classList.add('show'); }, 10);
+            // Check if the scroll is already locked to prevent event bubbling from resetting top to -0px
+            if (document.body.style.position !== "fixed") {
+                modal.style.display = "flex"; 
+                
+                // Lock the scroll wheel and retain position
+                var scrollY = window.scrollY;
+                document.body.style.position = "fixed";
+                document.body.style.top = "-" + scrollY + "px";
+                document.body.style.width = "100%";
+                
+                setTimeout(function() { modal.classList.add('show'); }, 10);
+            }
             
             // Check if it's a standard image tag or a text element with data-img-src
             if (trigger.tagName === 'IMG') {
@@ -475,4 +479,4 @@
         });
     });
 
-})(jQuery);
+})(jQuery);i
