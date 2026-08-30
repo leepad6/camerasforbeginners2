@@ -423,4 +423,42 @@
         });
     });
 
+ // ==========================================
+    // Active Navigation Menu Logic (Bulletproof)
+    // ==========================================
+    $(document).ready(function() {
+        // 1. Function to check the URL and set the active link
+        function highlightCurrentMenu() {
+            // Get the current file name (or default to index.html)
+            var currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            
+            // Remove active class from all links
+            $('#nav ul.main li a').removeClass('active');
+            
+            // Find the link that matches the current path
+            var $targetLink = $('#nav ul.main li a[href="' + currentPath + '"]');
+            
+            // Apply the active class
+            if ($targetLink.length) {
+                $targetLink.addClass('active');
+            } else {
+                $('#nav ul.main li a[href="index.html"]').addClass('active');
+            }
+        }
+
+        // Run immediately when the site first loads
+        highlightCurrentMenu();
+
+        // 2. Instantly update the menu when a link is manually clicked
+        $('#nav ul.main li a').on('click', function() {
+            $('#nav ul.main li a').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        // 3. Ensure the menu updates if the user uses the Browser's Back/Forward buttons
+        window.addEventListener('popstate', function() {
+            setTimeout(highlightCurrentMenu, 100);
+        });
+    });
+
 })(jQuery);

@@ -628,10 +628,11 @@ h2 {
 }
 
 #nav ul.main li a:hover {
-    color: var(--mono-white);
+    color: #79E8E4;
     font-family: 'NotoSans', sans-serif;
     font-size: 30px;
 }
+
 
 #nav ul.sub {
     list-style-type: none;
@@ -2413,4 +2414,13 @@ html.is-animating.is-rendering .transition-slide {
 .img-modal-trigger:hover, 
 .img-modal-trigger:hover {
     opacity: var(--modal-trigger-hover-opacity);
+}
+
+/* ================================================= */
+/* ---------------- Active Menu Style -------------- */
+/* ================================================= */
+#nav ul.main li a.active {
+    color: #79E8E4 !important;
+    font-family: 'NotoSans', sans-serif !important;
+    font-size: 30px !important; 
 }
