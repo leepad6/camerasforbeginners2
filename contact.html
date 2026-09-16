@@ -171,6 +171,7 @@
 
         <!-- โครงสร้าง Modal สำหรับขยายรูปภาพ -->
         <div id="imageModal" class="img-modal">
+            <span class="img-modal-close">&times;</span>
             <img class="img-modal-content" id="expandedImg">
         </div>
 
@@ -204,9 +205,11 @@
         <script src="js/main.js"></script>
 		
 		<!-- Swup Script Installation -->
-        <script src="js/swup.umd.js"></script>
-        <script>
-          const swup = new Swup();
-        </script>
+       <script src="js/swup.umd.js"></script>
+<script>
+  const swup = new Swup({
+    containers: ['#swup', '#imageModal']
+  });
+</script>
     </body>
 </html>
