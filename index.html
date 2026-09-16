@@ -352,5 +352,52 @@
         <script>
           const swup = new Swup();
         </script>
+		   
+		   <script>
+function normalizeCarouselHeights() {
+    const items = document.querySelectorAll('#howItWorksCarousel .carousel-item');
+    let maxHeight = 0;
+
+    // Reset heights to auto before recalculating on window resize
+    items.forEach(item => { item.style.minHeight = 'auto'; });
+
+    // Calculate the tallest item
+    items.forEach(item => {
+        const prevDisplay = item.style.display;
+        const prevVisibility = item.style.visibility;
+        const prevPosition = item.style.position;
+
+        // Force rendering with constrained width to get accurate wrapped text height
+        item.style.visibility = 'hidden';
+        item.style.display = 'block';
+        item.style.position = 'absolute';
+        item.style.width = '100%'; // Fixes the text wrapping measurement issue
+
+        const h = item.offsetHeight;
+        if (h > maxHeight) { maxHeight = h; }
+
+        // Restore original styles
+        item.style.display = prevDisplay;
+        item.style.visibility = prevVisibility;
+        item.style.position = prevPosition;
+        item.style.width = '';
+    });
+
+    // Apply the maximum calculated height to all items
+    items.forEach(item => {
+        item.style.minHeight = maxHeight + 'px';
+    });
+}
+
+// Run the script after web fonts are fully loaded to prevent text reflow issues
+if (document.fonts) {
+    document.fonts.ready.then(normalizeCarouselHeights);
+} else {
+    window.addEventListener('load', normalizeCarouselHeights);
+}
+
+// Recalculate if the screen is rotated or resized
+window.addEventListener('resize', normalizeCarouselHeights);
+</script>
     </body>
 </html>
